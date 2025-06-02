@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <clipPath id="clip-Gmail_1">
+      <rect width="50" height="50"/>
+    </clipPath>
+  </defs>
+  <g id="Gmail_1" data-name="Gmail – 1" clip-path="url(#clip-Gmail_1)">
+    <rect width="50" height="50" fill="#fff"/>
+    <g id="Group_40" data-name="Group 40">
+      <path id="Path_100" data-name="Path 100" d="M5.665.366l19.4,14.212L44.335.366a5.27,5.27,0,0,1,5.647,4.407L50,33.248c-.964,4.62-3.929,4.517-7.813,4.584a2.143,2.143,0,0,1-.586-1.756l0-23.221L25,24.368,8.4,12.855l0,23.221a2.141,2.141,0,0,1-.585,1.756C3.928,37.764.964,37.868,0,33.248L.017,4.774C.752,1.645,2.592.516,5.665.366" transform="translate(0 5.925)" fill="#f23b2e"/>
+      <path id="Path_101" data-name="Path 101" d="M49.691.2,30.422,14.409,11.021.2c12.708-.619,25.911.464,38.67,0" transform="translate(-5.356 6.094)" fill="#e9ecef"/>
+      <path id="Path_102" data-name="Path 102" d="M48.988,58.971a2.141,2.141,0,0,0,.586,1.756c-11.33.2-23.043.2-34.374,0a2.141,2.141,0,0,0,.586-1.756l16.6-11.513Z" transform="translate(-7.387 -16.97)" fill="#c8d3d7"/>
+      <path id="Path_103" data-name="Path 103" d="M65.238,47.9l-16.6-11.513v-.2l16.6-11.513Z" transform="translate(-23.637 -5.9)" fill="#f9f9f9"/>
+      <path id="Path_104" data-name="Path 104" d="M32.942,36.193,16.343,24.68l0,23.221" transform="translate(-7.942 -5.9)" fill="#f9f9f9"/>
+    </g>
+  </g>
+</svg>
