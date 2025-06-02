@@ -1,220 +1,222 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>作品細節頁</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Noto Sans TC', sans-serif;
-      background-color: #fefefe;
-      color: #111;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>作品細節頁</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Noto Sans TC", sans-serif;
+        background-color: #fefefe;
+        color: #111;
+      }
 
-    header {
-      padding: 60px 20px 20px;
-      text-align: center;
-    }
+      header {
+        padding: 60px 20px 20px;
+        text-align: center;
+      }
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      margin-bottom: 0.2em;
-    }
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.4rem;
+        margin-bottom: 0.2em;
+      }
 
-    .subtitle {
-      font-size: 1rem;
-      color: #555;
-    }
+      .subtitle {
+        font-size: 1rem;
+        color: #555;
+      }
 
-    nav {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+      nav {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
 
-    nav a {
-      text-decoration: none;
-      font-size: 1rem;
-      color: #333;
-      border: 1px solid #ddd;
-      padding: 10px 20px;
-      border-radius: 40px;
-      transition: all 0.3s ease;
-    }
+      nav a {
+        text-decoration: none;
+        font-size: 1rem;
+        color: #333;
+        border: 1px solid #ddd;
+        padding: 10px 20px;
+        border-radius: 40px;
+        transition: all 0.3s ease;
+      }
 
-    nav a:hover {
-      background-color: #111;
-      color: #fff;
-      border-color: #111;
-    }
+      nav a:hover {
+        background-color: #111;
+        color: #fff;
+        border-color: #111;
+      }
 
-    .project-detail {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
+      .project-detail {
+        max-width: 900px;
+        margin: 60px auto;
+        padding: 0 20px;
+      }
 
-    .project-detail img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 20px;
-    }
+      .project-detail img {
+        width: 100%;
+        border-radius: 12px;
+        margin-bottom: 20px;
+      }
 
-    .project-detail h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
+      .project-detail h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
 
-    .project-meta {
-      color: #777;
-      font-size: 0.9rem;
-      margin-bottom: 20px;
-    }
+      .project-meta {
+        color: #777;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+      }
 
-    .project-description {
-      line-height: 1.8;
-      font-size: 1.05rem;
-    }
+      .project-description {
+        line-height: 1.8;
+        font-size: 1.05rem;
+      }
 
-    .footer {
-      margin-top: 80px;
-      text-align: center;
-      font-size: 0.8rem;
-      color: #999;
-      padding: 40px 20px;
-    }
+      .footer {
+        margin-top: 80px;
+        text-align: center;
+        font-size: 0.8rem;
+        color: #999;
+        padding: 40px 20px;
+      }
 
-.carousel {
-  position: relative;
-  margin: 40px auto;
-  overflow: hidden;
-  width: 100%;
-  max-width: 900px; /* 可以視專案調整 */
-  height: auto;
-}
+      .carousel {
+        position: relative;
+        margin: 40px auto;
+        overflow: hidden;
+        width: 100%;
+        max-width: 900px; /* 可以視專案調整 */
+        height: auto;
+      }
 
-.carousel-images {
-  display: flex;
-  transition: transform 0.5s ease;
-}
+      .carousel-images {
+        display: flex;
+        transition: transform 0.5s ease;
+      }
 
-.carousel-images img {
-  width: 100%;
-  height: auto;
-  flex-shrink: 0;
-  object-fit: cover;
-  /* object-fit: contain; */
-}
+      .carousel-images img {
+        width: 100%;
+        height: auto;
+        flex-shrink: 0;
+        object-fit: cover;
+        /* object-fit: contain; */
+      }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
+      img {
+        max-width: 100%;
+        height: auto;
+      }
 
+      .carousel button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        font-size: 1rem;
+        background-color: #ddd;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 10;
+        transition: background-color 0.3s ease;
+      }
 
-.carousel button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  border: none;
-  font-size: 1rem;
-  background-color: #ddd;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10;
-  transition: background-color 0.3s ease;
-}
+      .carousel button:hover {
+        background-color: #111;
+        color: #fff;
+      }
 
-.carousel button:hover {
-  background-color: #111;
-  color: #fff;
-}
+      .carousel .prev {
+        left: 10px;
+      }
 
-.carousel .prev {
-  left: 10px;
-}
+      .carousel .next {
+        right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>作品名稱</h1>
+      <p class="subtitle">設計理念與執行細節</p>
+      <nav>
+        <a href="./index.html">首頁</a>
+        <a href="./works.html">作品集總覽</a>
+        <a href="./about.html">關於我</a>
+        <a href="./blog.html">部落格</a>
+        <a href="./contact.html">聯絡我</a>
+      </nav>
+    </header>
 
-.carousel .next {
-  right: 10px;
-}
+    <section class="project-detail">
+      <div class="carousel">
+        <div class="carousel-images">
+          <img src="./image/works/work-1.png" alt="作品封面1" />
+          <img src="./image/index/banner.png" alt="作品封面2" />
+          <img src="image3.jpg" alt="作品封面3" />
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
 
-  </style>
-</head>
-<body>
-  <header>
-    <h1>作品名稱</h1>
-    <p class="subtitle">設計理念與執行細節</p>
-    <nav>
-      <a href="./indext.html">首頁</a>
-      <a href="./works.html">作品集總覽</a>
-      <a href="./about.html">關於我</a>
-      <a href="./blog.html">部落格</a>
-      <a href="./contact.html">聯絡我</a>
-    </nav>
-  </header>
+      <h2>專案名稱 / Project Title</h2>
+      <p class="project-meta">品牌視覺設計・2024 年・UIUX設計</p>
 
-  <section class="project-detail">
-    <div class="carousel">
-  <div class="carousel-images">
-    <img src="./image/works/work-1.png" alt="作品封面1">
-    <img src="./image/index/banner.png" alt="作品封面2">
-    <img src="image3.jpg" alt="作品封面3">
-  </div>
-  <button class="prev">&#10094;</button>
-  <button class="next">&#10095;</button>
-</div>
+      <div class="project-description">
+        <p>
+          本專案為 XXX 品牌設計案，針對其視覺識別、網站架構與 UI
+          設計全面改造，主軸風格採取現代極簡、柔和質感風，結合使用者經驗提升，打造具有記憶點的品牌形象。
+        </p>
+        <p>
+          從
+          LOGO、色彩、字體系統延伸至網站與社群圖像，提供完整一致的品牌策略方案。本頁展示從概念草圖、視覺風格板、設計提案到實際應用的過程與成果。
+        </p>
+      </div>
+    </section>
 
-    <h2>專案名稱 / Project Title</h2>
-    <p class="project-meta">品牌視覺設計・2024 年・UIUX設計</p>
-
-    <div class="project-description">
-      <p>
-        本專案為 XXX 品牌設計案，針對其視覺識別、網站架構與 UI 設計全面改造，主軸風格採取現代極簡、柔和質感風，結合使用者經驗提升，打造具有記憶點的品牌形象。
-      </p>
-      <p>
-        從 LOGO、色彩、字體系統延伸至網站與社群圖像，提供完整一致的品牌策略方案。本頁展示從概念草圖、視覺風格板、設計提案到實際應用的過程與成果。
-      </p>
+    <div class="footer">
+      &copy; 2025 ZhouZhou Portfolio. All Rights Reserved.
     </div>
-  </section>
+    <script>
+      const carousel = document.querySelector(".carousel");
+      const carouselImages = document.querySelector(".carousel-images");
+      const images = document.querySelectorAll(".carousel-images img");
+      const prevBtn = document.querySelector(".prev");
+      const nextBtn = document.querySelector(".next");
 
-  <div class="footer">
-    &copy; 2025 ZhouZhou Portfolio. All Rights Reserved.
-  </div>
-<script>
-const carousel = document.querySelector('.carousel');
-const carouselImages = document.querySelector('.carousel-images');
-const images = document.querySelectorAll('.carousel-images img');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
+      let index = 0;
 
-let index = 0;
+      function updateCarousel() {
+        const width = carousel.clientWidth;
+        carouselImages.style.transform = `translateX(-${index * width}px)`;
+      }
 
-function updateCarousel() {
-  const width = carousel.clientWidth;
-  carouselImages.style.transform = `translateX(-${index * width}px)`;
-}
+      // 初始定位一次
+      window.addEventListener("load", updateCarousel);
+      // 當視窗尺寸變化時，也要更新一次
+      window.addEventListener("resize", updateCarousel);
 
-// 初始定位一次
-window.addEventListener('load', updateCarousel);
-// 當視窗尺寸變化時，也要更新一次
-window.addEventListener('resize', updateCarousel);
+      nextBtn.addEventListener("click", () => {
+        index = (index + 1) % images.length;
+        updateCarousel();
+      });
 
-nextBtn.addEventListener('click', () => {
-  index = (index + 1) % images.length;
-  updateCarousel();
-});
-
-prevBtn.addEventListener('click', () => {
-  index = (index - 1 + images.length) % images.length;
-  updateCarousel();
-});
-</script>
-
-</body>
+      prevBtn.addEventListener("click", () => {
+        index = (index - 1 + images.length) % images.length;
+        updateCarousel();
+      });
+    </script>
+  </body>
 </html>
