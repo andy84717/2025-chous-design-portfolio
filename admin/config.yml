@@ -1,10 +1,10 @@
 backend:
   name: github
-  repo: 你的GitHub帳號/你的repo名稱
+  repo: andy84717/2025-chous-design-portfolio
   branch: main
 
-media_folder: "images"
-public_folder: "/images"
+media_folder: "image/blog"
+public_folder: "/image/blog"
 
 collections:
   - name: "blog"
