@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: andy84717/2025-chous-design-portfolio
+  repo: chousdesign-blog
   branch: main
 
 media_folder: "image/blog"
