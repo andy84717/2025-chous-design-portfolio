@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: 你的GitHub帳號/你的repo名稱
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "blog"
+    label: "部落格文章"
+    folder: "blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "標題", name: "title", widget: "string"}
+      - {label: "日期", name: "date", widget: "datetime"}
+      - {label: "摘要", name: "summary", widget: "text"}
+      - {label: "內容", name: "body", widget: "markdown"}
