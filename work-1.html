@@ -1,127 +1,130 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>作品細節頁</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Noto Sans TC', sans-serif;
-      background-color: #fefefe;
-      color: #111;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>作品細節頁</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Noto Sans TC", sans-serif;
+        background-color: #fefefe;
+        color: #111;
+      }
 
-    header {
-      padding: 60px 20px 20px;
-      text-align: center;
-    }
+      header {
+        padding: 60px 20px 20px;
+        text-align: center;
+      }
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      margin-bottom: 0.2em;
-    }
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.4rem;
+        margin-bottom: 0.2em;
+      }
 
-    .subtitle {
-      font-size: 1rem;
-      color: #555;
-    }
+      .subtitle {
+        font-size: 1rem;
+        color: #555;
+      }
 
-    nav {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+      nav {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
 
-    nav a {
-      text-decoration: none;
-      font-size: 1rem;
-      color: #333;
-      border: 1px solid #ddd;
-      padding: 10px 20px;
-      border-radius: 40px;
-      transition: all 0.3s ease;
-    }
+      nav a {
+        text-decoration: none;
+        font-size: 1rem;
+        color: #333;
+        border: 1px solid #ddd;
+        padding: 10px 20px;
+        border-radius: 40px;
+        transition: all 0.3s ease;
+      }
 
-    nav a:hover {
-      background-color: #111;
-      color: #fff;
-      border-color: #111;
-    }
+      nav a:hover {
+        background-color: #111;
+        color: #fff;
+        border-color: #111;
+      }
 
-    .project-detail {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
+      .project-detail {
+        max-width: 900px;
+        margin: 60px auto;
+        padding: 0 20px;
+      }
 
-    .project-detail img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 20px;
-    }
+      .project-detail img {
+        width: 100%;
+        border-radius: 12px;
+        margin-bottom: 20px;
+      }
 
-    .project-detail h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
+      .project-detail h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
 
-    .project-meta {
-      color: #777;
-      font-size: 0.9rem;
-      margin-bottom: 20px;
-    }
+      .project-meta {
+        color: #777;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+      }
 
-    .project-description {
-      line-height: 1.8;
-      font-size: 1.05rem;
-    }
+      .project-description {
+        line-height: 1.8;
+        font-size: 1.05rem;
+      }
 
-    .footer {
-      margin-top: 80px;
-      text-align: center;
-      font-size: 0.8rem;
-      color: #999;
-      padding: 40px 20px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>作品名稱</h1>
-    <p class="subtitle">設計理念與執行細節</p>
-    <nav>
-     <a href="./index.html">首頁</a>
-      <a href="./works.html">作品集總覽</a>
-      <a href="./about.html">關於我</a>
-      <a href="./blog.html">部落格</a>
-      <a href="./contact.html">聯絡我</a>
-    </nav>
-  </header>
+      .footer {
+        margin-top: 80px;
+        text-align: center;
+        font-size: 0.8rem;
+        color: #999;
+        padding: 40px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>作品名稱</h1>
+      <p class="subtitle">設計理念與執行細節</p>
+      <nav>
+        <a href="./index.html">首頁</a>
+        <a href="./works.html">作品集總覽</a>
+        <a href="./about.html">關於我</a>
+        <a href="./blog.html">部落格</a>
+        <a href="./contact.html">聯絡我</a>
+      </nav>
+    </header>
 
-  <section class="project-detail">
-    <img src="project-cover.jpg" alt="作品封面">
+    <section class="project-detail">
+      <img src="project-cover.jpg" alt="作品封面" />
 
-    <h2>專案名稱 / Project Title</h2>
-    <p class="project-meta">品牌視覺設計・2024 年・UIUX設計</p>
+      <h2>專案名稱 / Project Title</h2>
+      <p class="project-meta">品牌視覺設計・2024 年・UIUX設計</p>
 
-    <div class="project-description">
-      <p>
-        本專案為 XXX 品牌設計案，針對其視覺識別、網站架構與 UI 設計全面改造，主軸風格採取現代極簡、柔和質感風，結合使用者經驗提升，打造具有記憶點的品牌形象。
-      </p>
-      <p>
-        從 LOGO、色彩、字體系統延伸至網站與社群圖像，提供完整一致的品牌策略方案。本頁展示從概念草圖、視覺風格板、設計提案到實際應用的過程與成果。
-      </p>
-    </div>
-  </section>
+      <div class="project-description">
+        <p>
+          本專案為 XXX 品牌設計案，針對其視覺識別、網站架構與 UI
+          設計全面改造，主軸風格採取現代極簡、柔和質感風，結合使用者經驗提升，打造具有記憶點的品牌形象。
+        </p>
+        <p>
+          從
+          LOGO、色彩、字體系統延伸至網站與社群圖像，提供完整一致的品牌策略方案。本頁展示從概念草圖、視覺風格板、設計提案到實際應用的過程與成果。
+        </p>
+      </div>
+    </section>
 
-  <div class="footer">
-    &copy; 2025 ChousDesign. All Rights Reserved.
-  </div>
-</body>
+    <div class="footer">&copy; 2025 ChousDesign. All Rights Reserved.</div>
+  </body>
 </html>
