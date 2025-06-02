@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>聯絡我｜周周設計誌</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: #fdfdfd;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 60px 20px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      margin-bottom: 0.2em;
+    }
+
+    p.subtitle {
+      font-size: 1rem;
+      color: #555;
+      margin-top: 0;
+    }
+
+    nav {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav a {
+      font-size: 1rem;
+      text-decoration: none;
+      color: #333;
+      border: 1px solid #ddd;
+      padding: 10px 20px;
+      border-radius: 40px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #111;
+      color: #fff;
+      border-color: #111;
+    }
+
+    .contact-section {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .contact-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, textarea {
+      padding: 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+
+    button {
+      padding: 12px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 40px;
+      background-color: #111;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #444;
+    }
+
+    .footer {
+      margin-top: 80px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #999;
+      padding: 40px 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>聯絡我</h1>
+    <p class="subtitle">有任何合作提案、品牌諮詢、塔羅預約都歡迎來信</p>
+    <nav>
+   <a href="./indext.html">首頁</a>
+      <a href="./works.html">作品集總覽</a>
+      <a href="./about.html">關於我</a>
+      <a href="./blog.html">部落格</a>
+      <a href="./contact.html">聯絡我</a>
+    </nav>
+  </header>
+
+  <section class="contact-section">
+    <h2>寫信給周周</h2>
+    <form action="https://formspree.io/f/xldnebda" method="POST">
+        
+      <label for="name">姓名</label>
+      <input type="text" id="name" name="name" placeholder="請輸入您的名字" required>
+
+      <label for="email">電子郵件</label>
+      <input type="email" id="email" name="email" placeholder="請輸入您的Email" required>
+
+      <label for="message">訊息內容</label>
+      <textarea id="message" name="message" rows="6" placeholder="請輸入您想說的話" required></textarea>
+
+      <button type="submit">送出訊息</button>
+    </form>
+
+  </section>
+
+  <div class="footer">
+    &copy; 2025 ChousDesign . All Rights Reserved.
+  </div>
+</body>
+</html>

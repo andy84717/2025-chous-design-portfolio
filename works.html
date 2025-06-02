@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>周周設計誌｜作品集總覽</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: #fdfdfd;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 60px 20px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      margin-bottom: 0.2em;
+    }
+
+    p.subtitle {
+      font-size: 1rem;
+      color: #555;
+      margin-top: 0;
+    }
+
+    nav {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav a {
+      font-size: 1rem;
+      text-decoration: none;
+      color: #333;
+      border: 1px solid #ddd;
+      padding: 10px 20px;
+      border-radius: 40px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #111;
+      color: #fff;
+      border-color: #111;
+    }
+
+    .portfolio {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
+
+    .project {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
+    .project img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .project-content {
+      padding: 20px;
+    }
+
+    .project-title {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .project-desc {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    .footer {
+      margin-top: 80px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #999;
+      padding: 40px 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>作品集總覽</h1>
+    <p class="subtitle">精選視覺設計 × UI/UX × 品牌企劃 × 插畫設計</p>
+    <nav>
+      <a href="./indext.html">首頁</a>
+      <a href="./works.html">作品集總覽</a>
+      <a href="./about.html">關於我</a>
+      <a href="./blog.html">部落格</a>
+      <a href="./contact.html">聯絡我</a>
+    </nav>
+  </header>
+
+  <section class="portfolio">
+    <div class="project">
+    <a href="/work-1.html">
+      <img src="/image/works/work-1.png" alt="Project 1"></a>
+      <div class="project-content">
+        <div class="project-title">品牌識別設計 - 月光甜點</div>
+        <div class="project-desc">溫柔復古色調搭配簡約 Logo，打造月光系甜點品牌形象。</div>
+      </div>
+    </div>
+    <div class="project">
+        <a href="./work-2.html">
+      <img src="./image/works/work-1.png" alt="Project 2"></a>
+      <div class="project-content">
+        <div class="project-title">保健食品包裝 - GenBoost</div>
+        <div class="project-desc">以專業、信任、清新感為核心的保健品全系列設計。</div>
+      </div>
+    </div>
+    <div class="project">
+      <img src="/path/to/project3.jpg" alt="Project 3">
+      <div class="project-content">
+        <div class="project-title">網站規劃設計 - 靈感生活誌</div>
+        <div class="project-desc">主題式網站企劃與 UI 設計，強調內容導向與閱讀體驗。</div>
+      </div>
+    </div>
+    <div class="project">
+      <img src="/path/to/project4.jpg" alt="Project 4">
+      <div class="project-content">
+        <div class="project-title">插畫 × 周邊 - 命運方周塔羅</div>
+        <div class="project-desc">塔羅主題插畫與商品設計，融合神秘與可愛氛圍。</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    &copy; 2025 ChousDesign . All Rights Reserved.
+  </div>
+</body>
+</html>
