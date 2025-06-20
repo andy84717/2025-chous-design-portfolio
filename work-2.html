@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>作品細節頁</title>
+    <title>作品細節頁：輪播圖</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap"
       rel="stylesheet"
@@ -112,7 +112,10 @@
         height: auto;
         flex-shrink: 0;
         object-fit: cover;
+        /* 保持圖片（或影片）的原始長寬比，並填充整個內容框。如果圖片的長寬比與內容框不符，它會裁切（crop）圖片的某些部分以確保完全覆蓋。 */
+       
         /* object-fit: contain; */
+        /* 保持圖片（或影片）的原始長寬比，並確保圖片的整個內容完整地顯示在其內容框內。如果圖片的長寬比與內容框不符，內容框中會出現空白區域（類似於電影的黑邊）。 */
       }
 
       img {
@@ -144,6 +147,71 @@
 
       .carousel .next {
         right: 10px;
+      }
+      /* --- Media Queries --- */
+
+      /* 小型裝置 (手機和平板直立，最大寬度 768px) */
+      @media (max-width: 768px) {
+        header {
+          padding: 30px 15px 15px; /* 縮小標頭內距 */
+        }
+
+        h1 {
+          font-size: 2rem; /* 縮小主要標題字體 */
+        }
+
+        .subtitle {
+          font-size: 0.9rem; /* 縮小副標題字體 */
+        }
+
+        nav {
+          flex-direction: column; /* 導覽列項目垂直排列 */
+          align-items: center; /* 導覽列項目置中 */
+          gap: 10px; /* 縮小導覽列項目間距 */
+        }
+
+        nav a {
+          width: 80%; /* 讓導覽列連結佔據更多寬度 */
+          max-width: 300px; /* 避免在小螢幕上過寬 */
+          text-align: center; /* 文字置中 */
+          padding: 12px 0; /* 調整內距 */
+        }
+
+        .project-detail {
+          margin: 30px auto; /* 縮小上下間距 */
+          padding: 0 15px; /* 縮小左右內距 */
+        }
+
+        .project-detail h2 {
+          font-size: 1.6rem; /* 縮小專案標題字體 */
+        }
+
+        .project-meta {
+          font-size: 0.8rem; /* 縮小元資料字體 */
+          margin-bottom: 15px; /* 調整間距 */
+        }
+
+        .project-description {
+          font-size: 1rem; /* 略微縮小描述文字字體 */
+          line-height: 1.6; /* 調整行高 */
+        }
+
+        /* 輪播按鈕在小螢幕上更適合點擊 */
+        .carousel button {
+          padding: 8px; /* 縮小按鈕內距 */
+          font-size: 0.8rem; /* 縮小按鈕箭頭字體 */
+        }
+      }
+
+      /* 更小的裝置 (例如舊款手機，最大寬度 480px) */
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        .project-detail h2 {
+          font-size: 1.4rem;
+        }
       }
     </style>
   </head>

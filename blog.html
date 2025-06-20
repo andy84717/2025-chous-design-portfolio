@@ -1,133 +1,203 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>部落格｜周周設計誌</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Noto Sans TC', sans-serif;
-      background-color: #fdfdfd;
-      color: #111;
-      line-height: 1.6;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>部落格｜周周設計誌</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Noto Sans TC", sans-serif;
+        background-color: #fdfdfd;
+        color: #111;
+        line-height: 1.6;
+      }
 
-    header {
-      padding: 60px 20px 20px;
-      text-align: center;
-    }
+      header {
+        padding: 60px 20px 20px;
+        text-align: center;
+      }
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.6rem;
-      margin-bottom: 0.2em;
-    }
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.6rem;
+        margin-bottom: 0.2em;
+      }
 
-    p.subtitle {
-      font-size: 1rem;
-      color: #555;
-      margin-top: 0;
-    }
+      p.subtitle {
+        font-size: 1rem;
+        color: #555;
+        margin-top: 0;
+      }
 
-    nav {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+      nav {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
 
-    nav a {
-      font-size: 1rem;
-      text-decoration: none;
-      color: #333;
-      border: 1px solid #ddd;
-      padding: 10px 20px;
-      border-radius: 40px;
-      transition: all 0.3s ease;
-    }
+      nav a {
+        font-size: 1rem;
+        text-decoration: none;
+        color: #333;
+        border: 1px solid #ddd;
+        padding: 10px 20px;
+        border-radius: 40px;
+        transition: all 0.3s ease;
+      }
 
-    nav a:hover {
-      background-color: #111;
-      color: #fff;
-      border-color: #111;
-    }
+      nav a:hover {
+        background-color: #111;
+        color: #fff;
+        border-color: #111;
+      }
 
-    .blog-section {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
+      .blog-section {
+        max-width: 900px;
+        margin: 60px auto;
+        padding: 0 20px;
+      }
 
-    .blog-post {
-      margin-bottom: 50px;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 30px;
-    }
+      .blog-post {
+        margin-bottom: 50px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 30px;
+      }
 
-    .blog-post h2 {
-      font-size: 1.8rem;
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 10px;
-    }
+      .blog-post h2 {
+        font-size: 1.8rem;
+        font-family: "Playfair Display", serif;
+        margin-bottom: 10px;
+      }
 
-    .blog-post p.date {
-      font-size: 0.9rem;
-      color: #999;
-      margin-top: 0;
-    }
+      .blog-post p.date {
+        font-size: 0.9rem;
+        color: #999;
+        margin-top: 0;
+      }
 
-    .blog-post p.summary {
-      font-size: 1.05rem;
-      color: #444;
-    }
+      .blog-post p.summary {
+        font-size: 1.05rem;
+        color: #444;
+      }
 
-    .footer {
-      margin-top: 80px;
-      text-align: center;
-      font-size: 0.8rem;
-      color: #999;
-      padding: 40px 20px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>命運方周</h1>
-    <p class="subtitle">設計 × 新知 × 學習札記</p>
-    <nav>
+      .footer {
+        margin-top: 80px;
+        text-align: center;
+        font-size: 0.8rem;
+        color: #999;
+        padding: 40px 20px;
+      }
+
+      /* --- Media Queries --- */
+
+      /* 小型裝置 (手機和平板直立，最大寬度 768px) */
+      @media (max-width: 768px) {
+        header {
+          padding: 30px 15px 15px; /* 縮小標頭內距 */
+        }
+
+        h1 {
+          font-size: 2rem; /* 縮小主要標題字體 */
+        }
+
+        p.subtitle {
+          font-size: 0.9rem; /* 縮小副標題字體 */
+        }
+
+        nav {
+          flex-direction: column; /* 導覽列項目垂直排列 */
+          align-items: center; /* 導覽列項目置中 */
+          gap: 10px; /* 縮小導覽列項目間距 */
+        }
+
+        nav a {
+          width: 80%; /* 讓導覽列連結佔據更多寬度 */
+          max-width: 300px; /* 避免在小螢幕上過寬 */
+          text-align: center; /* 文字置中 */
+          padding: 12px 0; /* 調整內距 */
+        }
+
+        .blog-section {
+          margin: 30px auto; /* 縮小上下間距 */
+          padding: 0 15px; /* 縮小左右內距 */
+        }
+
+        .blog-post {
+          margin-bottom: 40px; /* 調整文章間距 */
+          padding-bottom: 20px; /* 調整文章底線下方間距 */
+        }
+
+        .blog-post h2 {
+          font-size: 1.5rem; /* 縮小部落格文章標題字體 */
+        }
+
+        .blog-post p.date {
+          font-size: 0.8rem; /* 縮小日期字體 */
+        }
+
+        .blog-post p.summary {
+          font-size: 1rem; /* 略微縮小摘要字體 */
+        }
+      }
+
+      /* 更小的裝置 (例如舊款手機，最大寬度 480px) */
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        .blog-post h2 {
+          font-size: 1.3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>命運方周</h1>
+      <p class="subtitle">設計 × 新知 × 學習札記</p>
+      <nav>
         <a href="./index.html">首頁</a>
-      <a href="./works.html">作品集總覽</a>
-      <a href="./about.html">關於我</a>
-      <a href="./blog.html">部落格</a>
-      <a href="./contact.html">聯絡我</a>
-    </nav>
-  </header>
+        <a href="./works.html">作品集總覽</a>
+        <a href="./about.html">關於我</a>
+        <a href="./blog.html">部落格</a>
+        <a href="./contact.html">聯絡我</a>
+      </nav>
+    </header>
 
-  <section class="blog-section">
-    <div class="blog-post">
-      <h2>塔羅中的「愚者」：起點還是終點？</h2>
-      <p class="date">2025/06/01</p>
-      <p class="summary">愚者牌象徵自由與未知，是人生旅程的起點，也可能是一次重生的契機。本篇帶你解析愚者在不同占卜中的深意。</p>
-    </div>
+    <section class="blog-section">
+      <div class="blog-post">
+        <h2>塔羅中的「愚者」：起點還是終點？</h2>
+        <p class="date">2025/06/01</p>
+        <p class="summary">
+          愚者牌象徵自由與未知，是人生旅程的起點，也可能是一次重生的契機。本篇帶你解析愚者在不同占卜中的深意。
+        </p>
+      </div>
 
-    <div class="blog-post">
-      <h2>如何透過設計療癒自己</h2>
-      <p class="date">2025/05/20</p>
-      <p class="summary">從接觸設計到投入靈性工作，設計成為我自我覺察與療癒的媒介，也幫助我看見更多人的心。</p>
-    </div>
+      <div class="blog-post">
+        <h2>如何透過設計療癒自己</h2>
+        <p class="date">2025/05/20</p>
+        <p class="summary">
+          從接觸設計到投入靈性工作，設計成為我自我覺察與療癒的媒介，也幫助我看見更多人的心。
+        </p>
+      </div>
 
-    <div class="blog-post">
-      <h2>你的心靈原型是什麼？</h2>
-      <p class="date">2025/05/05</p>
-      <p class="summary">探索榮格原型理論，對應你內在的角色，也許你是照顧者、探險者，還是反叛者？一起來認識你靈魂的樣子。</p>
-    </div>
-  </section>
+      <div class="blog-post">
+        <h2>你的心靈原型是什麼？</h2>
+        <p class="date">2025/05/05</p>
+        <p class="summary">
+          探索榮格原型理論，對應你內在的角色，也許你是照顧者、探險者，還是反叛者？一起來認識你靈魂的樣子。
+        </p>
+      </div>
+    </section>
 
-  <div class="footer">
-    &copy; 2025 ChousDesign . All Rights Reserved.
-  </div>
-</body>
+    <div class="footer">&copy; 2025 ChousDesign . All Rights Reserved.</div>
+  </body>
 </html>

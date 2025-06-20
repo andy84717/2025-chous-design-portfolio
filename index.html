@@ -1,93 +1,142 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>周周設計誌｜Chous Design</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Noto Sans TC', sans-serif;
-      background-color: #fdfdfd;
-      color: #111;
-      line-height: 1.6;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>周周設計誌｜Chous Design</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Noto Sans TC", sans-serif;
+        background-color: #fdfdfd;
+        color: #111;
+        line-height: 1.6;
+      }
 
-    header {
-      padding: 60px 20px;
-      text-align: center;
-    }
+      header {
+        padding: 60px 20px;
+        text-align: center;
+      }
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      margin-bottom: 0.3em;
-    }
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.8rem;
+        margin-bottom: 0.3em;
+      }
 
-    p.subtitle {
-      font-size: 1rem;
-      color: #555;
-      margin-top: 0;
-    }
+      p.subtitle {
+        font-size: 1rem;
+        color: #555;
+        margin-top: 0;
+      }
 
-    .hero-image {
-      max-width: 800px;
-      margin: 40px auto;
-      display: block;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    }
+      .hero-image {
+        max-width: 800px;
+        width: 100%; /* 新增：確保圖片在小螢幕上完整顯示 */
+        height: auto; /* 新增：保持圖片比例 */
+        margin: 40px auto;
+        display: block;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      }
 
-    nav {
-      margin-top: 40px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+      nav {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
 
-    nav a {
-      font-size: 1rem;
-      text-decoration: none;
-      color: #333;
-      border: 1px solid #ddd;
-      padding: 10px 20px;
-      border-radius: 40px;
-      transition: all 0.3s ease;
-    }
+      nav a {
+        font-size: 1rem;
+        text-decoration: none;
+        color: #333;
+        border: 1px solid #ddd;
+        padding: 10px 20px;
+        border-radius: 40px;
+        transition: all 0.3s ease;
+      }
 
-    nav a:hover {
-      background-color: #111;
-      color: #fff;
-      border-color: #111;
-    }
+      nav a:hover {
+        background-color: #111;
+        color: #fff;
+        border-color: #111;
+      }
 
-    .footer {
-      margin-top: 80px;
-      text-align: center;
-      font-size: 0.8rem;
-      color: #999;
-      padding: 40px 20px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>周周設計誌</h1>
-    <p class="subtitle">品牌視覺設計 × UI/UX × 網頁設計 × 基礎攝影</p>
-    <img class="hero-image" src="./image/index/banner.png" alt="ZhouZhou Hero Image">
-    <nav>
-      <a href="./indext.html">首頁</a>
-      <a href="./works.html">作品集總覽</a>
-      <a href="./about.html">關於我</a>
-      <a href="./blog.html">部落格</a>
-      <a href="./contact.html">聯絡我</a>
-    </nav>
-  </header>
+      .footer {
+        margin-top: 80px;
+        text-align: center;
+        font-size: 0.8rem;
+        color: #999;
+        padding: 40px 20px;
+      }
 
-  <div class="footer">
-    &copy; 2025 ChousDesign . All Rights Reserved.
-  </div>
-</body>
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2rem; /* 縮小標題字體 */
+        }
+
+        p.subtitle {
+          font-size: 0.9rem; /* 縮小副標題字體 */
+        }
+
+        nav {
+          flex-direction: column; /* 導覽列項目垂直排列 */
+          align-items: center; /* 導覽列項目置中 */
+          gap: 10px; /* 縮小導覽列項目間距 */
+        }
+
+        nav a {
+          width: 80%; /* 讓導覽列連結佔據更多寬度 */
+          max-width: 300px; /* 避免在小螢幕上過寬 */
+          text-align: center; /* 文字置中 */
+          padding: 12px 0; /* 調整內距 */
+        }
+
+        header {
+          padding: 30px 15px; /* 縮小標頭內距 */
+        }
+
+        .hero-image {
+          margin: 20px auto; /* 縮小圖片上下間距 */
+        }
+      }
+
+      /* 更小的裝置 (例如舊款手機，最大寬度 480px) */
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.6rem;
+        }
+
+        p.subtitle {
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>周周設計誌</h1>
+      <p class="subtitle">品牌視覺設計 × UI/UX × 網頁設計 × 基礎攝影</p>
+      <img
+        class="hero-image"
+        src="./image/index/banner.png"
+        alt="ZhouZhou Hero Image"
+      />
+      <nav>
+        <a href="./index.html">首頁</a>
+        <a href="./works.html">作品集總覽</a>
+        <a href="./about.html">關於我</a>
+        <a href="./blog.html">部落格</a>
+        <a href="./contact.html">聯絡我</a>
+      </nav>
+    </header>
+
+    <div class="footer">&copy; 2025 ChousDesign . All Rights Reserved.</div>
+  </body>
 </html>
