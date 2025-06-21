@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>和風飯糰</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Noto Sans TC", sans-serif;
+        background-color: #fefefe;
+        color: #111;
+      }
+
+      header {
+        padding: 60px 20px 20px;
+        text-align: center;
+      }
+
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.4rem;
+        margin-bottom: 0.2em;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+        color: #555;
+      }
+
+      nav {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        font-size: 1rem;
+        color: #333;
+        border: 1px solid #ddd;
+        padding: 10px 20px;
+        border-radius: 40px;
+        transition: all 0.3s ease;
+      }
+
+      nav a:hover {
+        background-color: #111;
+        color: #fff;
+        border-color: #111;
+      }
+
+      .project-detail {
+        max-width: 900px;
+        margin: 60px auto;
+        padding: 0 20px;
+      }
+
+      .project-detail img {
+        width: 100%;
+        border-radius: 12px;
+        margin-bottom: 20px;
+      }
+
+      .project-detail h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      .project-meta {
+        color: #777;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+      }
+
+      .project-description {
+        line-height: 1.8;
+        font-size: 1.05rem;
+      }
+
+      .footer {
+        margin-top: 80px;
+        text-align: center;
+        font-size: 0.8rem;
+        color: #999;
+        padding: 40px 20px;
+      }
+
+      .carousel {
+        position: relative;
+        margin: 40px auto;
+        overflow: hidden;
+        width: 100%;
+        max-width: 900px; /* 可以視專案調整 */
+        height: auto;
+      }
+
+      .carousel-images {
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+
+      .carousel-images img {
+        width: 100%;
+        height: auto;
+        flex-shrink: 0;
+        object-fit: cover;
+        /* 保持圖片（或影片）的原始長寬比，並填充整個內容框。如果圖片的長寬比與內容框不符，它會裁切（crop）圖片的某些部分以確保完全覆蓋。 */
+
+        /* object-fit: contain; */
+        /* 保持圖片（或影片）的原始長寬比，並確保圖片的整個內容完整地顯示在其內容框內。如果圖片的長寬比與內容框不符，內容框中會出現空白區域（類似於電影的黑邊）。 */
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .carousel button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        font-size: 1rem;
+        background-color: #ddd;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 10;
+        transition: background-color 0.3s ease;
+      }
+
+      .carousel button:hover {
+        background-color: #111;
+        color: #fff;
+      }
+
+      .carousel .prev {
+        left: 10px;
+      }
+
+      .carousel .next {
+        right: 10px;
+      }
+      /* --- Media Queries --- */
+
+      /* 小型裝置 (手機和平板直立，最大寬度 768px) */
+      @media (max-width: 768px) {
+        header {
+          padding: 30px 15px 15px; /* 縮小標頭內距 */
+        }
+
+        h1 {
+          font-size: 2rem; /* 縮小主要標題字體 */
+        }
+
+        .subtitle {
+          font-size: 0.9rem; /* 縮小副標題字體 */
+        }
+
+        nav {
+          flex-direction: column; /* 導覽列項目垂直排列 */
+          align-items: center; /* 導覽列項目置中 */
+          gap: 10px; /* 縮小導覽列項目間距 */
+        }
+
+        nav a {
+          width: 80%; /* 讓導覽列連結佔據更多寬度 */
+          max-width: 300px; /* 避免在小螢幕上過寬 */
+          text-align: center; /* 文字置中 */
+          padding: 12px 0; /* 調整內距 */
+        }
+
+        .project-detail {
+          margin: 30px auto; /* 縮小上下間距 */
+          padding: 0 15px; /* 縮小左右內距 */
+        }
+
+        .project-detail h2 {
+          font-size: 1.6rem; /* 縮小專案標題字體 */
+        }
+
+        .project-meta {
+          font-size: 0.8rem; /* 縮小元資料字體 */
+          margin-bottom: 15px; /* 調整間距 */
+        }
+
+        .project-description {
+          font-size: 1rem; /* 略微縮小描述文字字體 */
+          line-height: 1.6; /* 調整行高 */
+        }
+
+        /* 輪播按鈕在小螢幕上更適合點擊 */
+        .carousel button {
+          padding: 8px; /* 縮小按鈕內距 */
+          font-size: 0.8rem; /* 縮小按鈕箭頭字體 */
+        }
+      }
+
+      /* 更小的裝置 (例如舊款手機，最大寬度 480px) */
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        .project-detail h2 {
+          font-size: 1.4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>和風飯糰</h1>
+      <p class="subtitle">
+        【獨立接案】<br />新竹和風飯糰，主要協助設計招牌、價碼牌、海報、傳單DM、菜單、塑膠袋等設計。
+      </p>
+      <nav>
+        <a href="./index.html">首頁</a>
+        <a href="./works.html">作品集總覽</a>
+        <a href="./about.html">關於我</a>
+        <a href="./blog.html">部落格</a>
+        <a href="./contact.html">聯絡我</a>
+      </nav>
+    </header>
+
+    <section class="project-detail">
+      <div class="carousel">
+        <div class="carousel-images">
+          <img
+            src="./image/works/和風飯糰/和風飯糰大頭貼.png"
+            alt="和風飯糰LOGO"
+          />
+          <img
+            src="./image/works/和風飯糰/方形圖＿和風飯糰 – 1.png"
+            alt="直式招牌設計"
+          />
+          <img
+            src="./image/works/和風飯糰/方形圖＿和風飯糰 – 2.png"
+            alt="橫式招牌設計"
+          />
+          <img
+            src="./image/works/和風飯糰/方形圖＿和風飯糰 – 3.png"
+            alt="海報設計"
+          />
+          <img
+            src="./image/works/和風飯糰/方形圖＿和風飯糰 – 4.png"
+            alt="海報設計2"
+          />
+          <img
+            src="./image/works/和風飯糰/方形圖＿和風飯糰 – 5.png"
+            alt="傳單設計"
+          />
+          <img
+            src="./image/works/和風飯糰/方形圖＿和風飯糰 – 6.png"
+            alt="菜單設計"
+          />
+          <img
+            src="./image/works/和風飯糰/方形圖＿和風飯糰 – 7.png"
+            alt="優惠券設計"
+          />
+          <img
+            src="./image/works/和風飯糰/方形圖＿和風飯糰 – 8.png"
+            alt="塑膠袋設計"
+          />
+          <img
+            src="./image/works/和風飯糰/方形圖＿和風飯糰 – 9.png"
+            alt="現場照片"
+          />
+          <img
+            src="./image/works/和風飯糰/方形圖＿和風飯糰 – 10.png"
+            alt="現場照片2"
+          />
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+
+      <h2>和風飯糰品牌視覺設計 / Visual Design</h2>
+      <p class="project-meta">品牌視覺設計・2020 年</p>
+
+      <div class="project-description">
+        <p>
+          本專案為「和風飯糰」品牌視覺設計案，為獨立接案，針對其品牌識別、品牌延伸商品來進行設計。
+          由於這是案主的第二家店，由他（二代）接手。由於過往的設計檔案已經不見了，因此，製作招牌的同時，也復刻了他們原本的LOGO，並與案主討論，重新定義了他們的品牌色系。
+          客戶的品牌識別主色系就是以黃色、咖啡色為主，我採用Pantone
+          P4-13U、Pantone7533 CP兩色為主色調。（招牌需要特殊色）
+        </p>
+        <p>
+          客戶的品牌識別主色系就是以黃色、咖啡色為主，我採用Pantone
+          P4-13U、Pantone7533 CP兩色為主色調。（招牌需要特殊色）
+        </p>
+        <p>
+          除了招牌的設計之外，也協助設計了海報、傳單、菜單、塑膠袋等設計，讓視覺更加有統一性。
+        </p>
+      </div>
+    </section>
+
+    <div class="footer">
+      &copy; 2025 ZhouZhou Portfolio. All Rights Reserved.
+    </div>
+    <script>
+      const carousel = document.querySelector(".carousel");
+      const carouselImages = document.querySelector(".carousel-images");
+      const images = document.querySelectorAll(".carousel-images img");
+      const prevBtn = document.querySelector(".prev");
+      const nextBtn = document.querySelector(".next");
+
+      let index = 0;
+
+      function updateCarousel() {
+        const width = carousel.clientWidth;
+        carouselImages.style.transform = `translateX(-${index * width}px)`;
+      }
+
+      // 初始定位一次
+      window.addEventListener("load", updateCarousel);
+      // 當視窗尺寸變化時，也要更新一次
+      window.addEventListener("resize", updateCarousel);
+
+      nextBtn.addEventListener("click", () => {
+        index = (index + 1) % images.length;
+        updateCarousel();
+      });
+
+      prevBtn.addEventListener("click", () => {
+        index = (index - 1 + images.length) % images.length;
+        updateCarousel();
+      });
+    </script>
+  </body>
+</html>
