@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>作品細節頁：輪播圖</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Noto Sans TC", sans-serif;
+        background-color: #fefefe;
+        color: #111;
+      }
+
+      header {
+        padding: 60px 20px 20px;
+        text-align: center;
+      }
+
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.4rem;
+        margin-bottom: 0.2em;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+        color: #555;
+      }
+
+      nav {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        font-size: 1rem;
+        color: #333;
+        border: 1px solid #ddd;
+        padding: 10px 20px;
+        border-radius: 40px;
+        transition: all 0.3s ease;
+      }
+
+      nav a:hover {
+        background-color: #111;
+        color: #fff;
+        border-color: #111;
+      }
+
+      .project-detail {
+        max-width: 700px;
+        
+        /* 方形設計就700，橫式設計900 */
+        margin: 60px auto;
+        padding: 0 20px;
+      }
+
+      .project-detail img {
+      
+        width: 100%;
+        border-radius: 12px;
+        margin-bottom: 20px;
+      }
+
+      .project-detail h2 {
+        
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      .project-meta {
+        color: #777;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+      }
+
+      .project-description {
+        line-height: 1.8;
+        font-size: 1.05rem;
+      }
+
+      .footer {
+        margin-top: 80px;
+        text-align: center;
+        font-size: 0.8rem;
+        color: #999;
+        padding: 40px 20px;
+      }
+
+      .carousel {
+        position: relative;
+        margin: 40px auto;
+        overflow: hidden;
+        width: 100%;
+        max-width: 900px; /* 可以視專案調整 */
+        height: auto;
+        
+      }
+
+      .carousel-images {
+        max-height: 300px;
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+
+      .carousel-images img {
+        width: 100%;
+        height: auto;
+        flex-shrink: 0;
+        /* object-fit: cover; */
+        /* 保持圖片（或影片）的原始長寬比，並填充整個內容框。如果圖片的長寬比與內容框不符，它會裁切（crop）圖片的某些部分以確保完全覆蓋。 */
+
+        object-fit: contain;
+        /* 保持圖片（或影片）的原始長寬比，並確保圖片的整個內容完整地顯示在其內容框內。如果圖片的長寬比與內容框不符，內容框中會出現空白區域（類似於電影的黑邊）。 */
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .carousel button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        font-size: 1rem;
+        background-color: #ddd;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 10;
+        transition: background-color 0.3s ease;
+      }
+
+      .carousel button:hover {
+        background-color: #111;
+        color: #fff;
+      }
+
+      .carousel .prev {
+        left: 10px;
+      }
+
+      .carousel .next {
+        right: 10px;
+      }
+      .project-navigation {
+        display: flex; /* 讓連結並排 */
+        justify-content: space-between; /* 讓兩個連結分開在兩端 */
+        max-width: 700px; /* 保持與內容區塊相同的最大寬度 */
+        margin: 40px auto 80px; /* 上下邊距，置中 */
+        padding: 0 20px; /* 左右內距，與內容區塊一致 */
+      }
+
+      .project-navigation .nav-link {
+        display: flex; /* 讓箭頭和文字並排 */
+        flex-direction: column; /* 讓文字和專案名稱垂直排列 */
+        text-decoration: none;
+        color: #333;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+        text-align: center; /* 預設文字置中，方便箭頭和文字對齊 */
+      }
+
+      .project-navigation .nav-link span {
+        font-size: 0.85rem; /* 專案名稱小一點 */
+        color: #777; /* 顏色淡一點 */
+        margin-top: 5px; /* 與上面的文字隔開 */
+      }
+
+      .project-navigation .nav-link:hover {
+        color: #007bff; /* 懸停時變色，可以調整成你喜歡的品牌色 */
+      }
+
+      /* 針對「上一個專案」的特定樣式 */
+      .project-navigation .prev-project {
+        align-items: flex-start; /* 讓內容靠左對齊 */
+      }
+
+      /* 針對「下一個專案」的特定樣式 */
+      .project-navigation .next-project {
+        align-items: flex-end; /* 讓內容靠右對齊 */
+      }
+
+      /* --- Media Queries --- */
+
+      /* 小型裝置 (手機和平板直立，最大寬度 768px) */
+      @media (max-width: 768px) {
+        header {
+          padding: 30px 15px 15px; /* 縮小標頭內距 */
+        }
+
+        h1 {
+          font-size: 2rem; /* 縮小主要標題字體 */
+        }
+
+        .subtitle {
+          font-size: 0.9rem; /* 縮小副標題字體 */
+        }
+
+        nav {
+          flex-direction: column; /* 導覽列項目垂直排列 */
+          align-items: center; /* 導覽列項目置中 */
+          gap: 10px; /* 縮小導覽列項目間距 */
+        }
+
+        nav a {
+          width: 80%; /* 讓導覽列連結佔據更多寬度 */
+          max-width: 300px; /* 避免在小螢幕上過寬 */
+          text-align: center; /* 文字置中 */
+          padding: 12px 0; /* 調整內距 */
+        }
+
+        .project-detail {
+          margin: 30px auto; /* 縮小上下間距 */
+          padding: 0 15px; /* 縮小左右內距 */
+        }
+
+        .project-detail h2 {
+          font-size: 1.6rem; /* 縮小專案標題字體 */
+        }
+
+        .project-meta {
+          font-size: 0.8rem; /* 縮小元資料字體 */
+          margin-bottom: 15px; /* 調整間距 */
+        }
+
+        .project-description {
+          font-size: 1rem; /* 略微縮小描述文字字體 */
+          line-height: 1.6; /* 調整行高 */
+        }
+
+        /* 輪播按鈕在小螢幕上更適合點擊 */
+        .carousel button {
+          padding: 8px; /* 縮小按鈕內距 */
+          font-size: 0.8rem; /* 縮小按鈕箭頭字體 */
+        }
+        .project-navigation {
+          margin: 30px auto 60px; /* 調整小螢幕下的上下邊距 */
+          padding: 0 15px; /* 調整左右內距 */
+        }
+
+        .project-navigation .nav-link {
+          font-size: 0.9rem; /* 縮小文字 */
+        }
+
+        .project-navigation .nav-link span {
+          font-size: 0.75rem; /* 縮小專案名稱 */
+        }
+      }
+
+      /* 更小的裝置 (例如舊款手機，最大寬度 480px) */
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        .project-detail h2 {
+          font-size: 1.4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>【主上數位】Banner設計</h1>
+      <p class="subtitle">我負責與專案客戶溝通，並協助設計他們的網站banner。</p>
+      <nav>
+        <a href="./index.html">首頁</a>
+        <a href="./works.html">作品集總覽</a>
+        <a href="./about.html">關於我</a>
+        <a href="./blog.html">部落格</a>
+        <a href="./contact.html">聯絡我</a>
+      </nav>
+    </header>
+
+    <section class="project-detail">
+      <div class="carousel">
+        <div class="carousel-images">
+          <img src="./image/works/主上banner設計/banner.png" alt="在 FiFiLaLa 專案中，客戶的核心需求是突顯其服裝設計與獨特風格。為此，我們請客戶提供了最受歡迎且風格一致的熱銷服飾照片，以確保視覺呈現能精準傳達品牌精髓。" title="在 FiFiLaLa 專案中，客戶的核心需求是突顯其服裝設計與獨特風格。為此，我們請客戶提供了最受歡迎且風格一致的熱銷服飾照片，以確保視覺呈現能精準傳達品牌精髓。"/>
+          <img
+            src="./image/works/主上banner設計/banner – 1.png"
+            alt="九九九寵物店banner，九九九寵物店的Banner畫面，直觀呈現了各類品種貓咪，以最快方式傳達其販售名貓與提供住宿的服務特色。"
+            title="九九九寵物店banner，九九九寵物店的Banner畫面，直觀呈現了各類品種貓咪，以最快方式傳達其販售名貓與提供住宿的服務特色。"
+        />
+          <img
+            src="./image/works/主上banner設計/banner – 2.png"
+            alt="夏琳服飾banner，針對夏琳服飾專案，我發現客戶提供的照片背景過於雜亂，因此我著手進行背景簡化處理，並精心挑選了能完美襯托服飾風格的牆面背景，有效突顯了其服裝設計的獨特魅力。"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 3.png"
+            alt="魯凱文化生態banner，接到這個專案時，我坦言有些不知所措，因為這是我首次嘗試具有原住民風格的Banner設計，且需要凸顯文化生態感。經過一番苦思，我決定從特殊的風格文字著手，結果效果超乎預期！同時，也搭配了一張生態豐富的背景照片，最終客戶一次性過稿，對此設計表達了滿意。"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 4.png"
+            alt="健昌藥局banner，健昌藥局的客戶，因為疫情的關係，需要宣傳自己的藥局，所以來找我們公司做網站。在色彩選用上，以綠色作為主色，想傳達安心感、有效治療的感覺。"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 5.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 6.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 7.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 8.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 9.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 10.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 11.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 12.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 13.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 14.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 15.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 16.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 17.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 18.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 19.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 20.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 21.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 22.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 23.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 24.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 25.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 26.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 27.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 28.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 29.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 30.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 31.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 32.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 33.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 34.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 35.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 36.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 37.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 38.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 39.png"
+            alt="作品封面2"
+          />
+          <img
+            src="./image/works/主上banner設計/banner – 40.png"
+            alt="作品封面2"
+          />
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+
+      <h2>歷經了50多個Banner設計歷練</h2>
+      <p class="project-meta">平面設計・2021-2022年</p>
+
+      <div class="project-description">
+        <p>
+          我在主上數位行銷公司任職的一年多裡，歷經了50多個專案。從LOGO、色彩、字體系統，延伸至網站與社群圖像，提供完整一致的網站視覺風格方案。本頁精選並展示客戶最終確認成果。
+        </p>
+        <p>
+          在這邊我歷練最多的就是與客戶溝通、接洽、了解需求，並為他們的網站進行優化動作，包含網站首頁內最重要的banner設計，這影響到了瀏覽者進到該網站時，第一時間是否了解我們客戶的產業與服務。
+          透過好的視覺設計、好的banner傳達，可以大大提升客戶的認知率，有效減少瀏覽者與站主來回溝通的成本。
+        </p>
+      </div>
+    </section>
+
+    <div class="project-navigation">
+      <a href="./楷懿美睫著陸頁設計.html" class="nav-link prev-project">
+        &larr; 上一個專案
+        <span>楷懿美睫著陸頁設計</span>
+      </a>
+      <a href="./next-project.html" class="nav-link next-project">
+        下一個專案 &rarr;
+        <span>專案名稱B</span>
+      </a>
+    </div>
+
+    <div class="footer">&copy; 2025 ChousDesign . All Rights Reserved.</div>
+    <script>
+      const carousel = document.querySelector(".carousel");
+      const carouselImages = document.querySelector(".carousel-images");
+      const images = document.querySelectorAll(".carousel-images img");
+      const prevBtn = document.querySelector(".prev");
+      const nextBtn = document.querySelector(".next");
+
+      let index = 0;
+
+      function updateCarousel() {
+        const width = carousel.clientWidth;
+        carouselImages.style.transform = `translateX(-${index * width}px)`;
+      }
+
+      // 初始定位一次
+      window.addEventListener("load", updateCarousel);
+      // 當視窗尺寸變化時，也要更新一次
+      window.addEventListener("resize", updateCarousel);
+
+      nextBtn.addEventListener("click", () => {
+        index = (index + 1) % images.length;
+        updateCarousel();
+      });
+
+      prevBtn.addEventListener("click", () => {
+        index = (index - 1 + images.length) % images.length;
+        updateCarousel();
+      });
+    </script>
+  </body>
+</html>
