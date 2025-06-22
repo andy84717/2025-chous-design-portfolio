@@ -149,6 +149,44 @@
       .carousel .next {
         right: 10px;
       }
+      .project-navigation {
+      display: flex; /* 讓連結並排 */
+      justify-content: space-between; /* 讓兩個連結分開在兩端 */
+      max-width: 700px; /* 保持與內容區塊相同的最大寬度 */
+      margin: 40px auto 80px; /* 上下邊距，置中 */
+      padding: 0 20px; /* 左右內距，與內容區塊一致 */
+    }
+
+    .project-navigation .nav-link {
+      display: flex; /* 讓箭頭和文字並排 */
+      flex-direction: column; /* 讓文字和專案名稱垂直排列 */
+      text-decoration: none;
+      color: #333;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+      text-align: center; /* 預設文字置中，方便箭頭和文字對齊 */
+    }
+
+    .project-navigation .nav-link span {
+      font-size: 0.85rem; /* 專案名稱小一點 */
+      color: #777; /* 顏色淡一點 */
+      margin-top: 5px; /* 與上面的文字隔開 */
+    }
+
+    .project-navigation .nav-link:hover {
+      color: #007bff; /* 懸停時變色，可以調整成你喜歡的品牌色 */
+    }
+
+    /* 針對「上一個專案」的特定樣式 */
+    .project-navigation .prev-project {
+        align-items: flex-start; /* 讓內容靠左對齊 */
+    }
+
+    /* 針對「下一個專案」的特定樣式 */
+    .project-navigation .next-project {
+        align-items: flex-end; /* 讓內容靠右對齊 */
+    }
+    
       /* --- Media Queries --- */
 
       /* 小型裝置 (手機和平板直立，最大寬度 768px) */
@@ -202,6 +240,18 @@
           padding: 8px; /* 縮小按鈕內距 */
           font-size: 0.8rem; /* 縮小按鈕箭頭字體 */
         }
+        .project-navigation {
+            margin: 30px auto 60px; /* 調整小螢幕下的上下邊距 */
+            padding: 0 15px; /* 調整左右內距 */
+        }
+
+        .project-navigation .nav-link {
+            font-size: 0.9rem; /* 縮小文字 */
+        }
+
+        .project-navigation .nav-link span {
+            font-size: 0.75rem; /* 縮小專案名稱 */
+        }
       }
 
       /* 更小的裝置 (例如舊款手機，最大寬度 480px) */
@@ -254,6 +304,17 @@
         </p>
       </div>
     </section>
+
+    <div class="project-navigation">
+      <a href="./previous-project.html" class="nav-link prev-project">
+        &larr; 上一個專案
+        <span>專案名稱A</span>
+      </a>
+      <a href="./next-project.html" class="nav-link next-project">
+        下一個專案 &rarr;
+        <span>專案名稱B</span>
+      </a>
+    </div>
 
     <div class="footer">
       &copy; 2025 ChousDesign . All Rights Reserved.
