@@ -3,209 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>作品細節頁｜類別｜ChousDesign</title>
+    <title>作品細節頁(輪播圖)｜類別｜ChousDesign</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap"
       rel="stylesheet"
     />
-    <style>
-      body {
-        margin: 0;
-        font-family: "Noto Sans TC", sans-serif;
-        background-color: #fefefe;
-        color: #111;
-      }
-
-      header {
-        padding: 60px 20px 20px;
-        text-align: center;
-      }
-
-      h1 {
-        font-family: "Playfair Display", serif;
-        font-size: 2.4rem;
-        margin-bottom: 0.2em;
-      }
-
-      .subtitle {
-        font-size: 1rem;
-        color: #555;
-      }
-
-      nav {
-        margin-top: 30px;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 20px;
-      }
-
-      nav a {
-        text-decoration: none;
-        font-size: 1rem;
-        color: #333;
-        border: 1px solid #ddd;
-        padding: 10px 20px;
-        border-radius: 40px;
-        transition: all 0.3s ease;
-      }
-
-      nav a:hover {
-        background-color: #111;
-        color: #fff;
-        border-color: #111;
-      }
-
-      .project-detail {
-        max-width: 700px;
-        /* 方形設計就700，橫式設計900 */
-        margin: 60px auto;
-        padding: 0 20px;
-      }
-
-      .project-detail img {
-        width: 100%;
-        border-radius: 12px;
-        margin-bottom: 20px;
-      }
-
-      .project-detail h2 {
-        font-family: "Playfair Display", serif;
-        font-size: 2rem;
-        margin-bottom: 10px;
-      }
-
-      .project-meta {
-        color: #777;
-        font-size: 0.9rem;
-        margin-bottom: 20px;
-      }
-
-      .project-description {
-        line-height: 1.8;
-        font-size: 1.05rem;
-      }
-
-      .footer {
-        margin-top: 80px;
-        text-align: center;
-        font-size: 0.8rem;
-        color: #999;
-        padding: 40px 20px;
-      }
-      .project-navigation {
-      display: flex; /* 讓連結並排 */
-      justify-content: space-between; /* 讓兩個連結分開在兩端 */
-      max-width: 700px; /* 保持與內容區塊相同的最大寬度 */
-      margin: 40px auto 80px; /* 上下邊距，置中 */
-      padding: 0 20px; /* 左右內距，與內容區塊一致 */
-    }
-
-    .project-navigation .nav-link {
-      display: flex; /* 讓箭頭和文字並排 */
-      flex-direction: column; /* 讓文字和專案名稱垂直排列 */
-      text-decoration: none;
-      color: #333;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-      text-align: center; /* 預設文字置中，方便箭頭和文字對齊 */
-    }
-
-    .project-navigation .nav-link span {
-      font-size: 0.85rem; /* 專案名稱小一點 */
-      color: #777; /* 顏色淡一點 */
-      margin-top: 5px; /* 與上面的文字隔開 */
-    }
-
-    .project-navigation .nav-link:hover {
-      color: #007bff; /* 懸停時變色，可以調整成你喜歡的品牌色 */
-    }
-
-    /* 針對「上一個專案」的特定樣式 */
-    .project-navigation .prev-project {
-        align-items: flex-start; /* 讓內容靠左對齊 */
-    }
-
-    /* 針對「下一個專案」的特定樣式 */
-    .project-navigation .next-project {
-        align-items: flex-end; /* 讓內容靠右對齊 */
-    }
-      /* --- Media Queries --- */
-
-      /* 小型裝置 (手機和平板直立，最大寬度 768px) */
-      @media (max-width: 768px) {
-        header {
-          padding: 30px 15px 15px; /* 縮小標頭內距 */
-        }
-
-        h1 {
-          font-size: 2rem; /* 縮小主要標題字體 */
-        }
-
-        .subtitle {
-          font-size: 0.9rem; /* 縮小副標題字體 */
-        }
-
-        nav {
-          flex-direction: column; /* 導覽列項目垂直排列 */
-          align-items: center; /* 導覽列項目置中 */
-          gap: 10px; /* 縮小導覽列項目間距 */
-        }
-
-        nav a {
-          width: 80%; /* 讓導覽列連結佔據更多寬度 */
-          max-width: 300px; /* 避免在小螢幕上過寬 */
-          text-align: center; /* 文字置中 */
-          padding: 12px 0; /* 調整內距 */
-        }
-
-        .project-detail {
-          margin: 30px auto; /* 縮小上下間距 */
-          padding: 0 15px; /* 縮小左右內距 */
-        }
-
-        .project-detail h2 {
-          font-size: 1.6rem; /* 縮小專案標題字體 */
-        }
-
-        .project-meta {
-          font-size: 0.8rem; /* 縮小元資料字體 */
-          margin-bottom: 15px; /* 調整間距 */
-        }
-
-        .project-description {
-          font-size: 1rem; /* 略微縮小描述文字字體 */
-          line-height: 1.6; /* 調整行高 */
-        }
-        .project-navigation {
-            margin: 30px auto 60px; /* 調整小螢幕下的上下邊距 */
-            padding: 0 15px; /* 調整左右內距 */
-        }
-
-        .project-navigation .nav-link {
-            font-size: 0.9rem; /* 縮小文字 */
-        }
-
-        .project-navigation .nav-link span {
-            font-size: 0.75rem; /* 縮小專案名稱 */
-        }
-      }
-
-      /* 更小的裝置 (例如舊款手機，最大寬度 480px) */
-      @media (max-width: 480px) {
-        h1 {
-          font-size: 1.8rem;
-        }
-
-        .project-detail h2 {
-          font-size: 1.4rem;
-        }
-      }
-    </style>
-  </head>
+    <link rel="stylesheet" href="./work-1.css" />
+    </head>
   <body>
     <header>
-      <h1>作品名稱</h1>
+      <h1>作品名稱</h1> 
       <p class="subtitle">設計理念與執行細節</p>
       <nav>
         <a href="./index.html">首頁</a>
@@ -217,10 +24,10 @@
     </header>
 
     <section class="project-detail">
-      <img src="./image/works/範例方形圖片.png" alt="作品封面" />
+      <img src="./image/works/範例方形圖片2.png" alt="專案主視覺圖" />
 
-      <h2>專案名稱 / Project Title</h2>
-      <p class="project-meta">品牌視覺設計・2024 年・UIUX設計</p>
+      <h1>專案名稱 / Project Title</h1>
+      <p class="project-meta">商品設計・2024 年</p>
 
       <div class="project-description">
         <p>
@@ -231,20 +38,30 @@
           從
           LOGO、色彩、字體系統延伸至網站與社群圖像，提供完整一致的品牌策略方案。本頁展示從概念草圖、視覺風格板、設計提案到實際應用的過程與成果。
         </p>
+
+        <img src="./image/works/範例方形圖片.png" alt="設計過程示意圖" />
       </div>
     </section>
 
     <div class="project-navigation">
-      <a href="./previous-project.html" class="nav-link prev-project">
+      <a href="./LV型錄設計.html" class="nav-link prev-project">
         &larr; 上一個專案
-        <span>專案名稱A</span>
+        <span>LV型錄設計</span>
       </a>
-      <a href="./next-project.html" class="nav-link next-project">
+      <a href="./CYT 品牌識別製作.html" class="nav-link next-project">
         下一個專案 &rarr;
-        <span>專案名稱B</span>
+        <span>CYT個人品牌識別設計</span>
       </a>
     </div>
 
     <div class="footer">&copy; 2025 ChousDesign . All Rights Reserved.</div>
+
+    <div class="scroll-buttons">
+      <button id="scrollToTopBtn" title="回到頂部">&#9650;</button>
+      <button id="scrollToBottomBtn" title="回到底部">&#9660;</button>
+    </div>
+
+    <!-- 連結javascript檔案 -->
+   <script src="./work-1.js" defer></script>
   </body>
 </html>
