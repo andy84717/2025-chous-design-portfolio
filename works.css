@@ -1,0 +1,214 @@
+body {
+  margin: 0;
+  font-family: "Noto Sans TC", sans-serif;
+  background-color: #fdfdfd;
+  color: #111;
+  line-height: 1.6;
+}
+
+header {
+  padding: 60px 20px 20px;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.6rem;
+  margin-bottom: 0.2em;
+}
+
+p.subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0;
+}
+
+nav {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+nav a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.portfolio {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.project {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+}
+
+.project img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-content {
+  padding: 20px;
+}
+
+.project-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.project-desc {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.footer {
+  margin-top: 80px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #999;
+  padding: 40px 20px;
+}
+/* --- 回到頂部/底部按鈕 --- */
+.scroll-buttons {
+  position: fixed; /* 固定在視窗中 */
+  bottom: 20px; /* 距離底部 20px */
+  right: 20px; /* 距離右側 20px */
+  display: flex;
+  flex-direction: column; /* 垂直堆疊 */
+  gap: 10px; /* 按鈕間距 */
+  z-index: 100; /* 確保按鈕在最上層 */
+}
+
+.scroll-buttons button {
+  background-color: rgba(0, 0, 0, 0.6); /* 半透明黑色背景 */
+  color: white;
+  border: none;
+  border-radius: 50%; /* 圓形按鈕 */
+  width: 45px; /* 寬度 */
+  height: 45px; /* 高度 */
+  font-size: 1.5rem; /* 箭頭大小 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  opacity: 0; /* 預設隱藏 */
+  visibility: hidden; /* 預設不可見 */
+}
+
+.scroll-buttons button.show {
+  opacity: 1; /* 顯示 */
+  visibility: visible; /* 可見 */
+}
+
+.scroll-buttons button:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* 懸停時顏色變深 */
+}
+
+/* --- 響應式呈現 --- */
+
+/* 小型裝置 (手機和平板直立，最大寬度 768px) */
+@media (max-width: 768px) {
+  header {
+    padding: 30px 15px 15px; /* 縮小標頭內距 */
+  }
+
+  h1 {
+    font-size: 2rem; /* 縮小主要標題字體 */
+  }
+
+  p.subtitle {
+    font-size: 0.9rem; /* 縮小副標題字體 */
+  }
+
+  nav {
+    flex-direction: column; /* 導覽列項目垂直排列 */
+    align-items: center; /* 導覽列項目置中 */
+    gap: 10px; /* 縮小導覽列項目間距 */
+  }
+
+  nav a {
+    width: 80%; /* 讓導覽列連結佔據更多寬度 */
+    max-width: 300px; /* 避免在小螢幕上過寬 */
+    text-align: center; /* 文字置中 */
+    padding: 12px 0; /* 調整內距 */
+  }
+
+  .portfolio {
+    margin: 30px auto; /* 縮小上下間距 */
+    padding: 0 15px; /* 縮小左右內距 */
+    /* 因為 grid 已經很響應了，這裡主要調整外層容器間距 */
+    gap: 25px; /* 縮小作品項目間的間距 */
+  }
+
+  .project-title {
+    font-size: 1.1rem; /* 略微縮小作品標題字體 */
+  }
+
+  .project-desc {
+    font-size: 0.9rem; /* 略微縮小作品描述字體 */
+  }
+  .scroll-buttons {
+    bottom: 15px;
+    right: 15px;
+    gap: 8px;
+  }
+  .scroll-buttons button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+  }
+}
+
+/* 更小的裝置 (例如舊款手機，最大寬度 480px) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .portfolio {
+    /* 確保在極小螢幕下依然好看，minmax(280px, 1fr) 可能在小於 280px 時會溢出，
+       這裡可以考慮將 minmax 的 min-width 調小一點，或讓其單列顯示。 */
+    grid-template-columns: 1fr; /* 強制單列顯示，確保在任何手機上都好看 */
+    gap: 30px; /* 調整單列時的間距 */
+  }
+  .scroll-buttons {
+    bottom: 10px;
+    right: 10px;
+    gap: 6px;
+  }
+  .scroll-buttons button {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+}

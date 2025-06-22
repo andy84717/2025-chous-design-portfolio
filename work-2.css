@@ -161,7 +161,7 @@ nav a:hover {
 }
 
 .project-navigation .nav-link:hover {
-  color: #007bff; /* 懸停時變色，可以調整成你喜歡的品牌色 */
+  color: #d5936b; /* 懸停時變色，可以調整成你喜歡的品牌色 */
 }
 
 /* 針對「上一個專案」的特定樣式 */
@@ -210,7 +210,7 @@ nav a:hover {
   background-color: rgba(0, 0, 0, 0.8); /* 懸停時顏色變深 */
 }
 
-/* --- 響應式呈現 --- */
+/* --- 響應式 --- */
 
 /* 小型裝置 (手機和平板直立，最大寬度 768px) */
 @media (max-width: 768px) {
