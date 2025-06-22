@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>楷懿美睫著陸頁設計</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Noto Sans TC", sans-serif;
+        background-color: #fefefe;
+        color: #111;
+      }
+
+      header {
+        padding: 60px 20px 20px;
+        text-align: center;
+      }
+
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.4rem;
+        margin-bottom: 0.2em;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+        color: #555;
+      }
+
+      nav {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        font-size: 1rem;
+        color: #333;
+        border: 1px solid #ddd;
+        padding: 10px 20px;
+        border-radius: 40px;
+        transition: all 0.3s ease;
+      }
+
+      nav a:hover {
+        background-color: #111;
+        color: #fff;
+        border-color: #111;
+      }
+
+      .project-detail {
+        max-width: 700px;
+        /* 方形設計就700，橫式設計900 */
+        margin: 60px auto;
+        padding: 0 20px;
+      }
+
+      .project-detail img {
+        width: 100%;
+        border-radius: 12px;
+        margin-bottom: 20px;
+      }
+
+      .project-detail h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      .project-meta {
+        color: #777;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+      }
+
+      .project-description {
+        line-height: 1.8;
+        font-size: 1.05rem;
+      }
+
+      .footer {
+        margin-top: 80px;
+        text-align: center;
+        font-size: 0.8rem;
+        color: #999;
+        padding: 40px 20px;
+      }
+      .project-navigation {
+        display: flex; /* 讓連結並排 */
+        justify-content: space-between; /* 讓兩個連結分開在兩端 */
+        max-width: 700px; /* 保持與內容區塊相同的最大寬度 */
+        margin: 40px auto 80px; /* 上下邊距，置中 */
+        padding: 0 20px; /* 左右內距，與內容區塊一致 */
+      }
+
+      .project-navigation .nav-link {
+        display: flex; /* 讓箭頭和文字並排 */
+        flex-direction: column; /* 讓文字和專案名稱垂直排列 */
+        text-decoration: none;
+        color: #333;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+        text-align: center; /* 預設文字置中，方便箭頭和文字對齊 */
+      }
+
+      .project-navigation .nav-link span {
+        font-size: 0.85rem; /* 專案名稱小一點 */
+        color: #777; /* 顏色淡一點 */
+        margin-top: 5px; /* 與上面的文字隔開 */
+      }
+
+      .project-navigation .nav-link:hover {
+        color: #007bff; /* 懸停時變色，可以調整成你喜歡的品牌色 */
+      }
+
+      /* 針對「上一個專案」的特定樣式 */
+      .project-navigation .prev-project {
+        align-items: flex-start; /* 讓內容靠左對齊 */
+      }
+
+      /* 針對「下一個專案」的特定樣式 */
+      .project-navigation .next-project {
+        align-items: flex-end; /* 讓內容靠右對齊 */
+      }
+      /* --- Media Queries --- */
+
+      /* 小型裝置 (手機和平板直立，最大寬度 768px) */
+      @media (max-width: 768px) {
+        header {
+          padding: 30px 15px 15px; /* 縮小標頭內距 */
+        }
+
+        h1 {
+          font-size: 2rem; /* 縮小主要標題字體 */
+        }
+
+        .subtitle {
+          font-size: 0.9rem; /* 縮小副標題字體 */
+        }
+
+        nav {
+          flex-direction: column; /* 導覽列項目垂直排列 */
+          align-items: center; /* 導覽列項目置中 */
+          gap: 10px; /* 縮小導覽列項目間距 */
+        }
+
+        nav a {
+          width: 80%; /* 讓導覽列連結佔據更多寬度 */
+          max-width: 300px; /* 避免在小螢幕上過寬 */
+          text-align: center; /* 文字置中 */
+          padding: 12px 0; /* 調整內距 */
+        }
+
+        .project-detail {
+          margin: 30px auto; /* 縮小上下間距 */
+          padding: 0 15px; /* 縮小左右內距 */
+        }
+
+        .project-detail h2 {
+          font-size: 1.6rem; /* 縮小專案標題字體 */
+        }
+
+        .project-meta {
+          font-size: 0.8rem; /* 縮小元資料字體 */
+          margin-bottom: 15px; /* 調整間距 */
+        }
+
+        .project-description {
+          font-size: 1rem; /* 略微縮小描述文字字體 */
+          line-height: 1.6; /* 調整行高 */
+        }
+        .project-navigation {
+          margin: 30px auto 60px; /* 調整小螢幕下的上下邊距 */
+          padding: 0 15px; /* 調整左右內距 */
+        }
+
+        .project-navigation .nav-link {
+          font-size: 0.9rem; /* 縮小文字 */
+        }
+
+        .project-navigation .nav-link span {
+          font-size: 0.75rem; /* 縮小專案名稱 */
+        }
+      }
+
+      /* 更小的裝置 (例如舊款手機，最大寬度 480px) */
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        .project-detail h2 {
+          font-size: 1.4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>楷懿美睫著陸頁設計</h1>
+      <p class="subtitle">
+        透過朋友介紹的著陸頁設計專案<br />美睫師痛點解析，專業解決方案引導頁
+      </p>
+      <nav>
+        <a href="./index.html">首頁</a>
+        <a href="./works.html">作品集總覽</a>
+        <a href="./about.html">關於我</a>
+        <a href="./blog.html">部落格</a>
+        <a href="./contact.html">聯絡我</a>
+      </nav>
+    </header>
+
+    <section class="project-detail">
+      <img
+        src="./image/works/楷懿美睫著陸頁設計/方形圖＿楷懿每節著陸頁.png"
+        alt="楷懿美睫方形圖封面"
+      />
+
+      <h2>楷懿美睫著陸頁設計 / Landing Page Design</h2>
+      <p class="project-meta">網頁設計、UI/UX設計・2023年</p>
+
+      <div class="project-description">
+        <p>
+          此著陸頁設計巧妙切入同業痛點，以「作為一名美睫師，我們常面臨各種技術問題...」開頭，迅速引起目標客群共鳴。頁面條列「客人心中期望落差大」、「感覺沒有完整學習」及「需要許多基本小技巧」等核心困境，搭配具體提問與視覺對比圖，深化問題感知。
+        </p>
+        <p>
+          整體設計旨在精準點出美睫師在學習與實務中的挑戰，有效建立專業形象與信任感，為後續課程或服務的導入做好強而有力的鋪墊。
+        </p>
+        <img
+          src="./image/works/楷懿美睫著陸頁設計/Web 1100 – 1.png"
+          alt="楷懿美睫著陸頁設計"
+        />
+        <img
+          src="./image/works/楷懿美睫著陸頁設計/Web 1100 – 2.png"
+          alt="楷懿美睫著陸頁設計"
+        />
+        <img
+          src="./image/works/楷懿美睫著陸頁設計/Web 1100 – 3.png"
+          alt="楷懿美睫著陸頁設計"
+        />
+        <img
+          src="./image/works/楷懿美睫著陸頁設計/Web 1100 – 4.png"
+          alt="楷懿美睫著陸頁設計"
+        />
+        <img
+          src="./image/works/楷懿美睫著陸頁設計/Web 1100 – 5.png"
+          alt="楷懿美睫著陸頁設計"
+        />
+        <img
+          src="./image/works/楷懿美睫著陸頁設計/Web 1100 – 6.png"
+          alt="楷懿美睫著陸頁設計"
+        />
+        <img
+          src="./image/works/楷懿美睫著陸頁設計/Web 1100 – 7.png"
+          alt="楷懿美睫著陸頁設計"
+        />
+        <img
+          src="./image/works/楷懿美睫著陸頁設計/Web 1100 – 8.png"
+          alt="楷懿美睫著陸頁設計"
+        />
+        <img
+          src="./image/works/楷懿美睫著陸頁設計/Web 1100 – 9.png"
+          alt="楷懿美睫著陸頁設計"
+        />
+        <img
+          src="./image/works/楷懿美睫著陸頁設計/Web 1100 – 10.png"
+          alt="楷懿美睫著陸頁設計"
+        />
+        <img
+          src="./image/works/楷懿美睫著陸頁設計/Web 1100 – 11.png"
+          alt="楷懿美睫著陸頁設計"
+        />
+      </div>
+    </section>
+
+    <div class="project-navigation">
+      <a
+        href="./Alex Lou品牌識別設計＿電競版本.html"
+        class="nav-link prev-project"
+      >
+        &larr; 上一個專案
+        <span>Alex Lou 品牌識別設計（電競風格）</span>
+      </a>
+      <a href="./next-project.html" class="nav-link next-project">
+        下一個專案 &rarr;
+        <span>專案名稱B</span>
+      </a>
+    </div>
+
+    <div class="footer">&copy; 2025 ChousDesign . All Rights Reserved.</div>
+  </body>
+</html>
