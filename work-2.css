@@ -97,7 +97,8 @@ nav a:hover {
 }
 
 .carousel-images {
-  height: 700px; /* 使用 height 而不是 max-height 來確保一致的高度 */
+  /* height: 700px;  */
+  /* 使用 height 而不是 max-height 來確保一致的高度 */
   display: flex;
   transition: transform 0.5s ease;
 }
@@ -136,6 +137,7 @@ nav a:hover {
 .carousel .next {
   right: 10px;
 }
+
 .project-navigation {
   display: flex; /* 讓連結並排 */
   justify-content: space-between; /* 讓兩個連結分開在兩端 */
@@ -242,7 +244,10 @@ nav a:hover {
   .project-detail {
     margin: 30px auto; /* 縮小上下間距 */
     padding: 0 15px; /* 縮小左右內距 */
+    max-width: 700px; /* 如果圖片都是方形，這個寬度會決定圖片大小 */
   }
+
+  /* 針對 .project-detail 區塊內的一般圖片 */
 
   .project-detail h2 {
     font-size: 1.6rem; /* 縮小專案標題字體 */
@@ -263,6 +268,21 @@ nav a:hover {
     padding: 8px; /* 縮小按鈕內距 */
     font-size: 0.8rem; /* 縮小按鈕箭頭字體 */
   }
+
+  /* 針對輪播圖中的圖片 */
+  .carousel-images img {
+    width: 100%;
+    height: auto; /* 讓高度根據 aspect-ratio 自動調整 */
+    flex-shrink: 0;
+    object-fit: cover; /* 裁剪以填滿，保持圖片原始長寬比 */
+    aspect-ratio: 1 / 1; /* 這裡設定寬高比為 1:1 (方形) */
+  }
+
+  .carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
   .project-navigation {
     margin: 30px auto 60px; /* 調整小螢幕下的上下邊距 */
     padding: 0 15px; /* 調整左右內距 */

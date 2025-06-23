@@ -1,0 +1,103 @@
+/* CSS Reset (歸零)：移除所有瀏覽器預設樣式，讓所有元素都從一個「空白」的狀態開始。這樣開發者就能完全掌控元素的樣式，不需要擔心預設樣式干擾。
+CSS Reset (如果你想完全掌控所有樣式)：它會將所有預設樣式歸零。如果你希望從頭開始定義每個元素的樣式，這是一個選擇。 */
+
+/* 簡化版 CSS Reset 範例 */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* 其他常用 reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* 讓 padding 和 border 不會增加元素總寬高 */
+}
+img {
+  display: block; /* 移除圖片底部的空白 */
+  max-width: 100%; /* 確保圖片響應式 */
+  height: auto;
+}
