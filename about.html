@@ -1,113 +1,130 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>關於我｜About me｜ChousDesign</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap"
-      rel="stylesheet"
-    />
-    <!-- css連結 -->
-    <link rel="stylesheet" href="./css/Normalize.css" />
-    <link rel="stylesheet" href="./css/about.css" />
-  </head>
-  <body>
-    <header>
-      <h1>關於 ChousDesign</h1>
-      <p class="subtitle">品牌設計 × 視覺創作 × 解決問題</p>
-      <nav>
-        <a href="./index.html">首頁</a>
-        <a href="./works.html">作品集總覽</a>
-        <a href="./about.html">關於我</a>
-        <a href="./blog.html">部落格</a>
-        <a href="./contact.html">聯絡我</a>
-      </nav>
-    </header>
 
-    <section class="about-section">
-      <h2>Hi！很高興可以認識您！</h2>
-      <p>
-        目前積極接案中。<br />
-      </p>
-      <p>
-       喜歡用感性與理性結合的方式，打造有溫度的設計作品，透過設計，述說你們的故事。<br>
-       就跟ChousDesign當初在設計自己的品牌時，一路摸索想要走的風格、表達自我的概念一樣。
-      </p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>關於我｜About me｜ChousDesign</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap"
+    rel="stylesheet" />
+  <!-- css連結 -->
+  <link rel="stylesheet" href="./css/Normalize.css" />
+  <link rel="stylesheet" href="./css/about.css" />
 
-      <div class="bio-highlight">
-        <p>・品牌識別設計</p>
-        <p>・海報設計</p>
-        <p>・傳單/DM設計</p>
-        <p>・名片設計</p>
-        <p>・社群貼文圖設計</p>
-        <p>・型錄/書籍排版設計</p>
-        <p>・著陸頁設計</p>
-        <p>・一頁式廣告頁設計</p>
-        <p>・網站設計</p>
-        <p>・簡報設計</p>
-        <p>・基礎商品攝影</p>
-      </div>
-    </section>
-    <!-- 頁尾 -->
-    <div class="footer">&copy; 2025 ChousDesign . All Rights Reserved.</div>
-    <!-- 回到頂部、回到底部按鈕 -->
-    <div class="scroll-buttons">
-      <button id="scrollToTopBtn" title="回到頂部">&#9650;</button>
-      <button id="scrollToBottomBtn" title="回到底部">&#9660;</button>
+  <style>
+    a {
+      text-decoration: none;
+      color: #d5936b;
+    }
+
+    /* 選擇性：當滑鼠懸停在連結上時，才顯示底線 */
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>關於 ChousDesign</h1>
+    <p class="subtitle">品牌設計 × 視覺創作 × 解決問題</p>
+    <nav>
+      <a href="./index.html">首頁</a>
+      <a href="./works.html">作品集總覽</a>
+      <a href="./about.html">關於我</a>
+      <a href="./blog.html">部落格</a>
+      <a href="./contact.html">聯絡我</a>
+    </nav>
+  </header>
+
+  <section class="about-section">
+    <h2>Hi！很高興可以認識您！</h2>
+    <p>
+      目前積極接案中。<br />
+    </p>
+    <p>
+      喜歡用感性與理性結合的方式，打造有溫度的設計作品，透過設計，述說你們的故事。<br>
+      就跟ChousDesign當初在設計自己的品牌時，一路摸索想要走的風格、表達自我的概念一樣。</p>
+    <p><strong>就讓我們一起攜手成長！</strong><br>
+      ChousDesign有時候也會學習新事物，並寫成<a href="./blog.html">部落格文章</a>，想學習的人可以點進去看看喔！</p>
+
+
+    <div class="bio-highlight">
+      <ul>
+        <li>品牌識別設計</li>
+        <li>海報設計</li>
+        <li>傳單/DM設計</li>
+        <li>名片設計</li>
+        <li>社群貼文圖設計</li>
+        <li>型錄/書籍排版設計</li>
+        <li>著陸頁設計</li>
+        <li>一頁式廣告頁設計</li>
+        <li>網站設計</li>
+        <li>簡報設計</li>
+        <li>基礎商品攝影</li>
+      </ul>
     </div>
-    <!-- 連結javascript檔案 -->
-    <script>
-      const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-      const scrollToBottomBtn = document.getElementById("scrollToBottomBtn");
+  </section>
+  <!-- 頁尾 -->
+  <div class="footer">&copy; 2025 ChousDesign . All Rights Reserved.</div>
+  <!-- 回到頂部、回到底部按鈕 -->
+  <div class="scroll-buttons">
+    <button id="scrollToTopBtn" title="回到頂部">&#9650;</button>
+    <button id="scrollToBottomBtn" title="回到底部">&#9660;</button>
+  </div>
+  <!-- 連結javascript檔案 -->
+  <script>
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    const scrollToBottomBtn = document.getElementById("scrollToBottomBtn");
 
-      // 檢查按鈕元素是否存在，以避免在沒有這些按鈕的頁面報錯
-      if (scrollToTopBtn && scrollToBottomBtn) {
-        // 監聽頁面滾動事件
-        window.addEventListener("scroll", () => {
-          // 顯示/隱藏「回到頂部」按鈕
-          // 當捲動距離超過視窗高度的 0.5 倍時顯示
-          if (window.scrollY > window.innerHeight * 0.5) {
-            scrollToTopBtn.classList.add("show");
-          } else {
-            scrollToTopBtn.classList.remove("show");
-          }
+    // 檢查按鈕元素是否存在，以避免在沒有這些按鈕的頁面報錯
+    if (scrollToTopBtn && scrollToBottomBtn) {
+      // 監聽頁面滾動事件
+      window.addEventListener("scroll", () => {
+        // 顯示/隱藏「回到頂部」按鈕
+        // 當捲動距離超過視窗高度的 0.5 倍時顯示
+        if (window.scrollY > window.innerHeight * 0.5) {
+          scrollToTopBtn.classList.add("show");
+        } else {
+          scrollToTopBtn.classList.remove("show");
+        }
 
-          // 顯示/隱藏「回到底部」按鈕
-          const scrollHeight = document.documentElement.scrollHeight; // 整個文件的高度
-          const clientHeight = document.documentElement.clientHeight; // 視窗的可見高度
-          const scrollTop = document.documentElement.scrollTop; // 當前滾動的位置
+        // 顯示/隱藏「回到底部」按鈕
+        const scrollHeight = document.documentElement.scrollHeight; // 整個文件的高度
+        const clientHeight = document.documentElement.clientHeight; // 視窗的可見高度
+        const scrollTop = document.documentElement.scrollTop; // 當前滾動的位置
 
-          // 當不在最底部時顯示「回到底部」按鈕 (例如，距離底部還有 100px 以上時顯示)
-          if (scrollTop + clientHeight < scrollHeight - 100) {
-            scrollToBottomBtn.classList.add("show");
-          } else {
-            scrollToBottomBtn.classList.remove("show");
-          }
+        // 當不在最底部時顯示「回到底部」按鈕 (例如，距離底部還有 100px 以上時顯示)
+        if (scrollTop + clientHeight < scrollHeight - 100) {
+          scrollToBottomBtn.classList.add("show");
+        } else {
+          scrollToBottomBtn.classList.remove("show");
+        }
+      });
+
+      // 「回到頂部」按鈕點擊事件
+      scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth", // 平滑滾動效果
         });
+      });
 
-        // 「回到頂部」按鈕點擊事件
-        scrollToTopBtn.addEventListener("click", () => {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth", // 平滑滾動效果
-          });
+      // 「回到底部」按鈕點擊事件
+      scrollToBottomBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: document.documentElement.scrollHeight, // 滾動到整個文件的底部
+          behavior: "smooth", // 平滑滾動效果
         });
+      });
 
-        // 「回到底部」按鈕點擊事件
-        scrollToBottomBtn.addEventListener("click", () => {
-          window.scrollTo({
-            top: document.documentElement.scrollHeight, // 滾動到整個文件的底部
-            behavior: "smooth", // 平滑滾動效果
-          });
-        });
+      // 初始化：在頁面載入時檢查是否需要顯示按鈕
+      // 這確保了在頁面剛載入時，如果頁面足夠長，按鈕也能正確顯示/隱藏。
+      window.addEventListener("load", () => {
+        window.dispatchEvent(new Event("scroll")); // 手動觸發一次滾動事件檢查
+      });
+    }
+  </script>
+</body>
 
-        // 初始化：在頁面載入時檢查是否需要顯示按鈕
-        // 這確保了在頁面剛載入時，如果頁面足夠長，按鈕也能正確顯示/隱藏。
-        window.addEventListener("load", () => {
-          window.dispatchEvent(new Event("scroll")); // 手動觸發一次滾動事件檢查
-        });
-      }
-    </script>
-  </body>
 </html>
