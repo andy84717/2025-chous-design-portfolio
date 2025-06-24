@@ -11,6 +11,16 @@ header {
   text-align: center;
 }
 
+a {
+      text-decoration: none;
+      color: #d5936b;
+    }
+
+    /* 選擇性：當滑鼠懸停在連結上時，才顯示底線 */
+    a:hover {
+      text-decoration: underline;
+    }
+
 h1 {
   font-family: "Playfair Display", serif;
   font-size: 2.6rem;
