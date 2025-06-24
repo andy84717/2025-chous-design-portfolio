@@ -1,295 +1,367 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>聯絡我｜contact me｜ChousDesign</title>
-    <link rel="stylesheet" href="你的CSS檔案路徑.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-<!-- css連結 -->
-    <link rel="stylesheet" href="./css/Normalize.css" />
-    <style>
-      body {
-        margin: 0;
-        font-family: "Noto Sans TC", sans-serif;
-        background-color: #fdfdfd;
-        color: #111;
-        line-height: 1.6;
-      }
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>聯絡我｜contact me｜ChousDesign</title>
+  <link rel="stylesheet" href="你的CSS檔案路徑.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <!-- css連結 -->
+  <link rel="stylesheet" href="./css/Normalize.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", sans-serif;
+      background-color: #fdfdfd;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 60px 20px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 2.6rem;
+      margin-bottom: 0.2em;
+    }
+
+    p.subtitle {
+      font-size: 1rem;
+      color: #555;
+      margin-top: 0;
+    }
+
+    nav {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      /* 讓導覽項目在小螢幕時換行 */
+      gap: 20px;
+    }
+
+    nav a {
+      font-size: 1rem;
+      text-decoration: none;
+      color: #333;
+      border: 1px solid #ddd;
+      padding: 10px 20px;
+      border-radius: 40px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #111;
+      color: #fff;
+      border-color: #111;
+    }
+
+    .contact-section {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .contact-section h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
+      padding: 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: "Noto Sans TC", sans-serif;
+      width: calc(100% - 24px);
+      /* 讓 input 寬度填滿，並扣除 padding */
+      box-sizing: border-box;
+      /* 讓 padding 不會增加總寬度 */
+    }
+
+    textarea {
+      resize: vertical;
+      /* 允許垂直拖動調整大小，但限制水平 */
+    }
+
+    button {
+      padding: 12px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 40px;
+      background-color: #111;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      width: 100%;
+      /* 讓按鈕在小螢幕上可以填滿 */
+      max-width: 200px;
+      /* 控制按鈕最大寬度，避免過長 */
+      margin: 0 auto;
+      /* 置中按鈕 */
+    }
+
+    button:hover {
+      background-color: #444;
+    }
+
+    .footer {
+      margin-top: 80px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #999;
+      padding: 40px 20px;
+    }
+
+    .social-media-links {
+      display: flex;
+      /* 使用 flexbox 排列社群圖示 */
+      justify-content: center;
+      /* 水平置中 */
+      gap: 20px;
+      /* 圖示間距 */
+      margin-top: 20px;
+      /* 與上方文字的間距 */
+    }
+
+    .social-media-links a {
+      text-decoration: none;
+      /* margin: 0 10px; 原來的 margin 可以用 gap 取代更簡潔 */
+    }
+
+    .social-media-links img {
+      display: block;
+      /* 讓圖片成為區塊元素，更容易控制間距 */
+      width: 36px;
+      /* 稍微放大社群圖示，讓手機上更容易點擊 */
+      height: 36px;
+      transition: transform 0.2s ease-in-out;
+      /* 懸停效果 */
+    }
+
+    .social-media-links img:hover {
+      transform: translateY(-3px);
+      /* 懸停時稍微上浮 */
+    }
+
+    /* line按鈕 */
+    .line-button {
+      position: fixed;
+      /* 讓按鈕固定在視窗中 */
+      bottom: 20px;
+      /* 距離底部 20 像素，可依需求調整 */
+      left: 20px;
+      /* 距離右側 20 像素，可依需求調整 */
+      background-color: #00B900;
+      /* Line 的品牌綠色 */
+      border-radius: 50%;
+      /* 使按鈕呈現圓形 */
+      padding: 10px;
+      /* 內邊距 */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      /* 陰影效果 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      /* 確保按鈕在其他內容之上 */
+      transition: transform 0.3s ease;
+      /* 滑鼠懸停時的動畫效果 */
+    }
+
+    .line-button:hover {
+      transform: scale(1.1);
+      /* 滑鼠懸停時放大 10% */
+    }
+
+    .line-button img {
+      width: 40px;
+      /* 圖示寬度，可依需求調整 */
+      height: 40px;
+      /* 圖示高度，可依需求調整 */
+      display: block;
+    }
+
+    /* --- Media Queries --- */
+
+    /* 小型裝置 (手機和平板直立，最大寬度 768px) */
+    @media (max-width: 768px) {
       header {
-        padding: 60px 20px 20px;
-        text-align: center;
+        padding: 40px 15px 15px;
+        /* 縮小標頭內距 */
       }
 
       h1 {
-        font-family: "Playfair Display", serif;
-        font-size: 2.6rem;
-        margin-bottom: 0.2em;
+        font-size: 2.2rem;
+        /* 縮小主要標題字體 */
       }
 
       p.subtitle {
-        font-size: 1rem;
-        color: #555;
-        margin-top: 0;
+        font-size: 0.9rem;
+        /* 縮小副標題字體 */
       }
 
       nav {
-        margin-top: 30px;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap; /* 讓導覽項目在小螢幕時換行 */
-        gap: 20px;
+        flex-direction: column;
+        /* 導覽列項目垂直排列 */
+        align-items: center;
+        /* 導覽列項目置中 */
+        gap: 10px;
+        /* 縮小導覽列項目間距 */
       }
 
       nav a {
-        font-size: 1rem;
-        text-decoration: none;
-        color: #333;
-        border: 1px solid #ddd;
-        padding: 10px 20px;
-        border-radius: 40px;
-        transition: all 0.3s ease;
-      }
-
-      nav a:hover {
-        background-color: #111;
-        color: #fff;
-        border-color: #111;
+        width: 80%;
+        /* 讓導覽列連結佔據更多寬度 */
+        max-width: 280px;
+        /* 避免在小螢幕上過寬 */
+        text-align: center;
+        /* 文字置中 */
+        padding: 12px 0;
+        /* 調整內距 */
+        font-size: 0.95rem;
       }
 
       .contact-section {
-        max-width: 600px;
-        margin: 60px auto;
-        padding: 0 20px;
+        margin: 40px auto;
+        /* 縮小上下間距 */
+        padding: 0 15px;
+        /* 縮小左右內距 */
       }
 
       .contact-section h2 {
-        font-family: "Playfair Display", serif;
-        font-size: 2rem;
-        margin-bottom: 20px;
-        text-align: center;
-      }
-
-      form {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      label {
-        font-weight: bold;
+        font-size: 1.8rem;
+        /* 縮小專案標題字體 */
       }
 
       input,
       textarea {
-        padding: 12px;
-        font-size: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        font-family: "Noto Sans TC", sans-serif;
-        width: calc(100% - 24px); /* 讓 input 寬度填滿，並扣除 padding */
-        box-sizing: border-box; /* 讓 padding 不會增加總寬度 */
-      }
-
-      textarea {
-        resize: vertical; /* 允許垂直拖動調整大小，但限制水平 */
+        padding: 10px;
+        /* 縮小輸入框內距 */
+        font-size: 0.95rem;
+        /* 縮小字體 */
       }
 
       button {
-        padding: 12px;
-        font-size: 1rem;
-        border: none;
-        border-radius: 40px;
-        background-color: #111;
-        color: white;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        width: 100%; /* 讓按鈕在小螢幕上可以填滿 */
-        max-width: 200px; /* 控制按鈕最大寬度，避免過長 */
-        margin: 0 auto; /* 置中按鈕 */
-      }
-
-      button:hover {
-        background-color: #444;
-      }
-
-      .footer {
-        margin-top: 80px;
-        text-align: center;
-        font-size: 0.8rem;
-        color: #999;
-        padding: 40px 20px;
-      }
-
-      .social-media-links {
-        display: flex; /* 使用 flexbox 排列社群圖示 */
-        justify-content: center; /* 水平置中 */
-        gap: 20px; /* 圖示間距 */
-        margin-top: 20px; /* 與上方文字的間距 */
-      }
-
-      .social-media-links a {
-        text-decoration: none;
-        /* margin: 0 10px; 原來的 margin 可以用 gap 取代更簡潔 */
+        padding: 10px;
+        /* 縮小按鈕內距 */
+        font-size: 0.95rem;
+        /* 縮小按鈕字體 */
       }
 
       .social-media-links img {
-        display: block; /* 讓圖片成為區塊元素，更容易控制間距 */
-        width: 36px; /* 稍微放大社群圖示，讓手機上更容易點擊 */
-        height: 36px;
-        transition: transform 0.2s ease-in-out; /* 懸停效果 */
+        width: 32px;
+        /* 稍微縮小社群圖示 */
+        height: 32px;
       }
 
-      .social-media-links img:hover {
-        transform: translateY(-3px); /* 懸停時稍微上浮 */
+      .line-button {
+        bottom: 15px;
+        left: 15px;
+        padding: 8px;
       }
 
-      /* --- Media Queries --- */
+      .line-button img {
+        width: 35px;
+        height: 35px;
+      }
+    }
 
-      /* 小型裝置 (手機和平板直立，最大寬度 768px) */
-      @media (max-width: 768px) {
-        header {
-          padding: 40px 15px 15px; /* 縮小標頭內距 */
-        }
-
-        h1 {
-          font-size: 2.2rem; /* 縮小主要標題字體 */
-        }
-
-        p.subtitle {
-          font-size: 0.9rem; /* 縮小副標題字體 */
-        }
-
-        nav {
-          flex-direction: column; /* 導覽列項目垂直排列 */
-          align-items: center; /* 導覽列項目置中 */
-          gap: 10px; /* 縮小導覽列項目間距 */
-        }
-
-        nav a {
-          width: 80%; /* 讓導覽列連結佔據更多寬度 */
-          max-width: 280px; /* 避免在小螢幕上過寬 */
-          text-align: center; /* 文字置中 */
-          padding: 12px 0; /* 調整內距 */
-          font-size: 0.95rem;
-        }
-
-        .contact-section {
-          margin: 40px auto; /* 縮小上下間距 */
-          padding: 0 15px; /* 縮小左右內距 */
-        }
-
-        .contact-section h2 {
-          font-size: 1.8rem; /* 縮小專案標題字體 */
-        }
-
-        input,
-        textarea {
-          padding: 10px; /* 縮小輸入框內距 */
-          font-size: 0.95rem; /* 縮小字體 */
-        }
-
-        button {
-          padding: 10px; /* 縮小按鈕內距 */
-          font-size: 0.95rem; /* 縮小按鈕字體 */
-        }
-
-        .social-media-links img {
-          width: 32px; /* 稍微縮小社群圖示 */
-          height: 32px;
-        }
+    /* 更小的裝置 (例如舊款手機，最大寬度 480px) */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
       }
 
-      /* 更小的裝置 (例如舊款手機，最大寬度 480px) */
-      @media (max-width: 480px) {
-        h1 {
-          font-size: 1.8rem;
-        }
-
-        .contact-section h2 {
-          font-size: 1.6rem;
-        }
-
-        .social-media-links img {
-          width: 28px; /* 再稍微縮小社群圖示 */
-          height: 28px;
-        }
+      .contact-section h2 {
+        font-size: 1.6rem;
       }
-    </style>
-  </head>
 
-  <body>
-    <header>
-      <h1>聯絡我</h1>
-      <p class="subtitle">有任何合作提案、品牌諮詢、塔羅預約都歡迎來信</p>
-      <nav>
-        <a href="./index.html">首頁</a>
-        <a href="./works.html">作品集總覽</a>
-        <a href="./about.html">關於我</a>
-        <a href="./blog.html">部落格</a>
-        <a href="./contact.html">聯絡我</a>
-      </nav>
-    </header>
+      .social-media-links img {
+        width: 28px;
+        /* 再稍微縮小社群圖示 */
+        height: 28px;
+      }
 
-    <section class="contact-section">
-      <h2>寫信給周周</h2>
-      <form action="https://formspree.io/f/xldnebda" method="POST">
-        <label for="name">姓名</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="請輸入您的名字"
-          required
-        />
+      .line-button {
+        bottom: 10px;
+        left: 10px;
+        padding: 6px;
+      }
 
-        <label for="email">電子郵件</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="請輸入您的Email"
-          required
-        />
+      .line-button img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  </style>
+</head>
 
-        <label for="message">訊息內容</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="6"
-          placeholder="請輸入您想說的話"
-          required
-        ></textarea>
+<body>
+  <header>
+    <h1>聯絡我</h1>
+    <p class="subtitle">有任何合作提案、品牌諮詢、塔羅預約都歡迎來信</p>
+    <nav>
+      <a href="./index.html">首頁</a>
+      <a href="./works.html">作品集總覽</a>
+      <a href="./about.html">關於我</a>
+      <a href="./blog.html">部落格</a>
+      <a href="./contact.html">聯絡我</a>
+    </nav>
+  </header>
 
-        <button type="submit">送出訊息</button>
-      </form>
-      <div style="margin-top: 40px; text-align: center">
-        <h2>其他聯繫方式</h2>
-        <p class="social-media-links">
-          <a href="https://www.instagram.com/chous_design/" target="_blank"
-            ><img
-              src="./image/contact/instagram.svg"
-              alt="instagram icon"
-              width="30px"
-              height="30px"
-          /></a>
-          <a href="https://line.me/R/ti/p/@170xuqkb" target="_blank"
-            ><img
-              src="./image/contact/Line.svg"
-              alt="line icon"
-              width="30px"
-              height="30px"
-          /></a>
-        </p>
-      </div>
-    </section>
+  <section class="contact-section">
+    <h2>寫信給周周</h2>
+    <form action="https://formspree.io/f/xldnebda" method="POST">
+      <label for="name">姓名</label>
+      <input type="text" id="name" name="name" placeholder="請輸入您的名字" required />
 
-    <div class="footer">&copy; 2025 ChousDesign . All Rights Reserved.</div>
-  </body>
+      <label for="email">電子郵件</label>
+      <input type="email" id="email" name="email" placeholder="請輸入您的Email" required />
+
+      <label for="message">訊息內容</label>
+      <textarea id="message" name="message" rows="6" placeholder="請輸入您想說的話" required></textarea>
+
+      <button type="submit">送出訊息</button>
+    </form>
+    <div style="margin-top: 40px; text-align: center">
+      <h2>其他聯繫方式</h2>
+      <p class="social-media-links">
+        <a href="https://www.instagram.com/chous_design/" target="_blank"><img src="./image/contact/instagram.svg"
+            alt="instagram icon" width="30px" height="30px" /></a>
+        <a href="https://line.me/R/ti/p/@170xuqkb" target="_blank"><img src="./image/contact/Line.svg" alt="line icon"
+            width="30px" height="30px" /></a>
+      </p>
+    </div>
+  </section>
+  <!-- line按鈕 -->
+  <a href="https://line.me/R/ti/p/@170xuqkb" class="line-button" target="_blank" aria-label="加我Line">
+    <img src="./image/contact/Line(green).svg" alt="Line 圖示" />
+  </a>
+  <!-- 頁尾 -->
+  <div class="footer">&copy; 2025 ChousDesign . All Rights Reserved.</div>
+
+</body>
+
 </html>

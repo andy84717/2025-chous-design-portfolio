@@ -126,6 +126,43 @@ nav a:hover {
 .scroll-buttons button:hover {
   background-color: rgba(0, 0, 0, 0.8); /* 懸停時顏色變深 */
 }
+/* line按鈕 */
+    .line-button {
+      position: fixed;
+      /* 讓按鈕固定在視窗中 */
+      bottom: 20px;
+      /* 距離底部 20 像素，可依需求調整 */
+      left: 20px;
+      /* 距離右側 20 像素，可依需求調整 */
+      background-color: #00B900;
+      /* Line 的品牌綠色 */
+      border-radius: 50%;
+      /* 使按鈕呈現圓形 */
+      padding: 10px;
+      /* 內邊距 */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      /* 陰影效果 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      /* 確保按鈕在其他內容之上 */
+      transition: transform 0.3s ease;
+      /* 滑鼠懸停時的動畫效果 */
+    }
+
+    .line-button:hover {
+      transform: scale(1.1);
+      /* 滑鼠懸停時放大 10% */
+    }
+
+    .line-button img {
+      width: 40px;
+      /* 圖示寬度，可依需求調整 */
+      height: 40px;
+      /* 圖示高度，可依需求調整 */
+      display: block;
+    }
 
 /* 響應式呈現  */
 @media (max-width: 768px) {
@@ -180,6 +217,16 @@ nav a:hover {
     height: 40px;
     font-size: 1.3rem;
   }
+  .line-button {
+        bottom: 15px;
+        left: 15px;
+        padding: 8px;
+      }
+
+      .line-button img {
+        width: 35px;
+        height: 35px;
+      }
 }
 
 /* 更小的裝置 (例如舊款手機，最大寬度 480px) */
@@ -201,4 +248,14 @@ nav a:hover {
     height: 35px;
     font-size: 1.2rem;
   }
+  .line-button {
+        bottom: 10px;
+        left: 10px;
+        padding: 6px;
+      }
+
+      .line-button img {
+        width: 30px;
+        height: 30px;
+      }
 }
