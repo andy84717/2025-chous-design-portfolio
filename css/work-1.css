@@ -199,7 +199,8 @@
           padding: 0 15px;
         }
 
-        .project-detail h1 { /* 調整這裡，從 h2 改為 h1 */
+        .project-detail h2 { 
+          font-family: "Playfair Display", serif;
           font-size: 1.6rem;
         }
 
@@ -242,7 +243,8 @@
           font-size: 1.8rem;
         }
 
-        .project-detail h2 { /* 調整這裡，從 h2 改為 h1 */
+        .project-detail h2 { 
+          font-family: "Playfair Display", serif;
           font-size: 1.4rem;
           color:#d5936b;
         }

@@ -251,6 +251,7 @@ nav a:hover {
   
 
   .project-detail h2 {
+    font-family: "Playfair Display", serif;
     font-size: 1.6rem; /* 縮小專案標題字體 */
     color:#d5936b;
     
@@ -317,6 +318,7 @@ nav a:hover {
   }
 
   .project-detail h2 {
+    font-family: "Playfair Display", serif;
     font-size: 1.4rem;
     color:#d5936b;
   }
