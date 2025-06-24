@@ -1,0 +1,41 @@
+/* 自定義基礎樣式範例 */
+*, *::before, *::after {
+    box-sizing: border-box; /* 現代佈局的首選 */
+}
+
+body {
+    margin: 0; /* 移除 body 的預設外邊距 */
+    line-height: 1.5; /* 設定基礎行高 */
+    font-family: "Noto Sans TC", sans-serif; /* 設定通用字體 */
+    color: #333; /* 設定基礎文字顏色 */
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin-top: 0; /* 移除標題和段落頂部預設外邊距，底部通常會保留或自定義 */
+}
+
+img {
+    display: block; /* 讓圖片行為更像區塊元素，避免底部空白 */
+    max-width: 100%; /* 確保圖片響應式 */
+    height: auto;
+}
+
+ul, ol {
+    list-style: none; /* 移除列表符號 */
+    padding: 0; /* 移除列表預設內邊距 */
+    margin: 0;
+}
+
+a {
+    text-decoration: none; /* 移除連結下劃線 */
+    color: inherit; /* 連結繼承父元素顏色 */
+}
+
+button, input, select, textarea {
+    font-family: inherit; /* 讓表單元素繼承字體 */
+    font-size: 100%; /* 確保表單元素字體大小一致 */
+    margin: 0; /* 移除預設邊距 */
+    line-height: 1.15; /* 確保行高一致 */
+}
+
+/* 還有很多其他細節會包含在專業的基礎樣式中 */

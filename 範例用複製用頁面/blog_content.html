@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>文章標題範例｜部落格｜ChousDesign</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/Normalize.css">
+  <link rel="stylesheet" href="../../css/blog_content.css" />
+
+</head>
+
+<body>
+  <header>
+    <h1>設計手札</h1>
+    <p class="subtitle">設計師的筆記本：分享經驗、見解與靈感</p>
+    <nav>
+      <a href="../../index.html">首頁</a>
+      <a href="../../works.html">作品集總覽</a>
+      <a href="../../about.html">關於我</a>
+      <a href="../../blog.html">部落格</a>
+      <a href="../../contact.html">聯絡我</a>
+    </nav>
+  </header>
+
+  <main class="article-container">
+    <header class="article-header">
+      <h1>接案設計師必看：提高效率的5個關鍵策略</h1>
+      <p class="article-meta">
+        <span>發佈於 2025 年 6 月 24 日</span>
+        <span>作者：<a href="../../about.html">ChousDesign</a></span>
+        <span>分類：<a href="#">品牌設計</a>, <a href="#">視覺溝通</a></span>
+      </p>
+    </header>
+
+    <article class="article-content">
+      <p>
+        在競爭激烈的設計市場中，作為一名接案設計師，效率不僅是你的競爭力，更是你實現工作與生活平衡的關鍵。你是否也曾為了趕稿而通宵達旦，或者被不斷的修改耗盡心力？是時候告別瞎忙，用策略性思維來提升你的工作效率了！
+      </p>
+
+      <img src="../image/works/範例方形圖片2.png" alt="設計師正在思考如何創造品牌記憶點" />
+
+      <h2>標題</h2>
+      <p>
+        內文
+      </p>
+
+      <!-- 下面是常用的元素要件 -->
+
+      <div class="container">
+        <h1>h1第一大標題</h1>
+        div可以想像是一個大空間，裡面包很多東西
+        class可以讓css設定的時候，選到該區塊
+        <p>
+          p內文<strong>strong重點內文（粗體）</strong>p內文
+          <em>em斜體內文</em>。
+        </p>
+
+        <h2>h2第二大標題</h2>
+        <p>
+          p內文<strong>strong重點內文（粗體）</strong>p內文<strong>strong重點內文（粗體）</strong>p內文<strong>strong重點內文（粗體）</strong>
+          <span>
+            span行內空間</span>
+            p內文
+        </p>
+
+        <h3>h3第三大標題</h3>
+        <p>p內文<strong>strong重點內文（粗體）</strong>p內文</p>
+
+        <ul>
+          ul、li是項目條列：符號
+          <li><strong>重點標題（粗體）</strong> 內文</li>
+          <li><strong>重點標題（粗體</strong> 內文</li>
+          <li><strong>重點標題（粗體</strong> 內文</li>
+          <li><strong>重點標題（粗體</strong> 內文</li>
+        </ul>
+
+        
+        <p>p內文<strong>strong重點標題（粗體）</strong>p內文<a href="https://www.google.com"
+            target="_blank">包在a裡面，具有連結功能</a>p內文</p>
+
+        <ol>
+          ol、li是項目條列：123
+          <li>項目一</li>
+          <li>項目二</li>
+          <li>項目三</li>
+        </ol>
+
+        <hr>hr是橫線
+
+        <figure>
+          figure也可以視為一個空間，裡面可以放圖片、註解的空間
+          <img src="https://via.placeholder.com/600x300/F0F0F0/000000?text=Placeholder+Image" alt="網頁設計概念圖">
+          img可以連結檔案內的圖片，可以是網址，也可以找尋自己的資料夾內的圖片；alt是如果圖片出不來，會暫時出現的文字
+          <figcaption>figcaption：圖片註解。</figcaption>
+        </figure>
+
+        <blockquote>
+          blockquote引用，很適合放一些重要文句
+        </blockquote>
+        
+        <ul>
+          如果想要寫出關於code的文字，但不是呈現其功能的時候。可以這樣寫。
+          <li><code>&lt;p&gt;</code> 用於標準段落。</li>
+          <li><code>&lt;h1&gt;</code> 到 <code>&lt;h6&gt;</code> 用於不同層級的標題。</li>
+          <li><code>&lt;img&gt;</code> 用於插入圖片。</li>
+          <li><code>&lt;a&gt;</code> 用於創建超連結。</li>
+        </ul>
+      </div>
+
+      <!-- script -->
+
+      <script>
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        const scrollToBottomBtn = document.getElementById("scrollToBottomBtn");
+
+        if (scrollToTopBtn && scrollToBottomBtn) {
+          window.addEventListener("scroll", () => {
+            if (window.scrollY > window.innerHeight * 0.5) {
+              scrollToTopBtn.classList.add("show");
+            } else {
+              scrollToTopBtn.classList.remove("show");
+            }
+
+            const scrollHeight = document.documentElement.scrollHeight;
+            const clientHeight = document.documentElement.clientHeight;
+            const scrollTop = document.documentElement.scrollTop;
+
+            if (scrollTop + clientHeight < scrollHeight - 100) {
+              scrollToBottomBtn.classList.add("show");
+            } else {
+              scrollToBottomBtn.classList.remove("show");
+            }
+          });
+
+          scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          });
+
+          scrollToBottomBtn.addEventListener("click", () => {
+            window.scrollTo({
+              top: document.documentElement.scrollHeight,
+              behavior: "smooth",
+            });
+          });
+
+          window.addEventListener("load", () => {
+            window.dispatchEvent(new Event("scroll"));
+          });
+        }
+      </script>
+</body>
+
+</html>
