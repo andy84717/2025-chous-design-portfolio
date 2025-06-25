@@ -13,7 +13,7 @@
 /* ------------響應式呈現  ------------*/
 
 /* 更小的裝置 (例如舊款手機，最大寬度 768px) */
-@media (max-width: 768px) {}
+@media (max-width: 768px) {
   .hero-image {
     width: 400px;
     margin: 20px auto;
