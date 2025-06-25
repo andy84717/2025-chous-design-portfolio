@@ -82,12 +82,12 @@
 /* --- 電腦版樣式 (Desktop Styles) --- */
 /* 這是預設樣式，適用於所有螢幕尺寸，但主要針對桌面電腦進行優化 */
 body {
-    font-family: "Noto Sans TC", sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
+    font-family: "Noto Sans TC", sans-serif;/* 設定通用字體 */
+    line-height: 1.5;/* 設定基礎行高 */
+    margin: 0;/* 移除 body 的預設外邊距 */
+    padding: 0;/* 移除 body 的預設內間距 */
     background-color: #fefefe;
-    color: #111;
+    color: #111; /* 設定基礎文字顏色 */
 }
 
 header {
@@ -95,13 +95,17 @@ header {
     text-align: center;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+    margin-top: 0; /* 移除標題和段落頂部預設外邊距，底部通常會保留或自定義 */
+}
+
 h1 {
     /*rem的根元素為html，不會有繼承問題： 1rem = 16px｜1.5rem = 24px｜2rem = 32px｜2.5rem = 40px｜3rem = 48px */
     font-family: "Cactus Classical Serif", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 2.2rem;
-    /* 38,4px */
+    font-size: 2.1rem;
+    /* 32x */
     margin-bottom: 0.2em;
     /* em會有繼承父元素的問題，要看父元素的設定 */
 
@@ -120,10 +124,28 @@ p.subtitle {
 }
 
 img {
-    max-width: 100%;
+    max-width: 100%;/* 確保圖片響應式 */
     height: auto;
-    display: block;
-    /* 避免圖片下方多餘的空白 */
+    display: block;/* 讓圖片行為更像區塊元素，避免底部空白 */ 
+}
+
+ul, ol {
+    list-style: none; /* 移除列表符號 */
+    padding: 0; /* 移除列表預設內邊距 */
+    margin: 0;
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none; /* 移除連結下劃線 */
+    color: inherit; /* 連結繼承父元素顏色 */
+}
+
+button, input, select, textarea {
+    font-family: inherit; /* 讓表單元素繼承字體 */
+    font-size: 100%; /* 確保表單元素字體大小一致 */
+    margin: 0; /* 移除預設邊距 */
+    line-height: 1.15; /* 確保行高一致 */
 }
 
 
@@ -152,9 +174,7 @@ nav a:hover {
     border-color: #111;
 }
 
-ul li{
-    font-size: 1rem;
-}
+
 
 /* 上一個專案、下一個專案按鈕 */
 .project-navigation {
@@ -197,107 +217,77 @@ ul li{
     /* 懸停時變色，可以調整成你喜歡的品牌色 */
 }
 
-.project-navigation .prev-project {
-    /* 針對「上一個專案」的特定樣式 */
+.project-navigation .prev-project {/* 針對「上一個專案」的特定樣式 */
     align-items: flex-start;
     /* 讓內容靠左對齊 */
 }
 
-.project-navigation .next-project {
-    /* 針對「下一個專案」的特定樣式 */
-    align-items: flex-end;
-    /* 讓內容靠右對齊 */
+.project-navigation .next-project { /* 針對「下一個專案」的特定樣式 */
+    align-items: flex-end;/* 讓內容靠右對齊 */
 }
 
 /* 回到頂部、底部按鈕 */
 .scroll-buttons {
-    position: fixed;
-    /* 固定在視窗中 */
-    bottom: 20px;
-    /* 距離底部 20px */
-    right: 20px;
-    /* 距離右側 20px */
+    position: fixed;/* 固定在視窗中 */
+    bottom: 20px;/* 距離底部 20px */
+    right: 20px; /* 距離右側 20px */
     display: flex;
-    flex-direction: column;
-    /* 垂直堆疊 */
-    gap: 10px;
-    /* 按鈕間距 */
-    z-index: 100;
-    /* 確保按鈕在最上層 */
+    flex-direction: column;/* 垂直堆疊 */
+    gap: 10px;/* 按鈕間距 */
+    z-index: 100; /* 確保按鈕在最上層 */
 }
 
 .scroll-buttons button {
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
     border: none;
-    border-radius: 50%;
-    /* 圓形按鈕 */
-    width: 45px;
-    /* 寬度 */
-    height: 45px;
-    /* 高度 */
-    font-size: 1.5rem;
-    /* 箭頭大小 */
+    border-radius: 50%; /* 圓形按鈕 */
+    width: 45px;/* 寬度 */
+    height: 45px; /* 高度 */
+    font-size: 1.5rem; /* 箭頭大小 */
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, opacity 0.3s ease;
-    opacity: 0;
-    /* 預設隱藏 */
-    visibility: hidden;
-    /* 預設不可見 */
+    opacity: 0; /* 預設隱藏 */
+    visibility: hidden; /* 預設不可見 */
 }
 
 .scroll-buttons button.show {
-    opacity: 1;
-    /* 顯示 */
-    visibility: visible;
-    /* 可見 */
+    opacity: 1; /* 顯示 */
+    visibility: visible; /* 可見 */
 }
 
 .scroll-buttons button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-    /* 懸停時顏色變深 */
+    background-color: rgba(0, 0, 0, 0.8); /* 懸停時顏色變深 */
 }
 
 
 /* line按鈕 */
 .line-button {
-    position: fixed;
-    /* 讓按鈕固定在視窗中 */
-    bottom: 20px;
-    /* 距離底部 20 像素，可依需求調整 */
-    left: 20px;
-    /* 距離右側 20 像素，可依需求調整 */
-    background-color: #00B900;
-    /* Line 的品牌綠色 */
-    border-radius: 50%;
-    /* 使按鈕呈現圓形 */
-    padding: 10px;
-    /* 內邊距 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* 陰影效果 */
+    position: fixed; /* 讓按鈕固定在視窗中 */
+    bottom: 20px;/* 距離底部 20 像素，可依需求調整 */
+    left: 20px; /* 距離右側 20 像素，可依需求調整 */
+    background-color: #00B900;/* Line 的品牌綠色 */
+    border-radius: 50%; /* 使按鈕呈現圓形 */
+    padding: 10px; /* 內邊距 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);/* 陰影效果 */
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
-    /* 確保按鈕在其他內容之上 */
-    transition: transform 0.3s ease;
-    /* 滑鼠懸停時的動畫效果 */
+    z-index: 1000;/* 確保按鈕在其他內容之上 */
+    transition: transform 0.3s ease;/* 滑鼠懸停時的動畫效果 */
 }
 
 .line-button:hover {
-    transform: scale(1.1);
-    /* 滑鼠懸停時放大 10% */
+    transform: scale(1.1);/* 滑鼠懸停時放大 10% */
 }
 
 .line-button img {
-    width: 40px;
-    /* 圖示寬度，可依需求調整 */
-    height: 40px;
-    /* 圖示高度，可依需求調整 */
+    width: 40px;/* 圖示寬度，可依需求調整 */
+    height: 40px; /* 圖示高度，可依需求調整 */
     display: block;
 }
 
@@ -321,62 +311,49 @@ ul li{
 /* 當螢幕寬度最大為 768px 時應用這些樣式 (常用於平板橫向或較大的手機) */
 @media (max-width: 768px) {
     header {
-        padding: 30px 15px 15px;
-        /* 縮小標頭內距 */
+        padding: 30px 15px 15px; /* 縮小標頭內距 */
+       
     }
 
     h1 {
         font-family: "Cactus Classical Serif", serif;
-        font-size: 2rem;
-        /* 縮小主要標題字體 */
+        font-size: 1.8rem; /* 縮小主要標題字體 */
     }
 
     p.subtitle {
-        font-size: 0.9rem;
-        /* 縮小副標題字體 */
+        font-size: 1rem;/* 縮小副標題字體 */
+        
     }
 
     nav {
-        flex-direction: column;
-        /* 導覽列項目垂直排列 */
-        align-items: center;
-        /* 導覽列項目置中 */
-        gap: 10px;
-        /* 縮小導覽列項目間距 */
+        flex-direction: column; /* 導覽列項目垂直排列 */
+        align-items: center;/* 導覽列項目置中 */
+        gap: 10px; /* 縮小導覽列項目間距 */
+       
     }
 
     nav a {
-        width: 80%;
-        /* 讓導覽列連結佔據更多寬度 */
-        max-width: 300px;
-        /* 避免在小螢幕上過寬 */
-        text-align: center;
-        /* 文字置中 */
-        padding: 12px 0;
-        /* 調整內距 */
+        width: 80%;/* 讓導覽列連結佔據更多寬度 */
+        max-width: 300px; /* 避免在小螢幕上過寬 */
+        text-align: center;/* 文字置中 */
+        padding: 12px 0; /* 調整內距 */
     }
 
-    header {
-        padding: 30px 15px;
-        /* 縮小標頭內距 */
-    }
+ 
 
     /* 響應式呈現768px_上一個專案、下一個專案按鈕 */
     .project-navigation {
-        margin: 30px auto 60px;
-        /* 調整小螢幕下的上下邊距 */
-        padding: 0 15px;
-        /* 調整左右內距 */
+        margin: 30px auto 60px;/* 調整小螢幕下的上下邊距 */
+        padding: 0 15px;/* 調整左右內距 */
     }
 
     .project-navigation .nav-link {
-        font-size: 0.9rem;
-        /* 縮小文字 */
+        font-size: 0.9rem; /* 縮小文字 */
     }
 
     .project-navigation .nav-link span {
-        font-size: 0.75rem;
-        /* 縮小專案名稱 */
+        font-size: 0.75rem; /* 縮小專案名稱 */
+       
     }
 
     /* 響應式呈現768px＿line按鈕 */
@@ -417,10 +394,6 @@ ul li{
 /* --- 手機版樣式 (Mobile Styles) --- */
 /* 當螢幕寬度最大為 480px 時應用這些樣式 (常用於手機) */
 @media (max-width: 480px) {
-    body {
-        font-size: 1.8rem;
-        /* 手機版字體可以稍微縮小 */
-    }
 
     header {
         padding: 8px 0;
@@ -428,7 +401,7 @@ ul li{
 
     h1 {
         font-family: "Cactus Classical Serif", serif;
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
 
     p.subtitle {
