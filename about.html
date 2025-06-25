@@ -48,10 +48,20 @@
 </head>
 
 <body>
-  <header>
-    <h1>關於 ChousDesign</h1>
-    <p class="subtitle">品牌設計 × 視覺創作 × 解決問題</p>
-    <nav>
+  <header id="mainHeader">
+    <div class="header-content">
+      <h1>關於 ChousDesign</h1>
+      <p class="subtitle">品牌設計 × 視覺創作 × 解決問題</p>
+    </div>
+
+    <!-- hamburger -->
+    <button class="hamburger" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <!-- 選單列 -->
+    <nav id="mainNav">
       <a href="./index.html">首頁</a>
       <a href="./works.html">作品集總覽</a>
       <a href="./about.html">關於我</a>
@@ -151,6 +161,45 @@
         window.dispatchEvent(new Event("scroll")); // 手動觸發一次滾動事件檢查
       });
     }
+
+    //hambuger點擊事件
+    // JavaScript for sticky header and mobile menu
+    const mainHeader = document.getElementById('mainHeader');
+    const mainNav = document.getElementById('mainNav');
+    const hamburger = document.querySelector('.hamburger');
+
+    // Sticky header logic
+    const stickyObserver = new IntersectionObserver(
+      ([e]) => e.target.classList.toggle('is-sticky', e.intersectionRatio < 1),
+      { threshold: [1] }
+    );
+    stickyObserver.observe(mainHeader);
+
+    // Mobile menu toggle logic
+    hamburger.addEventListener('click', () => {
+      mainNav.classList.toggle('show-nav');
+      hamburger.classList.toggle('is-active'); // For animating hamburger icon
+    });
+
+    // JavaScript for sticky header and mobile menu
+    const mainHeader = document.getElementById('mainHeader');
+    const mainNav = document.getElementById('mainNav');
+    const hamburger = document.querySelector('.hamburger');
+
+    // Sticky header logic
+    // 使用 Intersection Observer 以獲得比 scroll 事件更好的性能
+    const stickyObserver = new IntersectionObserver(
+      ([e]) => e.target.classList.toggle('is-sticky', e.intersectionRatio < 1),
+      { threshold: [1] } // 當標頭 100% 可見時（閾值 1），它不是固定的。否則，它是固定的。
+    );
+    stickyObserver.observe(mainHeader);
+
+    // Mobile menu toggle logic
+    hamburger.addEventListener('click', () => {
+      mainNav.classList.toggle('show-nav'); // 切換導覽列的顯示與隱藏
+      hamburger.classList.toggle('is-active'); // 切換漢堡圖示的動畫
+    });
+
   </script>
 </body>
 

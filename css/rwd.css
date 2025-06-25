@@ -82,21 +82,75 @@
 /* --- 電腦版樣式 (Desktop Styles) --- */
 /* 這是預設樣式，適用於所有螢幕尺寸，但主要針對桌面電腦進行優化 */
 body {
-    font-family: "Noto Sans TC", sans-serif;/* 設定通用字體 */
-    line-height: 1.5;/* 設定基礎行高 */
-    margin: 0;/* 移除 body 的預設外邊距 */
-    padding: 0;/* 移除 body 的預設內間距 */
+    font-family: "Noto Sans TC", sans-serif;
+    /* 設定通用字體 */
+    line-height: 1.5;
+    /* 設定基礎行高 */
+    margin: 0;
+    /* 移除 body 的預設外邊距 */
+    padding: 0;
+    /* 移除 body 的預設內間距 */
     background-color: #fefefe;
-    color: #111; /* 設定基礎文字顏色 */
+    color: #111;
+    /* 設定基礎文字顏色 */
 }
 
 header {
     padding: 60px 20px;
     text-align: center;
+    position: relative;
+    z-index: 10;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-    margin-top: 0; /* 移除標題和段落頂部預設外邊距，底部通常會保留或自定義 */
+/* Sticky Header */
+header.is-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fefefe;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    /* Smaller padding when sticky */
+    transition: padding 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header.is-sticky .header-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0;
+}
+
+header.is-sticky h1 {
+    font-size: 1.5rem;
+    /* Smaller font size when sticky */
+    margin: 0;
+}
+
+header.is-sticky p.subtitle {
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+header.is-sticky nav {
+    margin-top: 0;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-top: 0;
+    /* 移除標題和段落頂部預設外邊距，底部通常會保留或自定義 */
 }
 
 h1 {
@@ -111,10 +165,10 @@ h1 {
 
 }
 
-h2{
+h2 {
     font-family: "Cactus Classical Serif", serif;
     font-weight: 400;
-    font-size:1.8rem ;
+    font-size: 1.8rem;
 }
 
 p.subtitle {
@@ -124,28 +178,42 @@ p.subtitle {
 }
 
 img {
-    max-width: 100%;/* 確保圖片響應式 */
+    max-width: 100%;
+    /* 確保圖片響應式 */
     height: auto;
-    display: block;/* 讓圖片行為更像區塊元素，避免底部空白 */ 
+    display: block;
+    /* 讓圖片行為更像區塊元素，避免底部空白 */
 }
 
-ul, ol {
-    list-style: none; /* 移除列表符號 */
-    padding: 0; /* 移除列表預設內邊距 */
+ul,
+ol {
+    list-style: none;
+    /* 移除列表符號 */
+    padding: 0;
+    /* 移除列表預設內邊距 */
     margin: 0;
     font-size: 1rem;
 }
 
 a {
-    text-decoration: none; /* 移除連結下劃線 */
-    color: inherit; /* 連結繼承父元素顏色 */
+    text-decoration: none;
+    /* 移除連結下劃線 */
+    color: inherit;
+    /* 連結繼承父元素顏色 */
 }
 
-button, input, select, textarea {
-    font-family: inherit; /* 讓表單元素繼承字體 */
-    font-size: 100%; /* 確保表單元素字體大小一致 */
-    margin: 0; /* 移除預設邊距 */
-    line-height: 1.15; /* 確保行高一致 */
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    /* 讓表單元素繼承字體 */
+    font-size: 100%;
+    /* 確保表單元素字體大小一致 */
+    margin: 0;
+    /* 移除預設邊距 */
+    line-height: 1.15;
+    /* 確保行高一致 */
 }
 
 
@@ -174,6 +242,42 @@ nav a:hover {
     border-color: #111;
 }
 
+/* Hamburger menu styles (hidden by default on desktop) */
+.hamburger {
+    display: none;
+    /* Hide on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    /* Ensure it's clickable */
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hamburger active state (for animation) */
+.hamburger.is-active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.is-active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
 
 
 /* 上一個專案、下一個專案按鈕 */
@@ -217,77 +321,107 @@ nav a:hover {
     /* 懸停時變色，可以調整成你喜歡的品牌色 */
 }
 
-.project-navigation .prev-project {/* 針對「上一個專案」的特定樣式 */
+.project-navigation .prev-project {
+    /* 針對「上一個專案」的特定樣式 */
     align-items: flex-start;
     /* 讓內容靠左對齊 */
 }
 
-.project-navigation .next-project { /* 針對「下一個專案」的特定樣式 */
-    align-items: flex-end;/* 讓內容靠右對齊 */
+.project-navigation .next-project {
+    /* 針對「下一個專案」的特定樣式 */
+    align-items: flex-end;
+    /* 讓內容靠右對齊 */
 }
 
 /* 回到頂部、底部按鈕 */
 .scroll-buttons {
-    position: fixed;/* 固定在視窗中 */
-    bottom: 20px;/* 距離底部 20px */
-    right: 20px; /* 距離右側 20px */
+    position: fixed;
+    /* 固定在視窗中 */
+    bottom: 20px;
+    /* 距離底部 20px */
+    right: 20px;
+    /* 距離右側 20px */
     display: flex;
-    flex-direction: column;/* 垂直堆疊 */
-    gap: 10px;/* 按鈕間距 */
-    z-index: 100; /* 確保按鈕在最上層 */
+    flex-direction: column;
+    /* 垂直堆疊 */
+    gap: 10px;
+    /* 按鈕間距 */
+    z-index: 100;
+    /* 確保按鈕在最上層 */
 }
 
 .scroll-buttons button {
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
     border: none;
-    border-radius: 50%; /* 圓形按鈕 */
-    width: 45px;/* 寬度 */
-    height: 45px; /* 高度 */
-    font-size: 1.5rem; /* 箭頭大小 */
+    border-radius: 50%;
+    /* 圓形按鈕 */
+    width: 45px;
+    /* 寬度 */
+    height: 45px;
+    /* 高度 */
+    font-size: 1.5rem;
+    /* 箭頭大小 */
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, opacity 0.3s ease;
-    opacity: 0; /* 預設隱藏 */
-    visibility: hidden; /* 預設不可見 */
+    opacity: 0;
+    /* 預設隱藏 */
+    visibility: hidden;
+    /* 預設不可見 */
 }
 
 .scroll-buttons button.show {
-    opacity: 1; /* 顯示 */
-    visibility: visible; /* 可見 */
+    opacity: 1;
+    /* 顯示 */
+    visibility: visible;
+    /* 可見 */
 }
 
 .scroll-buttons button:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* 懸停時顏色變深 */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* 懸停時顏色變深 */
 }
 
 
 /* line按鈕 */
 .line-button {
-    position: fixed; /* 讓按鈕固定在視窗中 */
-    bottom: 20px;/* 距離底部 20 像素，可依需求調整 */
-    left: 20px; /* 距離右側 20 像素，可依需求調整 */
-    background-color: #00B900;/* Line 的品牌綠色 */
-    border-radius: 50%; /* 使按鈕呈現圓形 */
-    padding: 10px; /* 內邊距 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);/* 陰影效果 */
+    position: fixed;
+    /* 讓按鈕固定在視窗中 */
+    bottom: 20px;
+    /* 距離底部 20 像素，可依需求調整 */
+    left: 20px;
+    /* 距離右側 20 像素，可依需求調整 */
+    background-color: #00B900;
+    /* Line 的品牌綠色 */
+    border-radius: 50%;
+    /* 使按鈕呈現圓形 */
+    padding: 10px;
+    /* 內邊距 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* 陰影效果 */
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;/* 確保按鈕在其他內容之上 */
-    transition: transform 0.3s ease;/* 滑鼠懸停時的動畫效果 */
+    z-index: 1000;
+    /* 確保按鈕在其他內容之上 */
+    transition: transform 0.3s ease;
+    /* 滑鼠懸停時的動畫效果 */
 }
 
 .line-button:hover {
-    transform: scale(1.1);/* 滑鼠懸停時放大 10% */
+    transform: scale(1.1);
+    /* 滑鼠懸停時放大 10% */
 }
 
 .line-button img {
-    width: 40px;/* 圖示寬度，可依需求調整 */
-    height: 40px; /* 圖示高度，可依需求調整 */
+    width: 40px;
+    /* 圖示寬度，可依需求調整 */
+    height: 40px;
+    /* 圖示高度，可依需求調整 */
     display: block;
 }
 
@@ -311,49 +445,63 @@ nav a:hover {
 /* 當螢幕寬度最大為 768px 時應用這些樣式 (常用於平板橫向或較大的手機) */
 @media (max-width: 768px) {
     header {
-        padding: 30px 15px 15px; /* 縮小標頭內距 */
-       
+        padding: 30px 15px 15px;
+        /* 縮小標頭內距 */
+
     }
 
     h1 {
         font-family: "Cactus Classical Serif", serif;
-        font-size: 1.8rem; /* 縮小主要標題字體 */
+        font-size: 1.8rem;
+        /* 縮小主要標題字體 */
     }
 
     p.subtitle {
-        font-size: 1rem;/* 縮小副標題字體 */
-        
+        font-size: 1rem;
+        /* 縮小副標題字體 */
+
     }
 
     nav {
-        flex-direction: column; /* 導覽列項目垂直排列 */
-        align-items: center;/* 導覽列項目置中 */
-        gap: 10px; /* 縮小導覽列項目間距 */
-       
+        flex-direction: column;
+        /* 導覽列項目垂直排列 */
+        align-items: center;
+        /* 導覽列項目置中 */
+        gap: 10px;
+        /* 縮小導覽列項目間距 */
+
     }
 
     nav a {
-        width: 80%;/* 讓導覽列連結佔據更多寬度 */
-        max-width: 300px; /* 避免在小螢幕上過寬 */
-        text-align: center;/* 文字置中 */
-        padding: 12px 0; /* 調整內距 */
+        width: 80%;
+        /* 讓導覽列連結佔據更多寬度 */
+        max-width: 300px;
+        /* 避免在小螢幕上過寬 */
+        text-align: center;
+        /* 文字置中 */
+        padding: 12px 0;
+        /* 調整內距 */
     }
 
- 
+
 
     /* 響應式呈現768px_上一個專案、下一個專案按鈕 */
     .project-navigation {
-        margin: 30px auto 60px;/* 調整小螢幕下的上下邊距 */
-        padding: 0 15px;/* 調整左右內距 */
+        margin: 30px auto 60px;
+        /* 調整小螢幕下的上下邊距 */
+        padding: 0 15px;
+        /* 調整左右內距 */
     }
 
     .project-navigation .nav-link {
-        font-size: 0.9rem; /* 縮小文字 */
+        font-size: 0.9rem;
+        /* 縮小文字 */
     }
 
     .project-navigation .nav-link span {
-        font-size: 0.75rem; /* 縮小專案名稱 */
-       
+        font-size: 0.75rem;
+        /* 縮小專案名稱 */
+
     }
 
     /* 響應式呈現768px＿line按鈕 */
@@ -396,16 +544,70 @@ nav a:hover {
 @media (max-width: 480px) {
 
     header {
-        padding: 8px 0;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
     }
+
+    header .header-content {
+        text-align: left;
+        flex-grow: 1;
+        /* Allow header content to take available space */
+    }
+
+    header.is-sticky .header-content {
+        flex-grow: 0;
+        /* Reset flex-grow when sticky for better alignment */
+    }
+
 
     h1 {
         font-family: "Cactus Classical Serif", serif;
         font-size: 1.5rem;
+        margin-bottom: 0;
     }
 
     p.subtitle {
         font-size: 0.8rem;
+        margin-top: 0;
+    }
+
+    /* Show hamburger on mobile */
+    .hamburger {
+        display: block;
+        position: static; /* Reset position for flow */
+    }
+
+    /* Hide nav by default on mobile */
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%; /* Take full width */
+        margin-top: 15px; /* Add some space below header content */
+        background-color: #fefefe;
+        padding: 10px 0;
+    }
+
+    /* Show nav when .show-nav class is present */
+    nav.show-nav {
+        display: flex;
+    }
+
+    nav a {
+        width: auto; /* Reset width */
+        max-width: none; /* Remove max-width restriction */
+        border: none; /* Remove borders for cleaner look */
+        padding: 10px 20px; /* Adjust padding */
+        border-radius: 0; /* Remove border-radius */
+        text-align: left; /* Align text to the left */
+        color: #333;
+    }
+
+    nav a:hover {
+        background-color: #eee; /* Lighter hover background */
+        color: #333;
     }
 
     /* 響應式呈現480px_回到頂部、底部按鈕 */

@@ -16,6 +16,16 @@ a {
   padding: 0 20px;
 }
 
+/* Add padding-top to body to prevent content from being hidden by sticky header */
+body:not(.is-sticky) .about-section {
+    padding-top: 0; /* Reset for non-sticky state */
+}
+
+/* When header is sticky, add padding-top to body based on header's height */
+body.is-sticky .about-section {
+    padding-top: 80px; /* Adjust this value based on your sticky header's height */
+}
+
 .about-section h2 {
   font-family: "Cactus Classical Serif", serif;
   font-weight: 400;
