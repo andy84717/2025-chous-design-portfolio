@@ -13,58 +13,8 @@
     rel="stylesheet" />
   <!-- css連結 -->
   <link rel="stylesheet" href="./css/Normalize.css" />
-  <link rel="stylesheet" href="../css/rwd.css">
+  <link rel="stylesheet" href="./css/rwd.css">
   <style>
-    body {
-      margin: 0;
-      font-family: "Noto Sans TC", sans-serif;
-      background-color: #fdfdfd;
-      color: #111;
-      line-height: 1.6;
-    }
-
-    header {
-      padding: 60px 20px 20px;
-      text-align: center;
-    }
-
-    h1 {
-      font-family: "Playfair Display", serif;
-      font-size: 2.6rem;
-      margin-bottom: 0.2em;
-    }
-
-    p.subtitle {
-      font-size: 1rem;
-      color: #555;
-      margin-top: 0;
-    }
-
-    nav {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      /* 讓導覽項目在小螢幕時換行 */
-      gap: 20px;
-    }
-
-    nav a {
-      font-size: 1rem;
-      text-decoration: none;
-      color: #333;
-      border: 1px solid #ddd;
-      padding: 10px 20px;
-      border-radius: 40px;
-      transition: all 0.3s ease;
-    }
-
-    nav a:hover {
-      background-color: #111;
-      color: #fff;
-      border-color: #111;
-    }
-
     .contact-section {
       max-width: 600px;
       margin: 60px auto;
@@ -127,14 +77,6 @@
       background-color: #444;
     }
 
-    .footer {
-      margin-top: 80px;
-      text-align: center;
-      font-size: 0.8rem;
-      color: #999;
-      padding: 40px 20px;
-    }
-
     .social-media-links {
       display: flex;
       /* 使用 flexbox 排列社群圖示 */
@@ -166,84 +108,11 @@
       /* 懸停時稍微上浮 */
     }
 
-    /* line按鈕 */
-    .line-button {
-      position: fixed;
-      /* 讓按鈕固定在視窗中 */
-      bottom: 20px;
-      /* 距離底部 20 像素，可依需求調整 */
-      left: 20px;
-      /* 距離右側 20 像素，可依需求調整 */
-      background-color: #00B900;
-      /* Line 的品牌綠色 */
-      border-radius: 50%;
-      /* 使按鈕呈現圓形 */
-      padding: 10px;
-      /* 內邊距 */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      /* 陰影效果 */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      /* 確保按鈕在其他內容之上 */
-      transition: transform 0.3s ease;
-      /* 滑鼠懸停時的動畫效果 */
-    }
 
-    .line-button:hover {
-      transform: scale(1.1);
-      /* 滑鼠懸停時放大 10% */
-    }
-
-    .line-button img {
-      width: 40px;
-      /* 圖示寬度，可依需求調整 */
-      height: 40px;
-      /* 圖示高度，可依需求調整 */
-      display: block;
-    }
-
-    /* --- Media Queries --- */
+    /* --- 響應式呈現 --- */
 
     /* 小型裝置 (手機和平板直立，最大寬度 768px) */
     @media (max-width: 768px) {
-      header {
-        padding: 40px 15px 15px;
-        /* 縮小標頭內距 */
-      }
-
-      h1 {
-        font-size: 2.2rem;
-        /* 縮小主要標題字體 */
-      }
-
-      p.subtitle {
-        font-size: 0.9rem;
-        /* 縮小副標題字體 */
-      }
-
-      nav {
-        flex-direction: column;
-        /* 導覽列項目垂直排列 */
-        align-items: center;
-        /* 導覽列項目置中 */
-        gap: 10px;
-        /* 縮小導覽列項目間距 */
-      }
-
-      nav a {
-        width: 80%;
-        /* 讓導覽列連結佔據更多寬度 */
-        max-width: 280px;
-        /* 避免在小螢幕上過寬 */
-        text-align: center;
-        /* 文字置中 */
-        padding: 12px 0;
-        /* 調整內距 */
-        font-size: 0.95rem;
-      }
-
       .contact-section {
         margin: 40px auto;
         /* 縮小上下間距 */
@@ -276,25 +145,10 @@
         /* 稍微縮小社群圖示 */
         height: 32px;
       }
-
-      .line-button {
-        bottom: 15px;
-        left: 15px;
-        padding: 8px;
-      }
-
-      .line-button img {
-        width: 35px;
-        height: 35px;
-      }
     }
 
     /* 更小的裝置 (例如舊款手機，最大寬度 480px) */
     @media (max-width: 480px) {
-      h1 {
-        font-size: 1.8rem;
-      }
-
       .contact-section h2 {
         font-size: 1.6rem;
       }
@@ -303,17 +157,6 @@
         width: 28px;
         /* 再稍微縮小社群圖示 */
         height: 28px;
-      }
-
-      .line-button {
-        bottom: 10px;
-        left: 10px;
-        padding: 6px;
-      }
-
-      .line-button img {
-        width: 30px;
-        height: 30px;
       }
     }
   </style>
@@ -368,7 +211,7 @@
     <button id="scrollToTopBtn" title="回到頂部">&#9650;</button>
     <button id="scrollToBottomBtn" title="回到底部">&#9660;</button>
   </div>
-<!-- 回到頂部、回到底部按鈕script -->
+  <!-- 回到頂部、回到底部按鈕script -->
 
   <script>
     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
