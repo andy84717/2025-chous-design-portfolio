@@ -11,9 +11,8 @@
   margin-bottom: 20px;
 }
 
-/* 調整 h2 為頁面主要標題 h1，請根據需求選擇 */
+
 .project-detail h2 {
-  /* 將 h2 樣式套用給 h1 */
   font-family: "Playfair Display", serif;
   font-size: 2rem;
   margin-bottom: 10px;

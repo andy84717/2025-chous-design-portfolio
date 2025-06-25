@@ -16,7 +16,6 @@
 @media (max-width: 768px) {
   .hero-image {
     width: 400px;
-    height: 350px;
     margin: 20px auto;
     /* 縮小圖片上下間距 */
   }

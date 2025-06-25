@@ -96,16 +96,26 @@ header {
 }
 
 h1 {
+    /*rem的根元素為html，不會有繼承問題： 1rem = 16px｜1.5rem = 24px｜2rem = 32px｜2.5rem = 40px｜3rem = 48px */
     font-family: "Cactus Classical Serif", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 2.4rem;
+    font-size: 2.2rem;
+    /* 38,4px */
     margin-bottom: 0.2em;
+    /* em會有繼承父元素的問題，要看父元素的設定 */
+
+}
+
+h2{
+    font-family: "Cactus Classical Serif", serif;
+    font-weight: 400;
+    font-size:1.8rem ;
 }
 
 p.subtitle {
     font-size: 1rem;
-    color: #555;
+    color: #777;
     margin-top: 0;
 }
 
@@ -140,6 +150,10 @@ nav a:hover {
     background-color: #111;
     color: #fff;
     border-color: #111;
+}
+
+ul li{
+    font-size: 1rem;
 }
 
 /* 上一個專案、下一個專案按鈕 */
