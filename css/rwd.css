@@ -96,7 +96,9 @@ header {
 }
 
 h1 {
-    font-family: "Playfair Display", serif;
+    font-family: "Cactus Classical Serif", serif;
+    font-weight: 400;
+    font-style: normal;
     font-size: 2.4rem;
     margin-bottom: 0.2em;
 }
@@ -310,6 +312,7 @@ nav a:hover {
     }
 
     h1 {
+        font-family: "Cactus Classical Serif", serif;
         font-size: 2rem;
         /* 縮小主要標題字體 */
     }
@@ -410,6 +413,7 @@ nav a:hover {
     }
 
     h1 {
+        font-family: "Cactus Classical Serif", serif;
         font-size: 1.6rem;
     }
 

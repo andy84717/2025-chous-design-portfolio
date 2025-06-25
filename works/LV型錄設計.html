@@ -1,162 +1,136 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LV型錄設計｜型錄/書籍排版設計｜ChousDesign</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap"
-      rel="stylesheet"
-    />
-    <!-- css連結 -->
-     <link rel="stylesheet" href="../css/rwd.css">
-    <link rel="stylesheet" href="../css/Normalize.css" />
-    <link rel="stylesheet" href="../css/work-2.css" />
 
-    <style>
-      .carousel-images img {
-        object-fit: contain; /* 保持原本圖片或影片原始長寬比，並確保圖片完整內容顯示。如果與框不符，框中會出現空白區域（類似電影黑邊） */
-      }
-      .carousel-images {
-        height: 400px; /* 使用 height 而不是 max-height 來確保一致的高度 */
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>LV型錄設計</h1>
-      <p class="subtitle">【獨立接案】簡約時尚的風格設計</p>
-      <nav>
-        <a href="../index.html">首頁</a>
-        <a href="../works.html">作品集總覽</a>
-        <a href="../about.html">關於我</a>
-        <a href="../blog.html">部落格</a>
-        <a href="../contact.html">聯絡我</a>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LV型錄設計｜型錄/書籍排版設計｜ChousDesign</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap"
+    rel="stylesheet" />
+  <!-- 字體連結 -->
+  <!-- Cactus Classical Serif、LXGW WenKai Mono TC  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=LXGW+WenKai+Mono+TC:wght@300;400;700&display=swap"
+    rel="stylesheet">
 
-    <section class="project-detail">
-      <div class="carousel">
-        <div class="carousel-images">
-          <img
-            src="../image/works/LV型錄設計/louis vuitton型錄-01.png"
-            alt="LV型錄設計1"
-          />
-          <img
-            src="../image/works/LV型錄設計/louis vuitton型錄-02.png"
-            alt="LV型錄設計2"
-          />
-          <img
-            src="../image/works/LV型錄設計/louis vuitton型錄-03.png"
-            alt="LV型錄設計3"
-          />
-          <img
-            src="../image/works/LV型錄設計/louis vuitton型錄-04.png"
-            alt="LV型錄設計4"
-          />
-          <img
-            src="../image/works/LV型錄設計/louis vuitton型錄-05.png"
-            alt="LV型錄設計5"
-          />
-          <img
-            src="../image/works/LV型錄設計/louis vuitton型錄-06.png"
-            alt="LV型錄設計6"
-          />
-          <img
-            src="../image/works/LV型錄設計/louis vuitton型錄-07.png"
-            alt="LV型錄設計7"
-          />
-          <img
-            src="../image/works/LV型錄設計/louis vuitton型錄-08.png"
-            alt="LV型錄設計8"
-          />
-          <img
-            src="../image/works/LV型錄設計/louis vuitton型錄-09.png"
-            alt="LV型錄設計9"
-          />
-          <img
-            src="../image/works/LV型錄設計/louis vuitton型錄-10.png"
-            alt="LV型錄設計10"
-          />
-          <img
-            src="../image/works/LV型錄設計/louis vuitton型錄-11.png"
-            alt="LV型錄設計11"
-          />
-          <img
-            src="../image/works/LV型錄設計/louis vuitton型錄-12.png"
-            alt="LV型錄設計12"
-          />
-          <img
-            src="../image/works/LV型錄設計/louis vuitton型錄-13.png"
-            alt="LV型錄設計13"
-          />
-          <img
-            src="../image/works/LV型錄設計/louis vuitton型錄-14.png"
-            alt="LV型錄設計14"
-          />
-          <img
-            src="../image/works/LV型錄設計/louis vuitton型錄-15.png"
-            alt="LV型錄設計15"
-          />
-          <img
-            src="../image/works/LV型錄設計/louis vuitton型錄-16.png"
-            alt="LV型錄設計16"
-          />
-          <img
-            src="../image/works/LV型錄設計/louis vuitton型錄-17.png"
-            alt="LV型錄設計17"
-          />
-          <img
-            src="../image/works/LV型錄設計/louis vuitton型錄-18.png"
-            alt="LV型錄設計18"
-          />
-          <img
-            src="../image/works/LV型錄設計/louis vuitton型錄-19.png"
-            alt="LV型錄設計19"
-          />
-          <img
-            src="../image/works/LV型錄設計/louis vuitton型錄-20.png"
-            alt="LV型錄設計20"
-          />
-        </div>
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
+  <!-- .cactus-classical-serif-regular {
+  font-family: "Cactus Classical Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.lxgw-wenkai-mono-tc-light {
+  font-family: "LXGW WenKai Mono TC", monospace;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.lxgw-wenkai-mono-tc-regular {
+  font-family: "LXGW WenKai Mono TC", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lxgw-wenkai-mono-tc-bold {
+  font-family: "LXGW WenKai Mono TC", monospace;
+  font-weight: 700;
+  font-style: normal;
+} -->
+  <!-- css連結 -->
+  <link rel="stylesheet" href="../css/rwd.css">
+  <link rel="stylesheet" href="../css/Normalize.css" />
+  <link rel="stylesheet" href="../css/work-2.css" />
+
+  <style>
+    .carousel-images img {
+      object-fit: contain;
+      /* 保持原本圖片或影片原始長寬比，並確保圖片完整內容顯示。如果與框不符，框中會出現空白區域（類似電影黑邊） */
+    }
+
+    .carousel-images {
+      height: 400px;
+      /* 使用 height 而不是 max-height 來確保一致的高度 */
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>LV型錄設計</h1>
+    <p class="subtitle">【獨立接案】簡約時尚的風格設計</p>
+    <nav>
+      <a href="../index.html">首頁</a>
+      <a href="../works.html">作品集總覽</a>
+      <a href="../about.html">關於我</a>
+      <a href="../blog.html">部落格</a>
+      <a href="../contact.html">聯絡我</a>
+    </nav>
+  </header>
+
+  <section class="project-detail">
+    <div class="carousel">
+      <div class="carousel-images">
+        <img src="../image/works/LV型錄設計/louis vuitton型錄-01.png" alt="LV型錄設計1" />
+        <img src="../image/works/LV型錄設計/louis vuitton型錄-02.png" alt="LV型錄設計2" />
+        <img src="../image/works/LV型錄設計/louis vuitton型錄-03.png" alt="LV型錄設計3" />
+        <img src="../image/works/LV型錄設計/louis vuitton型錄-04.png" alt="LV型錄設計4" />
+        <img src="../image/works/LV型錄設計/louis vuitton型錄-05.png" alt="LV型錄設計5" />
+        <img src="../image/works/LV型錄設計/louis vuitton型錄-06.png" alt="LV型錄設計6" />
+        <img src="../image/works/LV型錄設計/louis vuitton型錄-07.png" alt="LV型錄設計7" />
+        <img src="../image/works/LV型錄設計/louis vuitton型錄-08.png" alt="LV型錄設計8" />
+        <img src="../image/works/LV型錄設計/louis vuitton型錄-09.png" alt="LV型錄設計9" />
+        <img src="../image/works/LV型錄設計/louis vuitton型錄-10.png" alt="LV型錄設計10" />
+        <img src="../image/works/LV型錄設計/louis vuitton型錄-11.png" alt="LV型錄設計11" />
+        <img src="../image/works/LV型錄設計/louis vuitton型錄-12.png" alt="LV型錄設計12" />
+        <img src="../image/works/LV型錄設計/louis vuitton型錄-13.png" alt="LV型錄設計13" />
+        <img src="../image/works/LV型錄設計/louis vuitton型錄-14.png" alt="LV型錄設計14" />
+        <img src="../image/works/LV型錄設計/louis vuitton型錄-15.png" alt="LV型錄設計15" />
+        <img src="../image/works/LV型錄設計/louis vuitton型錄-16.png" alt="LV型錄設計16" />
+        <img src="../image/works/LV型錄設計/louis vuitton型錄-17.png" alt="LV型錄設計17" />
+        <img src="../image/works/LV型錄設計/louis vuitton型錄-18.png" alt="LV型錄設計18" />
+        <img src="../image/works/LV型錄設計/louis vuitton型錄-19.png" alt="LV型錄設計19" />
+        <img src="../image/works/LV型錄設計/louis vuitton型錄-20.png" alt="LV型錄設計20" />
       </div>
-
-      <h2>簡約時尚，讓型錄擁有美好精緻的觀賞體驗</h2>
-      <p class="project-meta">型錄/書籍排版設計・2024年</p>
-
-      <div class="project-description">
-        <p>
-          與案主討論此專案的時候，案主僅要求：「簡約時尚的風格，不需過多的裝飾」。<br />
-          很符合ChousDesign的設計風格，因此與案主的合作非常愉快！第一次確認完設計稿後，就成功結束專案。
-        </p>
-        <p>很開心能與案主的想法如此契合。 此專案設計，共計61頁。</p>
-      </div>
-    </section>
-    <!-- 上一個專案、下一個專案按鈕 -->
-    <div class="project-navigation">
-      <a href="../works/教具簡報設計.html" class="nav-link prev-project">
-        &larr; 上一個專案
-        <span>教具簡報設計</span>
-      </a>
-      <a href="../works/YR鋁合金快速帳設計.html" class="nav-link next-project">
-        下一個專案 &rarr;
-        <span>【YR佾睿國際】鋁合金快速帳設計</span>
-      </a>
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
     </div>
-    <!-- line按鈕 -->
+
+    <h2>簡約時尚，讓型錄擁有美好精緻的觀賞體驗</h2>
+    <p class="project-meta">型錄/書籍排版設計・2024年</p>
+
+    <div class="project-description">
+      <p>
+        與案主討論此專案的時候，案主僅要求：「簡約時尚的風格，不需過多的裝飾」。<br />
+        很符合ChousDesign的設計風格，因此與案主的合作非常愉快！第一次確認完設計稿後，就成功結束專案。
+      </p>
+      <p>很開心能與案主的想法如此契合。 此專案設計，共計61頁。</p>
+    </div>
+  </section>
+  <!-- 上一個專案、下一個專案按鈕 -->
+  <div class="project-navigation">
+    <a href="../works/教具簡報設計.html" class="nav-link prev-project">
+      &larr; 上一個專案
+      <span>教具簡報設計</span>
+    </a>
+    <a href="../works/YR鋁合金快速帳設計.html" class="nav-link next-project">
+      下一個專案 &rarr;
+      <span>【YR佾睿國際】鋁合金快速帳設計</span>
+    </a>
+  </div>
+  <!-- line按鈕 -->
   <a href="https://line.me/R/ti/p/@170xuqkb" class="line-button" target="_blank" aria-label="加我Line">
     <img src="../image/contact/Line(green).svg" alt="Line 圖示" />
   </a>
-    <!-- 頁尾 -->
-    <div class="footer">&copy; 2025 ChousDesign . All Rights Reserved.</div>
-    <!-- 回到頂部、回到底部按鈕 -->
-    <div class="scroll-buttons">
-      <button id="scrollToTopBtn" title="回到頂部">&#9650;</button>
-      <button id="scrollToBottomBtn" title="回到底部">&#9660;</button>
-    </div>
-    <!-- 連結javascript檔案 -->
-    <script src="../js/work-2.js"></script>
-  </body>
+  <!-- 頁尾 -->
+  <div class="footer">&copy; 2025 ChousDesign . All Rights Reserved.</div>
+  <!-- 回到頂部、回到底部按鈕 -->
+  <div class="scroll-buttons">
+    <button id="scrollToTopBtn" title="回到頂部">&#9650;</button>
+    <button id="scrollToBottomBtn" title="回到底部">&#9660;</button>
+  </div>
+  <!-- 連結javascript檔案 -->
+  <script src="../js/work-2.js"></script>
+</body>
+
 </html>
