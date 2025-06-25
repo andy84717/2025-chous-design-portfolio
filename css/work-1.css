@@ -1,318 +1,70 @@
+.project-detail {
+  max-width: 700px;
+  /* 方形設計就700，橫式設計900 */
+  margin: 60px auto;
+  padding: 0 20px;
+}
 
-      body {
-        margin: 0;
-        font-family: "Noto Sans TC", sans-serif;
-        background-color: #fefefe;
-        color: #111;
-      }
-      img {
-        max-width: 100%;
-        height: auto;
-      }
+.project-detail img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
 
-      header {
-        padding: 60px 20px 20px;
-        text-align: center;
-      }
+/* 調整 h2 為頁面主要標題 h1，請根據需求選擇 */
+.project-detail h2 {
+  /* 將 h2 樣式套用給 h1 */
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #d5936b;
+}
 
-      /* 調整 h1 為網站品牌名，如果需要的話 */
-      h1 {
-        font-family: "Playfair Display", serif;
-        font-size: 2.4rem;
-        margin-bottom: 0.2em;
-      }
 
-      
+.project-meta {
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
 
-      .subtitle {
-        font-size: 1rem;
-        color: #555;
-      }
+.project-description {
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
 
-      nav {
-        margin-top: 30px;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 20px;
-      }
 
-      nav a {
-        text-decoration: none;
-        font-size: 1rem;
-        color: #333;
-        border: 1px solid #ddd;
-        padding: 10px 20px;
-        border-radius: 40px;
-        transition: all 0.3s ease;
-      }
+  /* ------------響應式呈現  ------------*/
 
-      nav a:hover {
-        background-color: #111;
-        color: #fff;
-        border-color: #111;
-      }
+@media (max-width: 768px) {
 
-      .project-detail {
-        max-width: 700px;
-        /* 方形設計就700，橫式設計900 */
-        margin: 60px auto;
-        padding: 0 20px;
-      }
+  .project-detail {
+    margin: 30px auto;
+    padding: 0 15px;
+  }
 
-      .project-detail img {
-        width: 100%;
-        border-radius: 12px;
-        margin-bottom: 20px;
-      }
+  .project-detail h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.6rem;
+  }
 
-      /* 調整 h2 為頁面主要標題 h1，請根據需求選擇 */
-      .project-detail h2 { /* 將 h2 樣式套用給 h1 */
-        font-family: "Playfair Display", serif;
-        font-size: 2rem;
-        margin-bottom: 10px;
-        color: #d5936b;
-      }
-     
+  .project-meta {
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+  }
 
-      .project-meta {
-        color: #777;
-        font-size: 0.9rem;
-        margin-bottom: 20px;
-      }
+  .project-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
 
-      .project-description {
-        line-height: 1.8;
-        font-size: 1.05rem;
-      }
 
-      .footer {
-        margin-top: 80px;
-        text-align: center;
-        font-size: 0.8rem;
-        color: #999;
-        padding: 40px 20px;
-      }
+@media (max-width: 480px) {
 
-      .project-navigation {
-        display: flex;
-        justify-content: space-between;
-        max-width: 700px;
-        margin: 40px auto 80px;
-        padding: 0 20px;
-      }
+  .project-detail h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.4rem;
+    color: #d5936b;
+  }
 
-      .project-navigation .nav-link {
-        display: flex;
-        flex-direction: column;
-        text-decoration: none;
-        color: #333;
-        font-size: 1rem;
-        transition: color 0.3s ease;
-        text-align: center;
-      }
-
-      .project-navigation .nav-link span {
-        font-size: 0.85rem;
-        color: #777;
-        margin-top: 5px;
-      }
-
-      .project-navigation .nav-link:hover {
-        color: #d5936b;
-      }
-
-      .project-navigation .prev-project {
-        align-items: flex-start;
-      }
-
-      .project-navigation .next-project {
-        align-items: flex-end;
-      }
-      .scroll-buttons {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        z-index: 100;
-      }
-
-      .scroll-buttons button {
-        background-color: rgba(0, 0, 0, 0.6);
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 45px;
-        height: 45px;
-        font-size: 1.5rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        transition: background-color 0.3s ease, opacity 0.3s ease;
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      .scroll-buttons button.show {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .scroll-buttons button:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-      }
-      /* line按鈕 */
-    .line-button {
-      position: fixed;
-      /* 讓按鈕固定在視窗中 */
-      bottom: 20px;
-      /* 距離底部 20 像素，可依需求調整 */
-      left: 20px;
-      /* 距離右側 20 像素，可依需求調整 */
-      background-color: #00B900;
-      /* Line 的品牌綠色 */
-      border-radius: 50%;
-      /* 使按鈕呈現圓形 */
-      padding: 10px;
-      /* 內邊距 */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      /* 陰影效果 */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      /* 確保按鈕在其他內容之上 */
-      transition: transform 0.3s ease;
-      /* 滑鼠懸停時的動畫效果 */
-    }
-
-    .line-button:hover {
-      transform: scale(1.1);
-      /* 滑鼠懸停時放大 10% */
-    }
-
-    .line-button img {
-      width: 40px;
-      /* 圖示寬度，可依需求調整 */
-      height: 40px;
-      /* 圖示高度，可依需求調整 */
-      display: block;
-    }
-
-      /* --- 響應式呈現 --- */
-
-      @media (max-width: 768px) {
-        header {
-          padding: 30px 15px 15px;
-        }
-
-        h1 {
-          font-size: 2rem;
-        }
-
-        .subtitle {
-          font-size: 0.9rem;
-        }
-
-        nav {
-          flex-direction: column;
-          align-items: center;
-          gap: 10px;
-        }
-
-        nav a {
-          width: 80%;
-          max-width: 300px;
-          text-align: center;
-          padding: 12px 0;
-        }
-
-        .project-detail {
-          margin: 30px auto;
-          padding: 0 15px;
-        }
-
-        .project-detail h2 { 
-          font-family: "Playfair Display", serif;
-          font-size: 1.6rem;
-        }
-
-        .project-meta {
-          font-size: 0.8rem;
-          margin-bottom: 15px;
-        }
-
-        .project-description {
-          font-size: 1rem;
-          line-height: 1.6;
-        }
-
-        .project-navigation {
-          margin: 30px auto 60px;
-          padding: 0 15px;
-        }
-
-        .project-navigation .nav-link {
-          font-size: 0.9rem;
-        }
-
-        .project-navigation .nav-link span {
-          font-size: 0.75rem;
-        }
-        .scroll-buttons {
-          bottom: 15px;
-          right: 15px;
-          gap: 8px;
-        }
-        .scroll-buttons button {
-          width: 40px;
-          height: 40px;
-          font-size: 1.3rem;
-        }
-        .line-button {
-        bottom: 15px;
-        left: 15px;
-        padding: 8px;
-      }
-
-      .line-button img {
-        width: 35px;
-        height: 35px;
-      }
-      }
-
-      @media (max-width: 480px) {
-        h1 {
-          font-size: 1.8rem;
-        }
-
-        .project-detail h2 { 
-          font-family: "Playfair Display", serif;
-          font-size: 1.4rem;
-          color:#d5936b;
-        }
-        .scroll-buttons {
-          bottom: 10px;
-          right: 10px;
-          gap: 6px;
-        }
-        .scroll-buttons button {
-          width: 35px;
-          height: 35px;
-          font-size: 1.2rem;
-        }
-        .line-button {
-        bottom: 10px;
-        left: 10px;
-        padding: 6px;
-      }
-
-      .line-button img {
-        width: 30px;
-        height: 30px;
-      }
-      }
+}

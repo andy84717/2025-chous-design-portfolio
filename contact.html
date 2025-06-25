@@ -13,6 +13,7 @@
     rel="stylesheet" />
   <!-- css連結 -->
   <link rel="stylesheet" href="./css/Normalize.css" />
+  <link rel="stylesheet" href="../css/rwd.css">
   <style>
     body {
       margin: 0;
@@ -361,6 +362,58 @@
   </a>
   <!-- 頁尾 -->
   <div class="footer">&copy; 2025 ChousDesign . All Rights Reserved.</div>
+
+  <!-- 回到頂部、回到底部按鈕 -->
+  <div class="scroll-buttons">
+    <button id="scrollToTopBtn" title="回到頂部">&#9650;</button>
+    <button id="scrollToBottomBtn" title="回到底部">&#9660;</button>
+  </div>
+<!-- 回到頂部、回到底部按鈕script -->
+
+  <script>
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    const scrollToBottomBtn = document.getElementById("scrollToBottomBtn");
+
+    if (scrollToTopBtn && scrollToBottomBtn) {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > window.innerHeight * 0.5) {
+          scrollToTopBtn.classList.add("show");
+        } else {
+          scrollToTopBtn.classList.remove("show");
+        }
+
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight;
+        const scrollTop = document.documentElement.scrollTop;
+
+        if (scrollTop + clientHeight < scrollHeight - 100) {
+          scrollToBottomBtn.classList.add("show");
+        } else {
+          scrollToBottomBtn.classList.remove("show");
+        }
+      });
+
+      scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      scrollToBottomBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: document.documentElement.scrollHeight,
+          behavior: "smooth",
+        });
+      });
+
+      window.addEventListener("load", () => {
+        window.dispatchEvent(new Event("scroll"));
+      });
+    }
+  </script>
+
+
 
 </body>
 

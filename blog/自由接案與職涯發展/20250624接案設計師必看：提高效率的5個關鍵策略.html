@@ -7,8 +7,10 @@
     <title>接案設計師必看：提高效率的5個關鍵策略｜部落格｜ChousDesign</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap"
         rel="stylesheet" />
+    <link rel="stylesheet" href="../../css/rwd.css">
     <link rel="stylesheet" href="../../css/Normalize.css">
     <link rel="stylesheet" href="../../css/blog_content.css" />
+
     <style>
         a {
             text-decoration: none;
@@ -72,7 +74,9 @@
 
             <h2>四、專案管理與文件化</h2>
             <p>
-                當你同時處理多個專案時，混亂是效率的殺手。選擇一個適合你的<strong>專案管理工具</strong>（如 <a href="https://trello.com/zh-Hant">Trello</a>、<a href="https://asana.com/zh-tw">Asana</a> 或<a href="https://www.notion.com">Notion</a>），清晰地追蹤每個專案的進度、任務分配與截止日期。同時，養成良好的文件化習慣至關重要。將所有專案相關的參考資料、素材、字體、圖標等進行妥善分類與歸檔。建立自己的設計資源庫或知識庫，能大幅減少每次尋找資料的時間。
+                當你同時處理多個專案時，混亂是效率的殺手。選擇一個適合你的<strong>專案管理工具</strong>（如 <a
+                    href="https://trello.com/zh-Hant">Trello</a>、<a href="https://asana.com/zh-tw">Asana</a> 或<a
+                    href="https://www.notion.com">Notion</a>），清晰地追蹤每個專案的進度、任務分配與截止日期。同時，養成良好的文件化習慣至關重要。將所有專案相關的參考資料、素材、字體、圖標等進行妥善分類與歸檔。建立自己的設計資源庫或知識庫，能大幅減少每次尋找資料的時間。
             </p>
             <h2>五、學習與充電，保持身心平衡</h2>
             <p>
@@ -80,10 +84,24 @@
 
                 提升效率不僅能讓你完成更多設計案，更能為你爭取到更多的自由時間，去學習、去探索、去享受生活。現在就開始實踐這些策略，讓你的接案之路走得更穩健、更從容吧！
             </p>
+            
+            <!-- 上一個專案、下一個專案按鈕 -->
+            <div class="project-navigation">
+                <a href="../works/" class="nav-link prev-project">
+                    &larr; 上一個專案
+                    <span>專案名稱A</span>
+                </a>
+                <a href="../works/" class="nav-link next-project">
+                    下一個專案 &rarr;
+                    <span>專案名稱B</span>
+                </a>
+            </div>
+
+
             <!-- line按鈕 -->
-  <a href="https://line.me/R/ti/p/@170xuqkb" class="line-button" target="_blank" aria-label="加我Line">
-    <img src="./image/contact/Line(green).svg" alt="Line 圖示" />
-  </a>
+            <a href="https://line.me/R/ti/p/@170xuqkb" class="line-button" target="_blank" aria-label="加我Line">
+                <img src="../../image/contact/Line(green).svg" alt="Line 圖示" />
+            </a>
             <!-- 頁尾 -->
             <div class="footer">&copy; 2025 ChousDesign . All Rights Reserved.</div>
             <!-- 回到頂部、回到底部按鈕 -->
@@ -91,6 +109,11 @@
                 <button id="scrollToTopBtn" title="回到頂部">&#9650;</button>
                 <button id="scrollToBottomBtn" title="回到底部">&#9660;</button>
             </div>
+
+
+
+
+
             <!-- 回到頂部、回到底部按鈕script -->
 
             <script>

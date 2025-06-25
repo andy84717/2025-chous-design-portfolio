@@ -1,0 +1,451 @@
+/* 首先，請確保你的 HTML 檔案中 <head> 標籤內有以下這行，它能讓瀏覽器正確地縮放頁面以適應不同設備： */
+/* <meta name="viewport" content="width=device-width, initial-scale=1.0"> */
+
+
+/* 共同規劃 RWD 的項目
+1. 導航列/菜單 (Navigation Bar/Menu)
+
+這是最常見也最重要的共同 RWD 項目之一。
+
+電腦版： 通常是水平排列的菜單項，可能包含多層下拉菜單。
+平板版： 可能會保留水平排列，但字體或間距會調整，有時會將部分不常用的項目收進「更多」按鈕。
+手機版： 幾乎都會變成漢堡菜單 (Hamburger Menu) 或類似的折疊式菜單，點擊後展開，以節省寶貴的螢幕空間。
+共同規劃點： 定義漢堡圖示的樣式、菜單展開時的動畫、背景覆蓋層、以及菜單項的排列方式（通常是垂直堆疊）。
+
+2. 按鈕 (Buttons)
+
+網頁上的互動按鈕，例如「送出」、「了解更多」、「立即購買」等。
+
+電腦版： 通常有固定的寬高或根據文字內容調整，大小適中，方便滑鼠點擊。
+平板版： 可能會稍微放大點擊區域，以適應觸控操作，但外觀變化不大。
+手機版： 通常會放大觸控區域 (建議最小 44x44 像素)，並且可能讓按鈕佔滿螢幕寬度 (width: 100%)，或將多個按鈕垂直堆疊，確保用戶容易點擊。
+共同規劃點： 定義基本按鈕樣式 (顏色、字體、圓角)，然後在小螢幕下調整 padding、font-size 和 width。
+
+3. 表格 (Tables)
+
+顯示數據的表格。在小螢幕上通常很難以傳統方式完整呈現。
+
+電腦版： 標準的表格佈局。
+平板/手機版： 常用的 RWD 處理方式有：
+水平滾動： 讓表格在容器內水平滾動。
+卡片式佈局： 將每一行數據轉換成一個獨立的卡片，每列的標題變成卡片內的標籤。
+隱藏部分欄位： 優先顯示重要欄位，次要欄位在小螢幕下隱藏。
+共同規劃點： 決定在小螢幕下表格的呈現策略，並為其編寫相應的 CSS。
+
+4. 圖片與多媒體 (Images & Media)
+
+網頁中的所有圖片、影片等。
+
+電腦版： 可能有固定的尺寸或流動寬度。
+所有尺寸： 最基本的 RWD 處理是 max-width: 100%; height: auto; 讓圖片能等比例縮放。
+共同規劃點： 確保圖片不會超出容器，並且在不同螢幕尺寸下，圖片的顯示尺寸 (例如文章中的大圖 vs. 小圖縮略圖) 和排列方式 (例如多張圖片並排 vs. 垂直堆疊) 都能妥善處理。也可以考慮使用 <picture> 元素提供不同解析度的圖片。
+
+5. 欄位佈局 (Column Layouts)
+
+例如產品列表、文章網格、或主要內容與側邊欄的佈局。
+
+電腦版： 通常是多欄佈局，如 2 欄、3 欄或 4 欄。
+平板版： 可能會減少欄數，例如 3 欄變 2 欄，或 2 欄變 1 欄。
+手機版： 幾乎都會變成單欄垂直堆疊，確保內容易於瀏覽。
+共同規劃點： 利用 Flexbox 或 CSS Grid 建立彈性佈局，然後在媒體查詢中調整 flex-direction、grid-template-columns 等屬性。
+
+6. 文字內容 (Text Content)
+
+標題、段落、列表等。
+
+電腦版： 較大的字體尺寸，較長的行寬。
+平板版： 字體尺寸可能略微縮小，行高和段落間距也會調整，確保可讀性。
+手機版： 字體尺寸通常會再縮小，以避免文字過小而難以閱讀，同時也防止文字過大導致內容過長。
+共同規劃點： 設定好基礎字體大小 (font-size) 和行高 (line-height)，然後在媒體查詢中進行微調。
+
+7. 表單元素 (Form Elements)
+
+輸入框、下拉選單、複選框等。
+
+電腦版： 輸入框可能有固定的寬度，或者並排排列。
+平板/手機版： 輸入框通常會佔滿容器寬度 (width: 100%)，多個輸入框會垂直堆疊，且觸控區域會被放大。
+共同規劃點： 確保所有表單元素在手機上都能清晰顯示且易於操作。
+
+8. 頁腳 (Footer)
+
+版權信息、聯絡方式、次要連結等。
+
+電腦版： 可能呈現多欄佈局。
+平板/手機版： 通常會將多欄改為垂直堆疊，字體縮小，間距調整。
+共同規劃點： 處理頁腳內容的排列方式和大小。 */
+
+
+
+
+
+
+/* --- 電腦版樣式 (Desktop Styles) --- */
+/* 這是預設樣式，適用於所有螢幕尺寸，但主要針對桌面電腦進行優化 */
+body {
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #fefefe;
+    color: #111;
+}
+
+header {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 2.4rem;
+    margin-bottom: 0.2em;
+}
+
+p.subtitle {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* 避免圖片下方多餘的空白 */
+}
+
+
+/* 選單列  */
+nav {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    border-radius: 40px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #111;
+    color: #fff;
+    border-color: #111;
+}
+
+/* 上一個專案、下一個專案按鈕 */
+.project-navigation {
+    display: flex;
+    /* 讓連結並排 */
+    justify-content: space-between;
+    /* 讓兩個連結分開在兩端 */
+    max-width: 700px;
+    /* 保持與內容區塊相同的最大寬度 */
+    margin: 40px auto 80px;
+    /* 上下邊距，置中 */
+    padding: 0 20px;
+    /* 左右內距，與內容區塊一致 */
+}
+
+.project-navigation .nav-link {
+    display: flex;
+    /* 讓箭頭和文字並排 */
+    flex-direction: column;
+    /* 讓文字和專案名稱垂直排列 */
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    text-align: center;
+    /* 預設文字置中，方便箭頭和文字對齊 */
+}
+
+.project-navigation .nav-link span {
+    font-size: 0.85rem;
+    /* 專案名稱小一點 */
+    color: #777;
+    /* 顏色淡一點 */
+    margin-top: 5px;
+    /* 與上面的文字隔開 */
+}
+
+.project-navigation .nav-link:hover {
+    color: #d5936b;
+    /* 懸停時變色，可以調整成你喜歡的品牌色 */
+}
+
+.project-navigation .prev-project {
+    /* 針對「上一個專案」的特定樣式 */
+    align-items: flex-start;
+    /* 讓內容靠左對齊 */
+}
+
+.project-navigation .next-project {
+    /* 針對「下一個專案」的特定樣式 */
+    align-items: flex-end;
+    /* 讓內容靠右對齊 */
+}
+
+/* 回到頂部、底部按鈕 */
+.scroll-buttons {
+    position: fixed;
+    /* 固定在視窗中 */
+    bottom: 20px;
+    /* 距離底部 20px */
+    right: 20px;
+    /* 距離右側 20px */
+    display: flex;
+    flex-direction: column;
+    /* 垂直堆疊 */
+    gap: 10px;
+    /* 按鈕間距 */
+    z-index: 100;
+    /* 確保按鈕在最上層 */
+}
+
+.scroll-buttons button {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    /* 圓形按鈕 */
+    width: 45px;
+    /* 寬度 */
+    height: 45px;
+    /* 高度 */
+    font-size: 1.5rem;
+    /* 箭頭大小 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    /* 預設隱藏 */
+    visibility: hidden;
+    /* 預設不可見 */
+}
+
+.scroll-buttons button.show {
+    opacity: 1;
+    /* 顯示 */
+    visibility: visible;
+    /* 可見 */
+}
+
+.scroll-buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* 懸停時顏色變深 */
+}
+
+
+/* line按鈕 */
+.line-button {
+    position: fixed;
+    /* 讓按鈕固定在視窗中 */
+    bottom: 20px;
+    /* 距離底部 20 像素，可依需求調整 */
+    left: 20px;
+    /* 距離右側 20 像素，可依需求調整 */
+    background-color: #00B900;
+    /* Line 的品牌綠色 */
+    border-radius: 50%;
+    /* 使按鈕呈現圓形 */
+    padding: 10px;
+    /* 內邊距 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* 陰影效果 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* 確保按鈕在其他內容之上 */
+    transition: transform 0.3s ease;
+    /* 滑鼠懸停時的動畫效果 */
+}
+
+.line-button:hover {
+    transform: scale(1.1);
+    /* 滑鼠懸停時放大 10% */
+}
+
+.line-button img {
+    width: 40px;
+    /* 圖示寬度，可依需求調整 */
+    height: 40px;
+    /* 圖示高度，可依需求調整 */
+    display: block;
+}
+
+/* 頁尾 */
+.footer {
+    margin-top: 80px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #999;
+    padding: 40px 20px;
+}
+
+
+
+
+
+
+
+
+/* --- 平板版樣式 (Tablet Styles) --- */
+/* 當螢幕寬度最大為 768px 時應用這些樣式 (常用於平板橫向或較大的手機) */
+@media (max-width: 768px) {
+    header {
+        padding: 30px 15px 15px;
+        /* 縮小標頭內距 */
+    }
+
+    h1 {
+        font-size: 2rem;
+        /* 縮小主要標題字體 */
+    }
+
+    p.subtitle {
+        font-size: 0.9rem;
+        /* 縮小副標題字體 */
+    }
+
+    nav {
+        flex-direction: column;
+        /* 導覽列項目垂直排列 */
+        align-items: center;
+        /* 導覽列項目置中 */
+        gap: 10px;
+        /* 縮小導覽列項目間距 */
+    }
+
+    nav a {
+        width: 80%;
+        /* 讓導覽列連結佔據更多寬度 */
+        max-width: 300px;
+        /* 避免在小螢幕上過寬 */
+        text-align: center;
+        /* 文字置中 */
+        padding: 12px 0;
+        /* 調整內距 */
+    }
+
+    header {
+        padding: 30px 15px;
+        /* 縮小標頭內距 */
+    }
+
+    /* 響應式呈現768px_上一個專案、下一個專案按鈕 */
+    .project-navigation {
+        margin: 30px auto 60px;
+        /* 調整小螢幕下的上下邊距 */
+        padding: 0 15px;
+        /* 調整左右內距 */
+    }
+
+    .project-navigation .nav-link {
+        font-size: 0.9rem;
+        /* 縮小文字 */
+    }
+
+    .project-navigation .nav-link span {
+        font-size: 0.75rem;
+        /* 縮小專案名稱 */
+    }
+
+    /* 響應式呈現768px＿line按鈕 */
+    .line-button {
+        bottom: 15px;
+        left: 15px;
+        padding: 8px;
+    }
+
+    .line-button img {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* 響應式呈現768px＿回到頂部、底部按鈕 */
+    .scroll-buttons {
+        bottom: 15px;
+        right: 15px;
+        gap: 8px;
+    }
+
+    .scroll-buttons button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+/* --- 手機版樣式 (Mobile Styles) --- */
+/* 當螢幕寬度最大為 480px 時應用這些樣式 (常用於手機) */
+@media (max-width: 480px) {
+    body {
+        font-size: 1.8rem;
+        /* 手機版字體可以稍微縮小 */
+    }
+
+    header {
+        padding: 8px 0;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    p.subtitle {
+        font-size: 0.8rem;
+    }
+
+    /* 響應式呈現480px_回到頂部、底部按鈕 */
+    .scroll-buttons {
+        bottom: 10px;
+        right: 10px;
+        gap: 6px;
+    }
+
+    .scroll-buttons button {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+
+
+    /* 響應式呈現480px＿line按鈕 */
+    .line-button {
+        bottom: 10px;
+        left: 10px;
+        padding: 6px;
+    }
+
+    .line-button img {
+        width: 30px;
+        height: 30px;
+    }
+
+
+    .footer {
+        padding: 15px;
+        font-size: 12px;
+    }
+}

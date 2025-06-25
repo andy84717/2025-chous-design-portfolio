@@ -164,7 +164,7 @@ nav a:hover {
       display: block;
     }
 
-/* 響應式呈現  */
+  /* ------------響應式呈現  ------------*/
 @media (max-width: 768px) {
   header {
     padding: 30px 15px 15px; /* 縮小標頭內距 */
