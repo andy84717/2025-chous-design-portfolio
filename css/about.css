@@ -1,29 +1,22 @@
-
-a {
-      text-decoration: none;
-      color: #d5936b;
-    }
-
-    /* 選擇性：當滑鼠懸停在連結上時，才顯示底線 */
-    a:hover {
+/* 選擇性：當滑鼠懸停在連結上時，才顯示底線 */
+p a:hover {
       text-decoration: underline;
     }
 
+/* 在 body 中加入 padding-top 以防止內容被黏性標題隱藏 */
+body:not(.is-sticky) .about-section {
+    padding-top: 0; /* 重置為非黏性狀態 */
+}
+
+/* 當 header 為黏性時，根據 header 的高度向 body 添加 padding-top */
+body.is-sticky .about-section {
+    padding-top: 80px; /* 根據黏性標題的高度調整此值 */
+}
 
 .about-section {
   max-width: 900px;
   margin: 60px auto;
   padding: 0 20px;
-}
-
-/* Add padding-top to body to prevent content from being hidden by sticky header */
-body:not(.is-sticky) .about-section {
-    padding-top: 0; /* Reset for non-sticky state */
-}
-
-/* When header is sticky, add padding-top to body based on header's height */
-body.is-sticky .about-section {
-    padding-top: 80px; /* Adjust this value based on your sticky header's height */
 }
 
 .about-section h2 {

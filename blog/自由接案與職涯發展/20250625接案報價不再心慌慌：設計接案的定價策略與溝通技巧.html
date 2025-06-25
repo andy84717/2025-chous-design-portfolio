@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap"
     rel="stylesheet" />
 
-    <!-- 字體連結 -->
+  <!-- 字體連結 -->
   <!-- Cactus Classical Serif、LXGW WenKai Mono TC  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,7 +38,7 @@
   font-weight: 700;
   font-style: normal;
 } -->
-  
+
   <!-- CSS連結 -->
   <link rel="stylesheet" href="../../css/rwd.css">
   <link rel="stylesheet" href="../../css/Normalize.css">
@@ -197,50 +197,10 @@
     <button id="scrollToBottomBtn" title="回到底部">&#9660;</button>
   </div>
 
-  <!-- 回到頂部、回到底部按鈕script -->
+  <!-- 連結script -->
+  <script src="../../js/選單列hambuger效果.js"></script>
+  <script src="../../js/回到頂部、底部按鈕.js"></script>
 
-  <script>
-    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-    const scrollToBottomBtn = document.getElementById("scrollToBottomBtn");
-
-    if (scrollToTopBtn && scrollToBottomBtn) {
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > window.innerHeight * 0.5) {
-          scrollToTopBtn.classList.add("show");
-        } else {
-          scrollToTopBtn.classList.remove("show");
-        }
-
-        const scrollHeight = document.documentElement.scrollHeight;
-        const clientHeight = document.documentElement.clientHeight;
-        const scrollTop = document.documentElement.scrollTop;
-
-        if (scrollTop + clientHeight < scrollHeight - 100) {
-          scrollToBottomBtn.classList.add("show");
-        } else {
-          scrollToBottomBtn.classList.remove("show");
-        }
-      });
-
-      scrollToTopBtn.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-
-      scrollToBottomBtn.addEventListener("click", () => {
-        window.scrollTo({
-          top: document.documentElement.scrollHeight,
-          behavior: "smooth",
-        });
-      });
-
-      window.addEventListener("load", () => {
-        window.dispatchEvent(new Event("scroll"));
-      });
-    }
-  </script>
 </body>
 
 </html>

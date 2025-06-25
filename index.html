@@ -47,11 +47,25 @@
 </head>
 
 <body>
-  <header>
-    <h1>設計誌｜ChousDesign</h1>
-    <p class="subtitle">品牌視覺設計 × 平面設計 × UI/UX、網頁設計 × 基礎攝影</p>
-    <img class="hero-image" src="./image/index/banner.png" alt="ChousDesign Hero Image" />
-    <nav>
+  <header id="mainHeader">
+    <div class="header-content">
+      <h1>｜設計誌｜<br>ChousDesign</h1>
+      <p class="subtitle">品牌視覺設計 × 平面設計 × UI/UX、網頁設計 × 基礎攝影</p>
+    </div>
+
+    
+
+    <!-- hamburger -->
+    <button class="hamburger" aria-label="切換導覽選單">
+      <!-- 裡面的三個 <span> 會被 CSS 渲染成三條橫線 -->
+      <!-- aria-label 提供了無障礙閱讀的描述。 -->
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+<img class="hero-image" src="./image/index/banner.png" alt="ChousDesign Hero Image" />
+    <!-- 選單列 -->
+    <nav id="mainNav">
       <a href="./index.html">首頁</a>
       <a href="./works.html">作品集總覽</a>
       <a href="./about.html">關於我</a>
@@ -68,6 +82,9 @@
   <!-- 頁尾 -->
   <div class="footer">&copy; 2025 ChousDesign . All Rights Reserved.</div>
 
+  <!-- 連結javascript檔案 -->
+  <script src="./js/選單列hambuger效果.js"></script>
+  <script src="./js/回到頂部、底部按鈕.js"></script>
 
 </body>
 

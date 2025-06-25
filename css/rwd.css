@@ -195,7 +195,10 @@ ol {
     font-size: 1rem;
 }
 
+
 a {
+    text-decoration: none;
+      color: #d5936b;
     text-decoration: none;
     /* 移除連結下劃線 */
     color: inherit;
@@ -242,19 +245,17 @@ nav a:hover {
     border-color: #111;
 }
 
-/* Hamburger menu styles (hidden by default on desktop) */
+/* 漢堡選單樣式（桌面上預設為隱藏） */
 .hamburger {
-    display: none;
-    /* Hide on desktop */
+    display: none;/* 在桌面上隱藏 */
     background: none;
     border: none;
     cursor: pointer;
     padding: 10px;
-    position: absolute;
+    position: absolute;/* 相對於 header 定位 */
     top: 20px;
     right: 20px;
-    z-index: 100;
-    /* Ensure it's clickable */
+    z-index: 100;/* 確保它在最上層可點擊 */ 
 }
 
 .hamburger span {
@@ -263,20 +264,20 @@ nav a:hover {
     height: 3px;
     background-color: #333;
     margin: 5px auto;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;/* 讓漢堡線條有動畫效果 */
 }
 
-/* Hamburger active state (for animation) */
+/* 漢堡活動狀態（用於動畫） */
 .hamburger.is-active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);/* 第一條線旋轉並移動 */
 }
 
 .hamburger.is-active span:nth-child(2) {
-    opacity: 0;
+    opacity: 0;/* 第二條線隱藏 */
 }
 
 .hamburger.is-active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);/* 第三條線旋轉並移動 */
 }
 
 
@@ -544,69 +545,74 @@ nav a:hover {
 @media (max-width: 480px) {
 
     header {
-        padding: 15px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
+        padding: 15px 20px;/* 調整手機版標頭的內距 */
+        display: flex; /* 使用 Flexbox 佈局 */
+        justify-content: space-between; /* 讓內容和漢堡圖示分開 */
+        align-items: center;/* 垂直置中，確保h1和hamburger對齊 */
+        flex-wrap: wrap; /* 允許內容換行 (如果標頭變固定) */
     }
 
+/* 確保 header-content 佔據其應有的空間，並讓 h1 和 subtitle 內部垂直排列 */
     header .header-content {
         text-align: left;
-        flex-grow: 1;
-        /* Allow header content to take available space */
+        flex-grow: 1; /* 讓標頭內容佔據可用空間 */
+        display: flex; /* 將 header-content 設為 flex 容器 */
+        flex-direction: column; /* 讓 h1 和 p.subtitle 垂直堆疊 */
+        justify-content: center; /* 垂直置中內部文字 */
     }
 
+    /* 當 header 變成 sticky 時，可能需要調整 header-content 的 flex-grow */
     header.is-sticky .header-content {
-        flex-grow: 0;
-        /* Reset flex-grow when sticky for better alignment */
+        flex-grow: 0; /* Reset flex-grow when sticky for better alignment */
+        /* 您可能還需要在此處調整 header-content 的 max-width 或 width，以避免在 sticky 狀態下佔據太多空間 */
     }
-
 
     h1 {
         font-family: "Cactus Classical Serif", serif;
         font-size: 1.5rem;
-        margin-bottom: 0;
+        margin-bottom: 0; /* 移除底部外距，以更好地對齊 */
+        line-height: 1.2; /* 調整行高，讓 h1 不會過高 */
     }
 
     p.subtitle {
         font-size: 0.8rem;
-        margin-top: 0;
+        margin-top: 0;/* 移除頂部外距，以更好地對齊 */
+        line-height: 1.2; /* 調整行高 */
     }
 
-    /* Show hamburger on mobile */
+    /* 在行動裝置上顯示hamburger */
     .hamburger {
-        display: block;
-        position: static; /* Reset position for flow */
+        display: block; /* 在手機版顯示漢堡圖示 */
+        position: static; /* 移除絕對定位，讓它回到正常的流中，由 flex 佈局控制位置 */
     }
 
-    /* Hide nav by default on mobile */
+    /* 在行動裝置上預設隱藏選單列 */
     nav {
-        display: none;
-        flex-direction: column;
-        width: 100%; /* Take full width */
-        margin-top: 15px; /* Add some space below header content */
-        background-color: #fefefe;
-        padding: 10px 0;
+        display: none;/* 預設隱藏導覽列 */
+        flex-direction: column;/* 導覽連結垂直堆疊 */
+        width: 100%;  /* 佔據整個寬度 */
+        margin-top: 15px; /* 在標頭內容下方增加一些空間 */
+        background-color: #fefefe; /* 選單背景色 */
+        padding: 10px 0;/* 選單內距 */
     }
 
-    /* Show nav when .show-nav class is present */
+    /* 當 .show-nav 類別存在時顯示導航 */
     nav.show-nav {
-        display: flex;
+        display: flex;/* 當有 .show-nav 類別時，顯示選單 */
     }
 
     nav a {
-        width: auto; /* Reset width */
-        max-width: none; /* Remove max-width restriction */
-        border: none; /* Remove borders for cleaner look */
-        padding: 10px 20px; /* Adjust padding */
-        border-radius: 0; /* Remove border-radius */
-        text-align: left; /* Align text to the left */
+        width: auto; /* 重設寬度 */
+        max-width: none; /* 移除最大寬度限制 */
+        border: none; /* 移除邊框，使外觀更簡潔 */
+        padding: 10px 20px; /* 調整內距 */
+        border-radius: 0; /* 移除圓角 */
+        text-align: left; /* 文字左對齊 */
         color: #333;
     }
 
     nav a:hover {
-        background-color: #eee; /* Lighter hover background */
+        background-color: #eee; /* 懸停時背景變淺 */
         color: #333;
     }
 

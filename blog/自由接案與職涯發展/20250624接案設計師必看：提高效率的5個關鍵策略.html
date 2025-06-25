@@ -146,50 +146,12 @@
     </div>
 
 
-    <!-- 回到頂部、回到底部按鈕script -->
+    <!-- 連結script -->
 
-    <script>
-        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-        const scrollToBottomBtn = document.getElementById("scrollToBottomBtn");
+    <script src="../../js/選單列hambuger效果.js"></script>
+    <script src="../../js/回到頂部、底部按鈕.js"></script>
 
-        if (scrollToTopBtn && scrollToBottomBtn) {
-            window.addEventListener("scroll", () => {
-                if (window.scrollY > window.innerHeight * 0.5) {
-                    scrollToTopBtn.classList.add("show");
-                } else {
-                    scrollToTopBtn.classList.remove("show");
-                }
 
-                const scrollHeight = document.documentElement.scrollHeight;
-                const clientHeight = document.documentElement.clientHeight;
-                const scrollTop = document.documentElement.scrollTop;
-
-                if (scrollTop + clientHeight < scrollHeight - 100) {
-                    scrollToBottomBtn.classList.add("show");
-                } else {
-                    scrollToBottomBtn.classList.remove("show");
-                }
-            });
-
-            scrollToTopBtn.addEventListener("click", () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth",
-                });
-            });
-
-            scrollToBottomBtn.addEventListener("click", () => {
-                window.scrollTo({
-                    top: document.documentElement.scrollHeight,
-                    behavior: "smooth",
-                });
-            });
-
-            window.addEventListener("load", () => {
-                window.dispatchEvent(new Event("scroll"));
-            });
-        }
-    </script>
 </body>
 
 </html>

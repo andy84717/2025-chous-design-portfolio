@@ -42,20 +42,19 @@
   <link rel="stylesheet" href="./css/Normalize.css" />
   <link rel="stylesheet" href="./css/about.css" />
 
-  <style>
-
-  </style>
 </head>
 
 <body>
   <header id="mainHeader">
     <div class="header-content">
-      <h1>關於 ChousDesign</h1>
+      <h1>關於 <br>ChousDesign</h1>
       <p class="subtitle">品牌設計 × 視覺創作 × 解決問題</p>
     </div>
 
     <!-- hamburger -->
-    <button class="hamburger" aria-label="Toggle navigation menu">
+    <button class="hamburger" aria-label="切換導覽選單">
+      <!-- 裡面的三個 <span> 會被 CSS 渲染成三條橫線 -->
+      <!-- aria-label 提供了無障礙閱讀的描述。 -->
       <span></span>
       <span></span>
       <span></span>
@@ -98,6 +97,8 @@
       </ul>
     </div>
   </section>
+
+
   <!-- line按鈕 -->
   <a href="https://line.me/R/ti/p/@170xuqkb" class="line-button" target="_blank" aria-label="加我Line">
     <img src="./image/contact/Line(green).svg" alt="Line 圖示" />
@@ -109,98 +110,13 @@
     <button id="scrollToTopBtn" title="回到頂部">&#9650;</button>
     <button id="scrollToBottomBtn" title="回到底部">&#9660;</button>
   </div>
+
+  
   <!-- 連結javascript檔案 -->
-  <script>
-    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-    const scrollToBottomBtn = document.getElementById("scrollToBottomBtn");
+   <script src="./js/選單列hambuger效果.js"></script>
+  <script src="./js/回到頂部、底部按鈕.js"></script>
 
-    // 檢查按鈕元素是否存在，以避免在沒有這些按鈕的頁面報錯
-    if (scrollToTopBtn && scrollToBottomBtn) {
-      // 監聽頁面滾動事件
-      window.addEventListener("scroll", () => {
-        // 顯示/隱藏「回到頂部」按鈕
-        // 當捲動距離超過視窗高度的 0.5 倍時顯示
-        if (window.scrollY > window.innerHeight * 0.5) {
-          scrollToTopBtn.classList.add("show");
-        } else {
-          scrollToTopBtn.classList.remove("show");
-        }
 
-        // 顯示/隱藏「回到底部」按鈕
-        const scrollHeight = document.documentElement.scrollHeight; // 整個文件的高度
-        const clientHeight = document.documentElement.clientHeight; // 視窗的可見高度
-        const scrollTop = document.documentElement.scrollTop; // 當前滾動的位置
-
-        // 當不在最底部時顯示「回到底部」按鈕 (例如，距離底部還有 100px 以上時顯示)
-        if (scrollTop + clientHeight < scrollHeight - 100) {
-          scrollToBottomBtn.classList.add("show");
-        } else {
-          scrollToBottomBtn.classList.remove("show");
-        }
-      });
-
-      // 「回到頂部」按鈕點擊事件
-      scrollToTopBtn.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth", // 平滑滾動效果
-        });
-      });
-
-      // 「回到底部」按鈕點擊事件
-      scrollToBottomBtn.addEventListener("click", () => {
-        window.scrollTo({
-          top: document.documentElement.scrollHeight, // 滾動到整個文件的底部
-          behavior: "smooth", // 平滑滾動效果
-        });
-      });
-
-      // 初始化：在頁面載入時檢查是否需要顯示按鈕
-      // 這確保了在頁面剛載入時，如果頁面足夠長，按鈕也能正確顯示/隱藏。
-      window.addEventListener("load", () => {
-        window.dispatchEvent(new Event("scroll")); // 手動觸發一次滾動事件檢查
-      });
-    }
-
-    //hambuger點擊事件
-    // JavaScript for sticky header and mobile menu
-    const mainHeader = document.getElementById('mainHeader');
-    const mainNav = document.getElementById('mainNav');
-    const hamburger = document.querySelector('.hamburger');
-
-    // Sticky header logic
-    const stickyObserver = new IntersectionObserver(
-      ([e]) => e.target.classList.toggle('is-sticky', e.intersectionRatio < 1),
-      { threshold: [1] }
-    );
-    stickyObserver.observe(mainHeader);
-
-    // Mobile menu toggle logic
-    hamburger.addEventListener('click', () => {
-      mainNav.classList.toggle('show-nav');
-      hamburger.classList.toggle('is-active'); // For animating hamburger icon
-    });
-
-    // JavaScript for sticky header and mobile menu
-    const mainHeader = document.getElementById('mainHeader');
-    const mainNav = document.getElementById('mainNav');
-    const hamburger = document.querySelector('.hamburger');
-
-    // Sticky header logic
-    // 使用 Intersection Observer 以獲得比 scroll 事件更好的性能
-    const stickyObserver = new IntersectionObserver(
-      ([e]) => e.target.classList.toggle('is-sticky', e.intersectionRatio < 1),
-      { threshold: [1] } // 當標頭 100% 可見時（閾值 1），它不是固定的。否則，它是固定的。
-    );
-    stickyObserver.observe(mainHeader);
-
-    // Mobile menu toggle logic
-    hamburger.addEventListener('click', () => {
-      mainNav.classList.toggle('show-nav'); // 切換導覽列的顯示與隱藏
-      hamburger.classList.toggle('is-active'); // 切換漢堡圖示的動畫
-    });
-
-  </script>
 </body>
 
 </html>
