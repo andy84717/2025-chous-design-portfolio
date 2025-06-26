@@ -7,8 +7,8 @@
   <title>掌握 Midjourney：關鍵字詠唱的藝術與科學｜部落格｜ChousDesign</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap"
     rel="stylesheet" />
-    
-    <!-- 字體連結 -->
+
+  <!-- 字體連結 -->
   <!-- Cactus Classical Serif、LXGW WenKai Mono TC  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,7 +38,7 @@
   font-weight: 700;
   font-style: normal;
 } -->
-   
+
   <!-- css連結 -->
   <link rel="stylesheet" href="../../css/Normalize.css" />
   <link rel="stylesheet" href="../../css/rwd.css">
@@ -53,10 +53,22 @@
 </head>
 
 <body>
-  <header>
-    <h1>設計手札</h1>
-    <p class="subtitle">設計師的筆記本：分享經驗、見解與靈感</p>
-    <nav>
+  <header id="mainHeader">
+    <div class="header-content">
+      <h1>設計手札</h1>
+      <p class="subtitle">設計師的筆記本：分享經驗、見解與靈感</p>
+    </div>
+
+    <!-- hamburger -->
+    <button class="hamburger" aria-label="切換導覽選單">
+      <!-- 裡面的三個 <span> 會被 CSS 渲染成三條橫線 -->
+      <!-- aria-label 提供了無障礙閱讀的描述。 -->
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <!-- 選單列 -->
+    <nav id="mainNav">
       <a href="../../index.html">首頁</a>
       <a href="../../works.html">作品集總覽</a>
       <a href="../../about.html">關於我</a>
@@ -75,7 +87,7 @@
       </p>
     </header>
 
-   
+
 
     <article class="article-content">
       <p><strong>關鍵字：</strong>Midjourney、人工智慧繪圖、關鍵字詠唱、文字指令 / 提示 (prompt)、圖像生成、描述力、精確性、迭代優化、藝術洞察力、AI技術理解</p>
@@ -194,39 +206,39 @@
         總之，Midjourney 的關鍵字詠唱是一場關於溝通的藝術。您越能清晰、具體、有策略地表達您的創意，Midjourney
         就能越準確地將您的想像變為現實。<br>這是一個持續學習和探索的過程，每一次成功的生成都將是您掌握這門「魔法語言」的又一步。現在，拿起您的鍵盤，開始您的詠唱之旅吧！
       </strong>
-      </article>
+    </article>
 
-      <!-- 上一篇文章、下一篇文章按鈕 -->
-      <div class="project-navigation">
-        <a href="../自由接案與職涯發展/20250624接案設計師必看：提高效率的5個關鍵策略.html" class="nav-link prev-project">
-          &larr; 上一篇文章
-          <span>接案設計師必看：提高效率的5個關鍵策略</span>
-        </a>
-        <a href="../自由接案與職涯發展/20250625接案報價不再心慌慌：設計接案的定價策略與溝通技巧.html" class="nav-link next-project">
-          下一篇文章 &rarr;
-          <span>接案報價不再心慌慌：設計接案的定價策略與溝通技巧</span>
-        </a>
-      </div>
-
-      <!-- line按鈕 -->
-      <a href="https://line.me/R/ti/p/@170xuqkb" class="line-button" target="_blank" aria-label="加我Line">
-        <img src="../../image/contact/Line(green).svg" alt="Line 圖示" />
+    <!-- 上一篇文章、下一篇文章按鈕 -->
+    <div class="project-navigation">
+      <a href="../自由接案與職涯發展/20250624接案設計師必看：提高效率的5個關鍵策略.html" class="nav-link prev-project">
+        &larr; 上一篇文章
+        <span>接案設計師必看：提高效率的5個關鍵策略</span>
       </a>
+      <a href="../自由接案與職涯發展/20250625接案報價不再心慌慌：設計接案的定價策略與溝通技巧.html" class="nav-link next-project">
+        下一篇文章 &rarr;
+        <span>接案報價不再心慌慌：設計接案的定價策略與溝通技巧</span>
+      </a>
+    </div>
 
-      <!-- 頁尾 -->
-      <div class="footer">&copy; 2025 ChousDesign . All Rights Reserved.</div>
-      <!-- 回到頂部、回到底部按鈕 -->
-      <div class="scroll-buttons">
-        <button id="scrollToTopBtn" title="回到頂部">&#9650;</button>
-        <button id="scrollToBottomBtn" title="回到底部">&#9660;</button>
-      </div>
+    <!-- line按鈕 -->
+    <a href="https://line.me/R/ti/p/@170xuqkb" class="line-button" target="_blank" aria-label="加我Line">
+      <img src="../../image/contact/Line(green).svg" alt="Line 圖示" />
+    </a>
+
+    <!-- 頁尾 -->
+    <div class="footer">&copy; 2025 ChousDesign . All Rights Reserved.</div>
+    <!-- 回到頂部、回到底部按鈕 -->
+    <div class="scroll-buttons">
+      <button id="scrollToTopBtn" title="回到頂部">&#9650;</button>
+      <button id="scrollToBottomBtn" title="回到底部">&#9660;</button>
+    </div>
 
 
-      <!-- 連結script -->
+    <!-- 連結script -->
 
-  <script src="../../js/選單列hambuger效果.js"></script>
-  <script src="../../js/回到頂部、底部按鈕.js"></script>
-    
+    <script src="../../js/選單列hambuger效果.js"></script>
+    <script src="../../js/回到頂部、底部按鈕.js"></script>
+
 </body>
 
 </html>

@@ -7,7 +7,7 @@
   <title>作品細節頁(輪播圖)｜類別｜ChousDesign</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Playfair+Display&display=swap"
     rel="stylesheet" />
-    <!-- 字體連結 -->
+  <!-- 字體連結 -->
   <!-- Cactus Classical Serif、LXGW WenKai Mono TC  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,20 +37,32 @@
   font-weight: 700;
   font-style: normal;
 } -->
-  
+
   <!-- 連結css檔案 -->
-   <link rel="stylesheet" href="../css/rwd.css">
+  <link rel="stylesheet" href="../css/rwd.css">
   <link rel="stylesheet" href="../css/Normalize.css" />
   <link rel="stylesheet" href="../css/work-2.css" />
 
 </head>
 
 <body>
-  <header>
-    <h1>作品名稱</h1>
-    <p class="subtitle">設計理念與執行細節</p>
+  <header id="mainHeader">
+    <div class="header-content">
+      <h1>作品名稱</h1>
+      <p class="subtitle">設計理念與執行細節</p>
+    </div>
+
+    <!-- hamburger -->
+    <button class="hamburger" aria-label="切換導覽選單">
+      <!-- 裡面的三個 <span> 會被 CSS 渲染成三條橫線 -->
+      <!-- aria-label 提供了無障礙閱讀的描述。 -->
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
     <!-- 選單列 -->
-    <nav>
+    <nav id="mainNav">
       <a href="../index.html">首頁</a>
       <a href="../works.html">作品集總覽</a>
       <a href="../about.html">關於我</a>
@@ -111,6 +123,8 @@
 
   <!-- 連結javascript檔案 -->
   <script src="../js/work-2.js" defer></script>
+   <script src="../js/回到頂部、底部按鈕.js"></script>
+  <script src="../js/選單列hambuger效果.js"></script>
 </body>
 
 </html>
