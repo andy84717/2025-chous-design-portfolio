@@ -47,6 +47,9 @@
   <link rel="stylesheet" href="./css/rwd.css">
 
   <style>
+    hr{
+      width:70%;
+    }
     .contact-section {
       max-width: 600px;
       margin: 60px auto;
@@ -64,6 +67,7 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+      margin-top: 40px;
     }
 
     label {
@@ -224,8 +228,10 @@
     </nav>
   </header>
 
+  
   <section class="contact-section">
     <h2>寫信給ChousDesign</h2>
+    <hr>
     <form action="https://formspree.io/f/xldnebda" method="POST">
       <label for="name">姓名</label>
       <input type="text" id="name" name="name" placeholder="請輸入您的名字" required />
