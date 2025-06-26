@@ -56,16 +56,32 @@
 </head>
 
 <body>
-  <header>
-    <h1>教具簡報設計</h1>
-    <p class="subtitle">【獨立接案】簡報設計</p>
-    <nav>
+  <header id="mainHeader">
+    <div class="header-content">
+      <h1>教具簡報設計</h1>
+
+    </div>
+
+    <!-- hamburger -->
+    <button class="hamburger" aria-label="切換導覽選單">
+      <!-- 裡面的三個 <span> 會被 CSS 渲染成三條橫線 -->
+      <!-- aria-label 提供了無障礙閱讀的描述。 -->
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <p class="subtitle">【獨立接案】簡報視覺打造，增添互動讓簡報更精彩</p>
+
+    <!-- 選單列 -->
+    <nav id="mainNav">
       <a href="../index.html">首頁</a>
       <a href="../works.html">作品集總覽</a>
       <a href="../about.html">關於我</a>
       <a href="../blog.html">部落格</a>
       <a href="../contact.html">聯絡我</a>
     </nav>
+
   </header>
 
   <section class="project-detail">
@@ -138,6 +154,7 @@
   <!-- 連結javascript檔案 -->
   <script src="../js/work-2.js"></script>
   <script src="../js/回到頂部、底部按鈕.js"></script>
+  <script src="../js/選單列hambuger效果.js"></script>
 </body>
 
 </html>

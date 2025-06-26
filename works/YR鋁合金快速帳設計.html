@@ -44,10 +44,23 @@
 </head>
 
 <body>
-  <header>
-    <h1>【YR佾睿國際】鋁合金快速帳設計</h1>
+  <header id="mainHeader">
+    <div class="header-content">
+      <h1>【YR佾睿國際】<br>鋁合金快速帳設計</h1>
+    </div>
+
+    <!-- hamburger -->
+    <button class="hamburger" aria-label="切換導覽選單">
+      <!-- 裡面的三個 <span> 會被 CSS 渲染成三條橫線 -->
+      <!-- aria-label 提供了無障礙閱讀的描述。 -->
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
     <p class="subtitle">【獨立接案】賽車風格的車帳設計</p>
-    <nav>
+    <!-- 選單列 -->
+    <nav id="mainNav">
       <a href="../index.html">首頁</a>
       <a href="../works.html">作品集總覽</a>
       <a href="../about.html">關於我</a>
@@ -100,6 +113,7 @@
   </div>
   <!-- 連結javascript檔案 -->
   <script src="../js/work-1.js" defer></script>
+  <script src="../js/選單列hambuger效果.js"></script>
   <script src="../js/回到頂部、底部按鈕.js"></script>
 </body>
 

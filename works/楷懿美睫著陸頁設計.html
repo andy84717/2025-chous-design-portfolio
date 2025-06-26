@@ -44,12 +44,26 @@
 </head>
 
 <body>
-  <header>
-    <h1>楷懿美睫著陸頁設計</h1>
+  <header id="mainHeader">
+    <div class="header-content">
+      <h1>楷懿美睫著陸頁設計</h1>
+    </div>
+
+    <!-- hamburger -->
+    <button class="hamburger" aria-label="切換導覽選單">
+      <!-- 裡面的三個 <span> 會被 CSS 渲染成三條橫線 -->
+      <!-- aria-label 提供了無障礙閱讀的描述。 -->
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
     <p class="subtitle">
       美睫產業的痛點解析，專業解決方案引導頁
     </p>
-    <nav>
+
+    <!-- 選單列 -->
+    <nav id="mainNav">
       <a href="../index.html">首頁</a>
       <a href="../works.html">作品集總覽</a>
       <a href="../about.html">關於我</a>
@@ -109,6 +123,7 @@
 
   <!-- 連結javascript檔案 -->
   <!-- 單張圖，非輪播圖，要連work-1-->
+  <script src="../js/選單列hambuger效果.js"></script>
   <script src="../js/work-1.js"></script>
   <script src="../js/回到頂部、底部按鈕.js"></script>
 </body>

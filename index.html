@@ -44,28 +44,48 @@
   <link rel="stylesheet" href="./css/Normalize.css" />
   <link rel="stylesheet" href="./css/index.css">
 
+  <style>
+    @media (max-width: 480px) {
+      nav {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      nav a {
+        font-size: 1rem;
+        text-decoration: none; /* 移除文字的裝飾線條 */
+        color: #333;
+        border: 1px solid #ddd;
+        padding: 10px 20px;
+        border-radius: 40px;
+        transition: all 0.3s ease;
+        width: 60%;
+        /* 當你設定 width 屬性時，你是給元素設定了一個 固定的、絕對的寬度;max-width 則設定了元素的 最大寬度。 */
+        text-align: center;
+        
+      }
+
+      nav a:hover {
+        background-color: #111;
+        color: #fff;
+        border-color: #111;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <header id="mainHeader">
-    <div class="header-content">
-      <h1>｜設計誌｜<br>ChousDesign</h1>
-      <p class="subtitle">品牌視覺設計 × 平面設計 × UI/UX、網頁設計 × 基礎攝影</p>
-    </div>
+  <header>
+    <h1>設計誌｜ChousDesign</h1>
+    <p class="subtitle">品牌視覺設計 × 平面設計 × UI/UX、網頁設計 × 基礎攝影</p>
 
-    
+    <img class="hero-image" src="./image/index/banner.png" alt="ChousDesign Hero Image" />
 
-    <!-- hamburger -->
-    <button class="hamburger" aria-label="切換導覽選單">
-      <!-- 裡面的三個 <span> 會被 CSS 渲染成三條橫線 -->
-      <!-- aria-label 提供了無障礙閱讀的描述。 -->
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-<img class="hero-image" src="./image/index/banner.png" alt="ChousDesign Hero Image" />
     <!-- 選單列 -->
-    <nav id="mainNav">
+    <nav>
       <a href="./index.html">首頁</a>
       <a href="./works.html">作品集總覽</a>
       <a href="./about.html">關於我</a>
@@ -83,7 +103,6 @@
   <div class="footer">&copy; 2025 ChousDesign . All Rights Reserved.</div>
 
   <!-- 連結javascript檔案 -->
-  <script src="./js/選單列hambuger效果.js"></script>
   <script src="./js/回到頂部、底部按鈕.js"></script>
 
 </body>

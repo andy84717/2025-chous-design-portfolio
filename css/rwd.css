@@ -225,8 +225,8 @@ nav {
     margin-top: 40px;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-wrap: wrap;/* 如果你的元素排不下了，它們會自動換到下一行（或下一列） */
+    gap: 20px;/* gap它用來設定 網格 (Grid) 或 彈性盒子 (Flexbox) 佈局中，項目（items）之間的間距。 */
 }
 
 nav a {
@@ -550,6 +550,7 @@ nav a:hover {
         justify-content: space-between; /* 讓內容和漢堡圖示分開 */
         align-items: center;/* 垂直置中，確保h1和hamburger對齊 */
         flex-wrap: wrap; /* 允許內容換行 (如果標頭變固定) */
+        text-align: left;
     }
 
 /* 確保 header-content 佔據其應有的空間，並讓 h1 和 subtitle 內部垂直排列 */

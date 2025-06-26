@@ -41,15 +41,31 @@
   <link rel="stylesheet" href="../css/rwd.css">
   <link rel="stylesheet" href="../css/Normalize.css" />
   <link rel="stylesheet" href="../css/work-2.css" />
+ 
 </head>
 
 <body>
-  <header>
-    <h1>和風飯糰</h1>
+  <header id="mainHeader">
+    <div class="header-content">
+      <h1>和風飯糰</h1>
+      
+    </div>
+
+    <!-- hamburger -->
+    <button class="hamburger" aria-label="切換導覽選單">
+      <!-- 裡面的三個 <span> 會被 CSS 渲染成三條橫線 -->
+      <!-- aria-label 提供了無障礙閱讀的描述。 -->
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
     <p class="subtitle">
-      【獨立接案】協助設計招牌、價碼牌、海報、傳單DM、菜單、塑膠袋等設計。
-    </p>
-    <nav>
+        【獨立接案】協助設計招牌、價碼牌、海報、傳單DM、菜單、塑膠袋等設計。
+      </p>
+
+    <!-- 選單列 -->
+    <nav id="mainNav">
       <a href="../index.html">首頁</a>
       <a href="../works.html">作品集總覽</a>
       <a href="../about.html">關於我</a>
@@ -121,6 +137,7 @@
   </div>
 
   <!-- 連結javascript檔案 -->
+  <script src="../js/選單列hambuger效果.js"></script>
   <script src="../js/work-2.js"></script>
   <script src="../js/回到頂部、底部按鈕.js"></script>
 </body>
