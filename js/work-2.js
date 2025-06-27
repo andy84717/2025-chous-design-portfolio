@@ -25,9 +25,6 @@
         index = (index - 1 + images.length) % images.length;
         updateCarousel();
       });
-      // 新增的滾動按鈕 JavaScript
-      const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-      const scrollToBottomBtn = document.getElementById("scrollToBottomBtn");
 
       // 監聽頁面滾動事件
       window.addEventListener("scroll", () => {
