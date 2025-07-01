@@ -50,11 +50,10 @@
 }
 
 .blog-img {
-  flex-shrink: 0;
-  /* 防止圖片在空間不足時縮小 */
-  width: 200px;
+  
+  max-width: 200px;
   /* 設定圖片的固定寬度 */
-  height: 200px;
+  height: auto;
   /* 設定圖片的固定高度 */
   object-fit: cover;
   /* 確保圖片能填滿空間而不變形 */
@@ -63,10 +62,7 @@
 
 }
 
-.blog-content {
-  flex-grow: 1;
-  /* 讓內容區塊佔據剩餘的所有空間 */
-}
+
 
 .blog-content a {
   text-decoration: none;
